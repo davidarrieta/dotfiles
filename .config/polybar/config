@@ -1,0 +1,443 @@
+;=====================================================
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;=====================================================
+
+[colors]
+;background = ${xrdb:color0:#222}
+;Color de la barra en general
+;background = #282828
+background = #D0DECF
+
+;Color cuando por ejemplo estás en un cierto workspace y aparece con una iluminación para indicar que estas alli
+;background-alt = #444 
+;background-alt = #75BEC3
+;background-alt = #D0DECF
+background-alt = #75BEC3
+
+;foreground = ${xrdb:color7:#222}
+;Color de la letra en general
+;foreground = #dfdfdf
+foreground = #9A9B9A
+
+;Color de la letra cuando se hace click en un modulo, por ejemplo en el modulo de sonido actual al hacer click se cambia a "sound ;muted"
+;con un color más oscuro para indicar que no hay sonido
+;foreground-alt = #555
+foreground-alt = #FF0000
+
+;Color de la línea de abajo que aparece para indicar que (en este caso) estas en determinado workspace
+primary = #ffb52a
+
+
+;Aún no sé que es pero debe ser casi lo mismo
+secondary = #e60053
+
+;Color que cambia a rojo cuando en la pestaña esa de cuando estas en un workspace aparece una ventana urgente
+alert = #bd2c40
+
+[bar/example]
+;monitor = ${env:MONITOR:HDMI-1}
+
+;Tamaño de la barra en general, en este caso ocupa toda la pantalla
+width = 100%
+
+;Anchura de la barra en general, me gusta ese tamaño.
+height = 27
+;offset-x = 1%
+;offset-y = 1%
+
+;Redondez de las esquinas de la barra en general, a mayor valor, mayor será el grado de redondez de las esquinas de la barra, a
+;menor valor, serán más cuadradas las esquinas. Me gusta este tamaño, parece un rectangulo.
+;radius = 12.0
+
+; Prefer fixed center position for the `modules-center` block
+; When false, the center position will be based on the size of the other blocks.;
+fixed-center = true
+
+;Son los mismos valores background y foreground de arriba.
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+;Anchura de las líneas que aparecen debajo de las palabras. A mayor valor, mayor anchura.
+line-size = 3
+;Aún no sé que hace, pero tiene que ver con la misma vaina de las lineas.
+line-color = #f00
+
+;El espacio que deja la línea arriba y abajo; El espacio que deja para no tocar toda la parte de arriba de la pantalla
+;y las ventanas de abajo
+border-size = 4
+;El color del borde de la barra en general, creo que prefiero dejarlo así.
+border-color = #00000000
+
+;El espacio que deja el primer modulo de la izquierda para no tocar la barra o mejor dicho
+;Number of spaces to add at the beginning/end of the bar
+;A mayor valor, mayor espacio.
+padding-left = 2
+padding-right = 2
+
+;El espacio que deja cada modulo para separarse entre si, de izquierda a derecha.
+module-margin-left = 1
+module-margin-right = 2
+
+;¿Cómo saber la fuente a colocar? Con los comandos fc-list y fc-match. fc-list -a para ver la lista de fuentes disponibles
+;y fc-match para ver el nombre exacto a poner aquí.
+;Para colocar fuentes que tienen espacios de por medio como por ejemplo "SF Pro Text" se coloca una barra invertida.
+font-0 = SF\ Pro\ Text:style=Regular:size=10
+font-1 = DejaVuSans:style=Book:size:8
+font-2 = FontAwesome:style=regular:size=10
+font-3 = FontAwesome:style=regular:size=19
+
+;Modulos en la barra, del lado izquierdo tenemos el modulo que me dice en cual workspace estoy
+modules-left = bspwm i3 
+
+;Modulos del centro
+modules-center =   mpd
+
+;Modulos del lado derecho. En esta parte tenemos el modulo filesystem que nos dice que tan lleno está la raíz en el disco duro, el
+;modulo de volumen, el de memoria RAM, el de CPU, la fecha y un powermenu
+modules-right =   scriptdate pavolume  powermenu
+
+
+;El lugar de la bandeja donde se colocan los iconos como audacious, telegram etc. En este caso está del lado derecho.
+tray-position = right
+
+;Lo mismo que el padding de arriba solo que con la bandeja del sistema.
+tray-padding = 2
+
+; Tray icon max size
+tray-maxsize = 16
+
+; Enable pseudo transparency
+; Will automatically be enabled if a fully transparent
+; background color is defined using `tray-background`
+;tray-transparent = false
+
+; Background color for the tray container
+; By default the tray container will use the bar
+; background color.
+; Note: 32 bit alpha blending is not supported.
+;tray-background = ${root.background}
+
+; Restack the bar window and put it above the
+; selected window manager's root
+;
+; Fixes the issue where the bar is being drawn
+; on top of fullscreen window's
+;
+; Currently supported WM's:
+;   bspwm
+;   i3 (requires: `override-redirect = true`)
+;wm-restack =
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+; Fallback click handlers that will be called if
+; there's no matching module handler found.
+;click-left = 
+;click-middle = 
+;click-right =
+;scroll-up =
+;scroll-down =
+;double-click-left =
+;double-click-middle =
+;double-click-right =
+;
+; Requires polybar to be built with xcursor support (xcb-util-cursor)
+; Possible values are:
+; - default   : The default pointer as before, can also be an empty string (default)
+; - pointer   : Typically in the form of a hand
+; - ns-resize : Up and down arrows, can be used to indicate scrolling
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+fixed-values = true
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+label-occupied = %index%
+label-occupied-padding = 2
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = %index%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 2
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+;Probando
+fuzzy-match = true
+
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+
+label-mode-padding = 4
+
+; Letra de cuando hago por ejemplo $mod+o y me preguntan que aplicación quiero abrir
+label-mode-foreground = #9A9A9A
+
+; Color de fondo de eso mismo de arriba
+;label-mode-background = ${colors.primary}
+label-mode-background = #ABCDC4
+
+; focused = Active workspace on focused monitor
+label-focused = %index% %icon%
+label-focused-background = ${module/bspwm.label-focused-background}
+label-focused-foreground = #FBFDFD
+label-focused-underline = ${module/bspwm.label-focused-underline}
+label-focused-padding = ${module/bspwm.label-focused-padding}
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %icon%
+label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index% %icon%
+;label-urgent-background = ${module/bspwm.label-urgent-background}
+label-urgent-background = #F24840
+label-urgent-padding = ${module/bspwm.label-urgent-padding}
+
+;ws-icon-[0-9]+ = label;icon
+;NOTE: The label needs to match the name of the i3
+;workspace
+
+ws-icon-0 = 1;
+ws-icon-1 = 2; 
+ws-icon-2 = 3; 
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+
+[module/mpd]
+type = internal/mpd
+format-underline =  #81A594
+
+host = localhost 
+; Seconds to sleep between progressbar/song timer sync
+; Default: 1
+interval = 1
+
+;format-online = <icon-prev> <icon-seekb> <icon-stop> <toggle> <icon-seekf> <icon-next>  <icon-repeat> <icon-random>  <bar-progress> <label-time>  <label-song>
+format-online = <label-song> <icon-prev> <icon-stop> <toggle> <icon-next>
+;format-playing = ${self.format-online}
+;format-paused = ${self.format-online}
+;format-stopped = ${self.format-online}
+
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+
+label-song = ♫ %artist% - %title%
+
+label-song-maxlen = 75
+label-song-ellipsis = true
+
+; Available tokens:
+;   %elapsed%
+;   %total%
+; Default: %elapsed% / %total%
+label-time = %elapsed% 
+
+; Only applies if <bar-progress> is used
+bar-progress-width = 5
+bar-progress-indicator = |
+bar-progress-fill = ─
+bar-progress-empty = ─
+
+click-right = gsimplecal
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline =  #81A594
+label = CPU %percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #FFCF75
+label = RAM %percentage_used%%
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = %d %b %Y
+date-alt = " %Y-%m-%d"
+
+time = %I:%M%p
+time-alt = %H:%M:%S
+
+format-prefix = 
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #0a6cf5
+
+label = %date% %time%
+
+
+[module/volume]
+type = internal/volume
+
+; Soundcard to be used
+; Usually in the format hw:#
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+
+; Name of the master mixer
+; Default: Master
+master-mixer = Master
+
+format-volume = <label-volume> <bar-volume>
+label-volume = 
+label-volume-foreground = ${root.foreground}
+
+format-muted-prefix = " "
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = 
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/powermenu]
+type = custom/menu
+
+format-spacing = 1
+
+;label-active = %token%
+
+;label-active-font = 3
+
+label-open = 
+;label-open-foreground = ${colors.secondary}
+label-open-foreground = #30353A
+label-close = 
+label-close-foreground = ${colors.secondary}
+label-separator =|
+label-separator-foreground = ${colors.background}
+
+menu-0-0 = 
+menu-0-0-exec = menu-open-1
+menu-0-1 = 
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = 
+menu-1-0-exec = menu-open-0
+menu-1-1 =  
+menu-1-1-exec = reboot
+
+menu-2-0 = 
+menu-2-0-exec = shutdown -h now
+menu-2-1 = 
+menu-2-1-exec = menu-open-0
+
+[module/scriptdate]
+type = custom/script
+
+exec = date +'%I:%M%p'
+;exec = date +'%d %b %Y %I:%M%p'
+
+format-prefix =
+format-prefix-foreground = #9A9B9A
+;format-prefix-foreground = ${colors.background}
+format-underline = #B6C0D2
+
+content-foreground = ${colors.white}
+content-background = ${colors.magenta}
+
+tail = false
+
+interval = 5
+
+click-left = /home/claudio/.config/polybar/popus/calendar/pop_cal
+
+[module/menu]
+type = custom/text
+
+content =  
+content-foreground = ${colors.white}
+content-background = ${colors.magenta}
+click-left = /home/claudio/.config/polybar/popus/calendar/pop_cal
+
+
+[module/pavolume]
+type = custom/script
+tail = true
+label = %output%
+exec = ~/.config/polybar/pavolume.sh --listen
+click-right = exec pavucontrol
+click-left = ~/.config/polybar/pavolume.sh --togmute
+scroll-up = ~/.config/polybar/pavolume.sh --up
+scroll-down = ~/.config/polybar/pavolume.sh --down
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini

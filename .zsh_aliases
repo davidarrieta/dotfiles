@@ -1,0 +1,84 @@
+# Example aliases
+# Quick command to modify .zshrc
+alias zshconfig="vim ~/.zshrc"
+# Quick command to know if the internet works properly
+alias p="ping -c 3 google.com"
+# Just an ls more colorful
+alias ls="ls --color=yes --group-directories-first"
+# To avoid typos
+alias ñs="ls --color=yes --group-directories-first"
+#Quick command to mount a USB, flash drive, hard drive etc. I like how udisksctl mounts.
+alias m="udisksctl mount -b"
+# Same, but unmount
+alias um="udisksctl unmount -b"
+# Common vi alias
+alias vi="vim"
+# How to use the "archlinux" plugin that comes with oh-my-zsh
+alias paclias="less /home/claudio/.oh-my-zsh/plugins/archlinux/README.md"
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+# Quick access to modify .vimrc 
+# "cv" stands for Customize Vim
+# In addition, the letters "c" and "v" are quite close to each other on the QWERTY keyboard.
+alias cv="vim ~/.vimrc"
+# Search for packages in Arch with pacman. "spp" stands for "Search pacman packages"
+alias spp="pacman -Q | grep "
+# Quick command to rm -r 
+alias rr="rm -r"
+# Purge a package with pacman
+alias purge="sudo pacman -Rnscu"
+# Clear the screen of the terminal, but faster.
+alias c="clear"
+# Remove old packages in pacman cache and optimize pacman with the script pacman-optimize 
+alias clean="sudo pacman -Sc && pacaur -Sc && sudo pacman-optimize"
+# Just a more savage clean :)
+alias suclean="sudo pacman -Scc && pacaur -Scc && sudo pacman-optimize"
+# Use Reflector to improve the speed of Arch mirrors. First do a backup of /etc/pacman.d/mirrorlist.
+alias mirror="sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup && sudo reflector --verbose -l 10 --sort score -p http -p https --sort rate --save /etc/pacman.d/mirrorlist"
+# Using vim as pager, like less
+alias less="/usr/share/vim/vim80/macros/less.sh"
+# Find the 10 most heavy files in a folder
+alias hefi="du -hsx * | sort -rh | head -10"
+# Edit i3 conf with vim and much faster
+alias vi3="vim ~/.config/i3/config"
+# Use vim as cat.
+alias cat="vimcat"
+# Quick command to modify .zsh_aliases. "cza" stands for "Configure zsh aliases".
+alias cza="vim ~/.zsh_aliases"
+# To avoid typos pasting from webs
+alias nano="vim"
+# lulz
+alias emacs="vim"
+alias iv="vim"
+# Be more verbose and interactive with cp, mv and rm.
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias rm="rm -i"
+
+# Command to quickly download and convert to mp3 a song from youtube
+alias mp3-dl="youtube-dl --audio-quality 1 --extract-audio --audio-format mp3"
+
+# See the most heavy files in a folder 
+alias duf='du -sh *'
+
+# Find directories by their name
+alias fd='find . -type d -name'
+# Find files by their name
+alias ff='find . -type f -name'
+
+# Generate a playlist in .m3u for mpd
+alias genplaylist="cd ~/Música;find . -name '*.mp3' -o -name '*.flac' -o -name '*.mp4'|sed -e 's%^./%%g' > ~/.mpd/playlists/all.m3u"
+
+#█▓▒░ update mpd database
+function genplaylist() {
+  cd ~/music
+  find . -name '*.mp3' -o -name '*.flac'|sed -e 's%^./%%g' > ~/.config/mpd/playlists/all.m3u
+  mpc clear
+  mpc load all.m3u
+  mpc update
+}
+
+alias todo="vim ~/.todo"
+
+alias lsg="ls | grep -i"
+alias lsag="ls -a | grep -i"
