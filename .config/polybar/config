@@ -88,8 +88,11 @@ module-margin-right = 2
 ;Para colocar fuentes que tienen espacios de por medio como por ejemplo "SF Pro Text" se coloca una barra invertida.
 font-0 = SF\ Pro\ Text:style=Regular:size=10
 font-1 = DejaVuSans:style=Book:size:8
-font-2 = FontAwesome:style=regular:size=10
-font-3 = FontAwesome:style=regular:size=19
+font-2 = FontAwesome:style=regular:size=11
+;font-2 = Font\ Awesome\ 5\ Brands:style=regular:size:4
+;font-3 = Font\ Awesome\ 5\ Free:style=regular:size:4
+;font-4 = Font\ Awesome\ 5\ Free:style=solid:size:4
+
 
 ;Modulos en la barra, del lado izquierdo tenemos el modulo que me dice en cual workspace estoy
 modules-left = bspwm i3 
@@ -240,7 +243,7 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 ;workspace
 
 ws-icon-0 = 1;
-ws-icon-1 = 2; 
+ws-icon-1 = 2;
 ws-icon-2 = 3; 
 ws-icon-3 = 4;
 ws-icon-4 = 5;

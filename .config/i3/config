@@ -29,11 +29,11 @@ gaps inner 15
 gaps outer -2
 
 # Toggle Gaps
-set $mode_gaps Toggle gaps: (1)OFF (2)LOW (3)NORMAL (4)HUGE  
+set $toggle_gaps Toggle gaps: (1)OFF (2)LOW (3)NORMAL (4)HUGE  
 
-bindsym $mod+n mode "$mode_gaps"
+bindsym $mod+n mode "$toggle_gaps"
 
-mode "$mode_gaps" {
+mode "$toggle_gaps" {
     bindsym 1 mode "default", gaps inner all set 0, gaps outer all set 0
     bindsym 2 mode "default", gaps inner all set 10, gaps outer all set -4
     bindsym 3 mode "default", gaps inner all set 30, gaps outer all set 15
@@ -243,7 +243,7 @@ bindsym --release button2 kill
 bindsym $mod+button3 floating toggle
 
 # Press $mod+o followed by either f, t, m, n, v, etc. to launch firefox,  and the most used apps by me
-set $mode_launcher Launch: [f]irefox [m]usic(ncmpcpp) [n]autilus [v]lc [t]elegram [l]ibreoffice writer [z]athura
+set $mode_launcher Launch: [f]irefox [m]usic(ncmpcpp) [n]autilus [t]elegram [l]ibreoffice writer [z]athura
 bindsym $mod+o mode "$mode_launcher"
 
 mode "$mode_launcher" {
@@ -252,7 +252,6 @@ mode "$mode_launcher" {
     bindsym m exec termite -e ncmpcpp --class=ncmpcpp --name=ncmpcpp
 
     bindsym n exec nautilus
-    bindsym v exec vlc 
     bindsym l exec libreoffice --writer
     bindsym z exec zathura
 
@@ -310,8 +309,8 @@ mode "resize" {
 }
 
 #navigate workspaces next / previous
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev 
+bindsym $mod+Ctrl+l workspace next
+bindsym $mod+Ctrl+h workspace prev 
 
 # Volume control
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
@@ -322,7 +321,7 @@ bindsym XF86AudioPrev exec --no-startup-id mpc prev
 bindsym XF86AudioNext exec --no-startup-id mpc next
 
 # Lock the screen with i3lock and this script
-bindsym $mod+Ctrl+l exec --no-startup-id ~/.scripts/i3lock.sh
+bindsym XF86WakeUp exec --no-startup-id ~/.scripts/i3lock.sh
 
 # Open calculator with his multimedia key
 bindsym XF86Calculator exec gnome-calculator

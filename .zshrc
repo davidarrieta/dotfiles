@@ -51,7 +51,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git archlinux colorize copydir extract zsh-syntax-highlighting )
+plugins=(web-search git archlinux colorize copydir extract zsh-syntax-highlighting )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -80,6 +80,9 @@ source /home/claudio/.zsh_aliases
 export EDITOR="vim"
 export PAGER="vimpager"
 export TERM"termite"
+
+#BASE16_SHELL=$HOME/.config/base16-shell/
+#[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 # To ls automatically after cd
 #function chpwd() {
