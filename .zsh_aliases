@@ -82,3 +82,5 @@ alias todo="vim ~/.todo"
 
 alias lsg="ls | grep -i"
 alias lsag="ls -a | grep -i"
+
+alias dots="cd ~/dotfiles"

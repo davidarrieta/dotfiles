@@ -1,4 +1,4 @@
-# If you come from bash you might have to change your $PATH.
+#jbergantine If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -7,7 +7,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="gallois"
+#ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,7 +52,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(web-search git archlinux colorize copydir extract zsh-syntax-highlighting )
+plugins=(web-search z git archlinux colorize copydir extract zsh-syntax-highlighting )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -81,8 +82,8 @@ export EDITOR="vim"
 export PAGER="vimpager"
 export TERM"termite"
 
-#BASE16_SHELL=$HOME/.config/base16-shell/
-#[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 # To ls automatically after cd
 #function chpwd() {

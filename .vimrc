@@ -158,6 +158,12 @@ map <Leader>p "*p
 
 nmap <leader>l :set list!<CR>
 
+" Mapping <C-e> to execute Python code via Python 3 interpreter
+map <silent> <C-e> :call PYTHON()<CR>
+func PYTHON()
+	exec "!clear && python3 %"
+endfunc
+
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:$ 
 
