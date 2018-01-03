@@ -36,7 +36,9 @@ alias suclean="sudo pacman -Scc && pacaur -Scc && sudo pacman-optimize"
 # Use Reflector to improve the speed of Arch mirrors. First do a backup of /etc/pacman.d/mirrorlist.
 alias mirror="sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup && sudo reflector --verbose -l 10 --sort score -p http -p https --sort rate --save /etc/pacman.d/mirrorlist"
 # Using vim as pager, like less
-alias less="/usr/share/vim/vim80/macros/less.sh"
+#alias less="/usr/share/vim/vim80/macros/less.sh"
+alias less="vimpager"
+alias zless="vimpager"
 # Find the 10 most heavy files in a folder
 alias hefi="du -hsx * | sort -rh | head -10"
 # Edit i3 conf with vim and much faster
