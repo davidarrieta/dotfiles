@@ -32,7 +32,7 @@ alias c="clear"
 # Remove old packages in pacman cache and optimize pacman with the script pacman-optimize 
 alias clean="sudo pacman -Sc && pacaur -Sc && sudo pacman-optimize"
 # Just a more savage clean :)
-alias suclean="sudo pacman -Scc && pacaur -Scc && sudo pacman-optimize"
+alias suclean="sudo pacman -Scc && trizen -Scc && sudo pacman-optimize"
 # Use Reflector to improve the speed of Arch mirrors. First do a backup of /etc/pacman.d/mirrorlist.
 alias mirror="sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup && sudo reflector --verbose -l 10 --sort score -p http -p https --sort rate --save /etc/pacman.d/mirrorlist"
 # Using vim as pager, like less
@@ -69,7 +69,7 @@ alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
 # Generate a playlist in .m3u for mpd
-alias genplaylist="cd ~/Música;find . -name '*.mp3' -o -name '*.flac' -o -name '*.mp4'|sed -e 's%^./%%g' > ~/.mpd/playlists/all.m3u"
+alias genplaylist="cd ~/Música;find . -name '*.mp3' -o -name '*.flac' -o -name '*.m4a' -o -name '*.mp4'|sed -e 's%^./%%g' > ~/.mpd/playlists/all.m3u"
 
 #█▓▒░ update mpd database
 function genplaylist() {
@@ -86,3 +86,36 @@ alias lsg="ls | grep -i"
 alias lsag="ls -a | grep -i"
 
 alias dots="cd ~/dotfiles"
+
+# Pacman and trizen aliases:
+
+alias pacupg='sudo pacman -Syu'
+alias pacin='sudo pacman -S'
+alias pacins='sudo pacman -U'
+alias pacre='sudo pacman -R'
+alias pacrem='sudo pacman -Rns'
+alias pacrep='pacman -Si'
+alias pacreps='pacman -Ss'
+alias pacloc='pacman -Qi'
+alias paclocs='pacman -Qs'
+alias pacinsd='sudo pacman -S --asdeps'
+alias pacmir='sudo pacman -Syy'
+alias paclsorphans='sudo pacman -Qdt'
+alias pacrmorphans='sudo pacman -Rs $(pacman -Qtdq)'
+alias pacfileupg='sudo pacman -Fy'
+alias pacfiles='pacman tFs'
+alias upgrade='sudo pacman -Syu'
+
+paclist() {
+  # Source: https://bbs.archlinux.org/viewtopic.php?id=93683
+  LC_ALL=C pacman -Qei $(pacman -Qu | cut -d " " -f 1) | \
+    awk 'BEGIN {FS=":"} /^Name/{printf("\033[1;36m%s\033[1;37m", $2)} /^Description/{print $2}'
+}
+
+
+# Trizen
+
+alias trupg="trizen -Syu"
+alias trin="trizen -S"
+alias treps="trizen -Ss"
+

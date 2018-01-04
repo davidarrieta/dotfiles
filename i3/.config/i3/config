@@ -43,10 +43,12 @@ mode "$toggle_gaps" {
     bindsym Escape mode "default"
 }
 
+# scratchpad
+bindsym $mod+Shift+m move scratchpad
+bindsym $mod+Shift+o scratchpad show
+
 #Mini borders
-for_window [class="Nautilus"] border pixel 0
-for_window [class="^.*"] border pixel 1
-for_window [class="Gnome-calculator"] border pixel 0
+for_window [class="^.*"] border pixel 0
 
 # Blurme script!
 
@@ -63,7 +65,7 @@ exec_always --no-startup-id /home/claudio/.scripts/blurme.sh &
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -128,9 +130,6 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-# Bindkeys for common applications
-#bindsym $mod+t exec xfce4-terminal --hide-borders --hide-toolbar --hide-menubar  
-
 # Set default names to workspaces 
 
 # First, Web browser. My favorite? Firefox <3
@@ -181,31 +180,62 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # assign classes
 assign [class="Firefox"] $ws1
-assign [class="(?i)termite"] $ws2
+assign [class="^URxvt$" instance="urxvt"] $ws2
 assign [class="Nautilus"] $ws3
-assign [class="ncmpcpp" instance="ncmpcpp"] $ws4
+assign [instance="ncmpcpp"] $ws4
 assign [class="TelegramDesktop"] $ws5
 assign [class="mpv"] $ws6
 assign [class="(?i)libreoffice"] $ws7
 assign [class="(?i)zathura"] $ws7
 
-# is part of window colors
+## Base16 Tomorrow Night
+# Author: Chris Kempson (http://chriskempson.com)
+#
+# You can use these variables anywhere in the i3 configuration file.
 
-set $bg-color            #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
+set $base00 #1d1f21
+set $base01 #282a2e
+set $base02 #373b41
+set $base03 #969896
+set $base04 #b4b7b4
+set $base05 #c5c8c6
+set $base06 #e0e0e0
+set $base07 #ffffff
+set $base08 #cc6666
+set $base09 #de935f
+set $base0A #f0c674
+set $base0B #b5bd68
+set $base0C #8abeb7
+set $base0D #81a2be
+set $base0E #b294bb
+set $base0F #a3685a
 
+# Basic color configuration using the Base16 variables for windows and borders.
+# Property Name         Border  BG      Text    Indicator Child Border
+client.focused          $base05 $base0D $base00 $base0D $base0D
+client.focused_inactive $base01 $base01 $base05 $base03 $base01
+client.unfocused        $base01 $base00 $base05 $base01 $base01
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base05 $base00 $base00
+client.background $base07
 
-# window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color         $bg-color 
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $bg-color
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $bg-color
-client.urgent $urgent-bg-color $urgent-bg-color $text-color $bg-color
-client.placeholder $bg-color $bg-color $bg-color $bg-color
-
+## is part of window colors
+#
+#set $bg-color            #2f343f
+#set $inactive-bg-color   #2f343f
+#set $text-color          #f3f4f5
+#set $inactive-text-color #676E7D
+#set $urgent-bg-color     #E53935
+#
+#
+## window colors
+##                       border              background         text                 indicator
+#client.focused          $bg-color           $bg-color          $text-color         $bg-color 
+#client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $bg-color
+#client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $bg-color
+#client.urgent $urgent-bg-color $urgent-bg-color $text-color $bg-color
+#client.placeholder $bg-color $bg-color $bg-color $bg-color
+#
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -215,7 +245,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -f 'pango: SF-Pro-Display-Regula
 
 #Certain windows always in float(ing) mode
 for_window [class="Pavucontrol"] floating enable
-for_window [class="Mousepad" title="Mousepad"] floating enable resize set 1024 640
+for_window [class="Leafpad" title="Leafpad"] floating enable resize set 1024 640
 for_window [class="Audacious"] floating enable resize set 1024 640
 for_window [class="Lxappearance"] floating enable
 for_window [class="Nautilus"] floating enable
@@ -243,15 +273,15 @@ bindsym --release button2 kill
 bindsym $mod+button3 floating toggle
 
 # Press $mod+o followed by either f, t, m, n, v, etc. to launch firefox,  and the most used apps by me
-set $mode_launcher Launch: [f]irefox [m]usic(ncmpcpp) [n]autilus [t]elegram [l]ibreoffice writer [z]athura
+set $mode_launcher Launch: [f]irefox [m]usic(ncmpcpp thu[n]ar [t]elegram [l]ibreoffice writer [z]athura
 bindsym $mod+o mode "$mode_launcher"
 
 mode "$mode_launcher" {
     bindsym f exec firefox
     bindsym t exec /home/claudio/Descargas/Telegram/Telegram
-    bindsym m exec termite -e ncmpcpp --class=ncmpcpp --name=ncmpcpp
+    bindsym m exec --no-startup-id urxvt -name ncmpcpp -e ncmpcpp
 
-    bindsym n exec nautilus
+    bindsym n exec thunar
     bindsym l exec libreoffice --writer
     bindsym z exec zathura
 
@@ -334,13 +364,15 @@ bindsym $mod+r mode "resize"
 
 exec_always --no-startup-id compton -f
 
-exec_always --no-startup-id feh --bg-scale /home/claudio/Imágenes/Wallpapers/sea.jpg
+exec_always --no-startup-id feh --bg-fill /home/claudio/Imágenes/Wallpapers/green-plants.jpg
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 exec_always --no-startup-id parcellite
 
 exec_always --no-startup-id mpd
+
+exec_always --no-startup-id urxvtd --quiet --opendisplay --fork &
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner

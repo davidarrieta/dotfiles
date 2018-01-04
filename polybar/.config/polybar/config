@@ -8,36 +8,36 @@
 ;=====================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
 ;Color de la barra en general
-;background = #282828
-background = #D0DECF
+;background = ${xrdb:color0:#222}
+;background = ${xrdb:color18:}
+background = #F21D1F21
+;background = #D0DECF
 
 ;Color cuando por ejemplo estás en un cierto workspace y aparece con una iluminación para indicar que estas alli
 ;background-alt = #444 
 ;background-alt = #75BEC3
 ;background-alt = #D0DECF
-background-alt = #75BEC3
+background-alt = ${xrdb:color19:}
 
 ;foreground = ${xrdb:color7:#222}
 ;Color de la letra en general
 ;foreground = #dfdfdf
-foreground = #9A9B9A
+foreground = ${xrdb:color20:#B4B7B4}
 
 ;Color de la letra cuando se hace click en un modulo, por ejemplo en el modulo de sonido actual al hacer click se cambia a "sound ;muted"
 ;con un color más oscuro para indicar que no hay sonido
 ;foreground-alt = #555
-foreground-alt = #FF0000
+foreground-alt = ${xrdb:color8:}
 
 ;Color de la línea de abajo que aparece para indicar que (en este caso) estas en determinado workspace
-primary = #ffb52a
-
+primary = ${xrdb:color8:}
 
 ;Aún no sé que es pero debe ser casi lo mismo
 secondary = #e60053
 
 ;Color que cambia a rojo cuando en la pestaña esa de cuando estas en un workspace aparece una ventana urgente
-alert = #bd2c40
+alert = ${xrdb:color9:}
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -69,7 +69,7 @@ line-color = #f00
 
 ;El espacio que deja la línea arriba y abajo; El espacio que deja para no tocar toda la parte de arriba de la pantalla
 ;y las ventanas de abajo
-border-size = 4
+border-size = 0
 ;El color del borde de la barra en general, creo que prefiero dejarlo así.
 border-color = #00000000
 
@@ -86,13 +86,9 @@ module-margin-right = 2
 ;¿Cómo saber la fuente a colocar? Con los comandos fc-list y fc-match. fc-list -a para ver la lista de fuentes disponibles
 ;y fc-match para ver el nombre exacto a poner aquí.
 ;Para colocar fuentes que tienen espacios de por medio como por ejemplo "SF Pro Text" se coloca una barra invertida.
-font-0 = SF\ Pro\ Text:style=Regular:size=10
+font-0 = SF\ Pro\ Text:style=Regular:size=9
 font-1 = DejaVuSans:style=Book:size:8
 font-2 = FontAwesome:style=regular:size=11
-;font-2 = Font\ Awesome\ 5\ Brands:style=regular:size:4
-;font-3 = Font\ Awesome\ 5\ Free:style=regular:size:4
-;font-4 = Font\ Awesome\ 5\ Free:style=solid:size:4
-
 
 ;Modulos en la barra, del lado izquierdo tenemos el modulo que me dice en cual workspace estoy
 modules-left = bspwm i3 
@@ -209,11 +205,12 @@ fuzzy-match = true
 label-mode-padding = 4
 
 ; Letra de cuando hago por ejemplo $mod+o y me preguntan que aplicación quiero abrir
-label-mode-foreground = #9A9A9A
+label-mode-foreground = ${xrdb:color10:}
 
 ; Color de fondo de eso mismo de arriba
 ;label-mode-background = ${colors.primary}
-label-mode-background = #ABCDC4
+label-mode-background = ${xrdb:color18:} 
+
 
 ; focused = Active workspace on focused monitor
 label-focused = %index% %icon%
@@ -230,12 +227,12 @@ label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 label-visible = %index%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
+;label-visible-padding = ${self.label-focused-padding}
+;
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index% %icon%
-;label-urgent-background = ${module/bspwm.label-urgent-background}
-label-urgent-background = #F24840
+label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
 ;ws-icon-[0-9]+ = label;icon
@@ -252,7 +249,7 @@ ws-icon-6 = 7;
 
 [module/mpd]
 type = internal/mpd
-format-underline =  #81A594
+format-underline =  #FF0000
 
 host = localhost 
 ; Seconds to sleep between progressbar/song timer sync
@@ -288,8 +285,6 @@ bar-progress-indicator = |
 bar-progress-fill = ─
 bar-progress-empty = ─
 
-click-right = gsimplecal
-
 [module/cpu]
 type = internal/cpu
 interval = 2
@@ -318,7 +313,6 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
 
 label = %date% %time%
 
@@ -372,7 +366,7 @@ format-spacing = 1
 
 label-open = 
 ;label-open-foreground = ${colors.secondary}
-label-open-foreground = #30353A
+label-open-foreground = ${xrdb:color17:}
 label-close = 
 label-close-foreground = ${colors.secondary}
 label-separator =|
@@ -402,7 +396,8 @@ exec = date +'%I:%M%p'
 format-prefix =
 format-prefix-foreground = #9A9B9A
 ;format-prefix-foreground = ${colors.background}
-format-underline = #B6C0D2
+;format-underline = #B6C0D2
+format-underline = ${xrdb:color2:}
 
 content-foreground = ${colors.white}
 content-background = ${colors.magenta}

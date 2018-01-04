@@ -86,15 +86,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " Surround plugin. Quoting/parenthesizing made simple
 Plugin 'tpope/vim-surround'
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-
-"Enable solarized dark to be used in Vim airline
-let g:airline_solarized_bg='dark'
-
-"Set the theme of ViM airline to solarized
-let g:airline_theme='solarized'
-
 "All of your Plugins must be added before the following line
 call vundle#end()            "required
 filetype plugin indent on    "required. Filetype auto-detection.

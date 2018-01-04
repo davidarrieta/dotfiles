@@ -52,7 +52,7 @@ ZSH_THEME="gallois"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(web-search alias-tips z git archlinux colorize copydir extract zsh-syntax-highlighting )
+plugins=(web-search alias-tips z git colorize copydir extract zsh-syntax-highlighting )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,8 +83,8 @@ export PAGER=/usr/bin/vimpager
 #export PAGER="vimpager"
 
 
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+#BASE16_SHELL=$HOME/.config/base16-shell/
+#[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 # To ls automatically after cd
 #function chpwd() {

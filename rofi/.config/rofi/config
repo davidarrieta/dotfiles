@@ -1,3 +1,7 @@
+
+! Base16 Tomorrow Night
+! Author: Chris Kempson (http://chriskempson.com)
+
 ! ------------------------------------------------------------------------------
 !                      ROFI Settings
 ! ------------------------------------------------------------------------------
@@ -5,7 +9,6 @@
 ! General
 rofi.font:                SF-Pro-Text-Regular 12
 rofi.hide-scrollbar:      true
-
 
 ! Layout
 rofi.width:              100
@@ -15,36 +18,32 @@ rofi.lines:              1
 rofi.padding:            400
 rofi.sidebar-mode:       true
 !rofi.fullscreen:         true
-rofi.transparency 	real
+rofi.transparency   real
 
-! ------------------------------------------------------------------------------
-!                      ROFI Color theme
-! ------------------------------------------------------------------------------
+! base00: #1d1f21
+! base01: #282a2e
+! base02: #373b41
+! base03: #969896
+! base04: #b4b7b4
+! base05: #c5c8c6
+! base06: #e0e0e0
+! base07: #ffffff
+! base08: #cc6666
+! base09: #de935f
+! base0A: #f0c674
+! base0B: #b5bd68
+! base0C: #8abeb7
+! base0D: #81a2be
+! base0E: #b294bb
+! base0F: #a3685a
 
+! Enable the extended coloring options
 rofi.color-enabled: true
 
-!                  bg       border   separator
-rofi.color-window: argb:F2012A35, #3D556A, #005466
+! Property Name     BG       Border   Separator
+rofi.color-window:  argb:F2282a2e, #282a2e, #c5c8c6
 
-!                  bg       fg       bg-alt   hl-bg    hl-fg
-rofi.color-normal: argb:D9004355, argb:BF7C8E91, argb:D9073642, argb:802075C7, argb:8CFFFFFF
-rofi.color-active:  argb:D9004355, argb:80F24840, #003643, argb:66797FD4, argb:BF7C8E91
-rofi.color-urgent: #cc241d, #282828, #cc241d, #fb4934, #282828
-
-! El fondo estará con color solarized pero con una trasparencia del 75%
-
-!rofi.color-window: argb:BF012A35
-
-    
-!rofi.color-normal: #FF001F, #19e4b0, #A7A7A7, #3C8EA3, #DF24BB
-!rofi.color-active: argb:002f343f, #ffffff, argb:002f343f, argb:002f343f, #ffffff
-!rofi.color-urgent: argb:002f343f, #ff0000, argb:002f343f, argb:002f343f, #ff0000
-rofi.width: 100
-rofi.lines: 3
-rofi.columns: 1
-rofi.bw1: 0
-rofi.padding: 400
-rofi.eh: 1
-!rofi.separator-style: solid
-rofi.hide-scrollbar: true
-
+! Property Name     BG       FG       BG-alt   Head-BG  Head-FG
+rofi.color-normal:  argb:D9282a2e, #c5c8c6, #282a2e, #282a2e, #ffffff
+rofi.color-active:  argb:D9282a2e, #81a2be, #282a2e, #282a2e, #81a2be
+rofi.color-urgent:  #282a2e, #cc6666, #282a2e, #282a2e, #cc6666
