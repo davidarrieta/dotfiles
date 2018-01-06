@@ -64,7 +64,7 @@
     frame_width = 3
 
     # Defines color of the frame around the notification window.
-    frame_color = "#d3d2d0"
+    frame_color = "#282a2e"
 
     # Define a color for the separator.
     # possible values are:
@@ -162,7 +162,7 @@
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_folders = /usr/share/icons/Paper/16x16/status/:/usr/share/icons/Paper/16x16/devices/
 
 
     ### History ###
@@ -240,23 +240,20 @@
     # Context menu.
     context = ctrl+shift+period
 
-[urgency_low]
-    # IMPORTANT: colors have to be defined in quotation marks.
-    # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#dfddd5"
-    foreground = "#A2B1A8"
-    timeout = 4
+[base16_low]
+    msg_urgency = low
+    background = "#282a2e"
+    foreground = "#969896"
 
-[urgency_normal]
-    background = "#dfddd5"
-    foreground = "#657b83"
-    timeout = 4
+[base16_normal]
+    msg_urgency = normal
+    background = "#373b41"
+    foreground = "#c5c8c6"
 
-[urgency_critical]
-    background = "#dfddd5"
-    foreground = "#dc322f"
-    timeout = 0
-
+[base16_critical]
+    msg_urgency = critical
+    background = "#cc6666"
+foreground = "#e0e0e0"
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
@@ -316,15 +313,4 @@
 #    urgency = normal
 #
 
-[VLC media player]
-    appname = VLC media player
-    format = "<b>Now Playing:</b>\n%s\n%b"
-urgency = low
-
-#[NCMPCPP]
-    appname = mpc
-    format = "<b>Now Playing:</b>\n%s\n%b"
-    format = "<b>%s</b>\n%b"
-    #new_icon = NCMPCPP
-    timeout = 10
 # vim: ft=cfg

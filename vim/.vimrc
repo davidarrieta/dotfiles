@@ -225,6 +225,8 @@ set undolevels=1000
 
 set hidden " Don't display any error when moving through unsaved buffers
 
+set ruler " status line there will be something like: 529, 35 68%, representing line 529, column 35, about 68% of the way to the end of the buffer.
+
 
 """"""""""" Maybe they will be useful in the future  """""""""""""""""""
 

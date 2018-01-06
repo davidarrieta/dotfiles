@@ -181,7 +181,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 # assign classes
 assign [class="Firefox"] $ws1
 assign [class="^URxvt$" instance="urxvt"] $ws2
-assign [class="Nautilus"] $ws3
+assign [class="Nemo"] $ws3
 assign [instance="ncmpcpp"] $ws4
 assign [class="TelegramDesktop"] $ws5
 assign [class="mpv"] $ws6
@@ -273,7 +273,7 @@ bindsym --release button2 kill
 bindsym $mod+button3 floating toggle
 
 # Press $mod+o followed by either f, t, m, n, v, etc. to launch firefox,  and the most used apps by me
-set $mode_launcher Launch: [f]irefox [m]usic(ncmpcpp thu[n]ar [t]elegram [l]ibreoffice writer [z]athura
+set $mode_launcher Launch: [f]irefox [m]usic(ncmpcpp [n]emo [t]elegram [l]ibreoffice writer [z]athura
 bindsym $mod+o mode "$mode_launcher"
 
 mode "$mode_launcher" {
@@ -281,7 +281,7 @@ mode "$mode_launcher" {
     bindsym t exec /home/claudio/Descargas/Telegram/Telegram
     bindsym m exec --no-startup-id urxvt -name ncmpcpp -e ncmpcpp
 
-    bindsym n exec thunar
+    bindsym n exec nemo
     bindsym l exec libreoffice --writer
     bindsym z exec zathura
 
@@ -361,6 +361,8 @@ bindsym $mod+m exec --no-startup-id ~/.scripts/xdo.sh
 
 #Resize windows
 bindsym $mod+r mode "resize"
+
+# Autostart applications at startup
 
 exec_always --no-startup-id compton -f
 
