@@ -81,6 +81,9 @@ source /home/claudio/.zsh_aliases
 export EDITOR="vim"
 export PAGER=/usr/bin/vimpager
 #export PAGER="vimpager"
+#
+
+bindkey -v
 
 
 #BASE16_SHELL=$HOME/.config/base16-shell/
