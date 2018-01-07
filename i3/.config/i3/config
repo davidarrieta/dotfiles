@@ -182,6 +182,7 @@ assign [class="TelegramDesktop"] $ws5
 assign [class="mpv"] $ws6
 assign [class="(?i)libreoffice"] $ws7
 assign [class="(?i)zathura"] $ws7
+assign [class="^URxvt$" instance="ranger"] $ws3
 
 ## Base16 Tomorrow Night
 # Author: Chris Kempson (http://chriskempson.com)
@@ -260,6 +261,8 @@ for_window [window_role="bubble"] floating enable, move position center
 for_window [title="Preferences$"] floating enable
 for_window [title="Places"] floating enable
 for_window [title="Biblioteca"] floating enable
+for_window [title="Seleccionar un archivo"] floating enable, move position center resize set 1024 640
+for_window [class="(?i)lightdm-gtk-greeter-settings"] floating enable, move position center resize set 1024 640
 
 # The middle button over a titlebar kills the window
 bindsym --release button2 kill
@@ -268,7 +271,7 @@ bindsym --release button2 kill
 bindsym $mod+button3 floating toggle
 
 # Press $mod+o followed by either f, t, m, n, v, etc. to launch firefox,  and the most used apps by me
-set $mode_launcher Launch: [f]irefox [m]usic(ncmpcpp [n]emo [t]elegram [l]ibreoffice writer [z]athura
+set $mode_launcher Launch: [f]irefox [m]usic(ncmpcpp [n]emo [t]elegram [l]ibreoffice writer [z]athura [r]anger
 bindsym $mod+o mode "$mode_launcher"
 
 mode "$mode_launcher" {
@@ -279,6 +282,8 @@ mode "$mode_launcher" {
     bindsym n exec nemo
     bindsym l exec libreoffice --writer
     bindsym z exec zathura
+
+	bindsym r exec urxvt -name ranger -e ranger
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
@@ -370,6 +375,8 @@ exec_always --no-startup-id parcellite
 exec_always --no-startup-id mpd
 
 exec_always --no-startup-id urxvtd --quiet --opendisplay --fork &
+
+exec_always --no-startup-id lxsession
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
