@@ -244,16 +244,21 @@
     msg_urgency = low
     background = "#282a2e"
     foreground = "#969896"
+	timeout= 2 
 
 [base16_normal]
     msg_urgency = normal
     background = "#373b41"
     foreground = "#c5c8c6"
+	timeout= 2 
 
 [base16_critical]
     msg_urgency = critical
     background = "#cc6666"
-foreground = "#e0e0e0"
+	foreground = "#e0e0e0"
+	timeout= 2 
+
+
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
