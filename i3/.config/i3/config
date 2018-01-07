@@ -1,28 +1,30 @@
-# Claudio D. Arrieta's i3-gaps config file
-# Github: https://github.com/DavidArrieta
+# Claudio D. Arrieta's i3 config file 
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-###---Basic Definitions---###
 
-##--Needed for i3-gaps--##
 
 set $mod Mod4
-set $term urxvt
 
-font pango:SF-Pro-Display-Regular 10 # Font for window titles. I like and use the San Francisco Font.
-hide_edge_borders smart # Thin borders
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below. I like and use the San Francisco Font.
+font pango:SF-Pro-Display-Regular 10
 
-smart_gaps on # This will disable all gaps (outer and inner) on the workspace whenever only one container is on the current workspace.
-for_window [class="^.*"] border pixel 0	#Mini borders
+# thin borders
+hide_edge_borders smart
+
+# If you want gaps to only be used if there is more than one container on the workspace, you can use this:
+# This will disable all gaps (outer and inner) on the workspace whenever only one container is on the current workspace.
+smart_gaps on
 
 # In your i3 config, you can set a global gap size as shown below.
-gaps inner 15 
+# This is the default value that will be used for all workspaces:
+gaps inner 15
+
 gaps outer -2
 
-##--Just i3-gaps related--##
-
-set $toggle_gaps Toggle gaps: (1)OFF (2)LOW (3)NORMAL (4)HUGE	# Toggle Gaps
+# Toggle Gaps
+set $toggle_gaps Toggle gaps: (1)OFF (2)LOW (3)NORMAL (4)HUGE  
 
 bindsym $mod+n mode "$toggle_gaps"
 
@@ -36,157 +38,92 @@ mode "$toggle_gaps" {
     bindsym Escape mode "default"
 }
 
+# scratchpad
+bindsym $mod+Shift+m move scratchpad
+bindsym $mod+Shift+o scratchpad show
 
-set $mode_gaps Gaps: (o) outer, (i) inner 					# Press $mod+Shift+g to enter the gap mode.
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global) 		# Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). 
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global) 		# If you also press Shift with these keys, the change will be global for all workspaces.
-bindsym $mod+Shift+g mode "$mode_gaps"
+#Mini borders
+for_window [class="^.*"] border pixel 0
 
-mode "$mode_gaps" {
-	bindsym o      mode "$mode_gaps_outer"
-		bindsym i      mode "$mode_gaps_inner"
-		bindsym Return mode "default"
-		bindsym Escape mode "default"
-}
-mode "$mode_gaps_inner" {
-	bindsym plus  gaps inner current plus 5
-		bindsym minus gaps inner current minus 5
-		bindsym 0     gaps inner current set 0
+# Blurme script!
 
-		bindsym Shift+plus  gaps inner all plus 5
-		bindsym Shift+minus gaps inner all minus 5
-		bindsym Shift+0     gaps inner all set 0
+exec_always --no-startup-id /home/claudio/.scripts/blurme.sh &
 
-		bindsym Return mode "default"
-		bindsym Escape mode "default"
-}
-mode "$mode_gaps_outer" {
-	bindsym plus  gaps outer current plus 5
-		bindsym minus gaps outer current minus 5
-		bindsym 0     gaps outer current set 0
+# Before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
 
-		bindsym Shift+plus  gaps outer all plus 5
-		bindsym Shift+minus gaps outer all minus 5
-		bindsym Shift+0     gaps outer all set 0
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
 
-		bindsym Return mode "default"
-		bindsym Escape mode "default"
+# start a terminal
+bindsym $mod+Return exec urxvt
 
-}
-
-###---Starting External Applications---###
-
-## Blurme script! ##
-exec_always --no-startup-id /home/claudio/.scripts/blurme.sh & 
-## Polkit helper ##
-exec_always --no-startup-id lxsession 
-
-## Composite manager ##
-exec_always --no-startup-id compton -f 
-## Set the wallpaper with feh ##
-exec_always --no-startup-id feh --bg-fill /home/claudio/Imágenes/Wallpapers/green-plants.jpg 
-
-## Launch polybar properly ##
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh 
-## Clipboard helper ##
-exec_always --no-startup-id parcellite 
-
-## Music player daemon ##
-exec_always --no-startup-id mpd 
-## Start the urxvt daemon ##
-exec_always --no-startup-id urxvtd --quiet --opendisplay --fork & 
-
-###---Basic i3 Bindings---###
-
-
-bindsym $mod+Shift+m move scratchpad # Scratchpad
-bindsym $mod+Shift+o scratchpad show # Scratchpad
-
-bindsym $mod+Shift+q kill # Kill focused window
-
-bindsym $mod+j focus down # Change focus
-bindsym $mod+k focus up # Change focus
-
-bindsym $mod+l focus right # Change focus
-bindsym $mod+h focus left # Change focus
-
-#bindsym $mod+Left focus left # Alternatively, you can use the cursor keys. Commented because vim-like movement.
-#bindsym $mod+Down focus down # Alternatively, you can use the cursor keys. Commented because vim-like movement.
-
-#bindsym $mod+Up focus up # Alternatively, you can use the cursor keys. Commented because vim-like movement.
-#bindsym $mod+Right focus right # Alternatively, you can use the cursor keys. Commented because vim-like movement.
-
-bindsym $mod+Shift+j move down # Move focused window
-bindsym $mod+Shift+k move up # Move focused window
-
-bindsym $mod+Shift+l move right # Move focused window
-bindsym $mod+Shift+h move left # Move focused window
- 
-bindsym $mod+Shift+Left move left # Alternatively, you can use the cursor keys.
-bindsym $mod+Shift+Down move down # Alternatively, you can use the cursor keys.
-bindsym $mod+Shift+Up move up # Alternatively, you can use the cursor keys.
-bindsym $mod+Shift+Right move right # Alternatively, you can use the cursor keys.
-
-bindsym $mod+Right split h  # Split in horizontal orientation
-bindsym $mod+Left split h # Split in horizontal orientation
-
-bindsym $mod+Up split v # Split in vertical orientation 
-bindsym $mod+Down split v # Split in vertical orientation
-
-bindsym $mod+f fullscreen toggle # Enter fullscreen mode for the focused container
-
-bindsym $mod+s layout stacking # Change container layout to stacked
-bindsym $mod+w layout tabbed # Change container layout to tabbed
-bindsym $mod+e layout toggle split # Change container layout to splitted
-
-bindsym $mod+Shift+space floating toggle # Toggle tiling / floating
-bindsym $mod+space focus mode_toggle # Change focus between tiling / floating windows
-
-bindsym $mod+a focus parent # Focus the parent container
-#bindsym $mod+d focus child # Focus the child container
-
-bindsym $mod+Ctrl+l workspace next # Navigate workspaces next 
-bindsym $mod+Ctrl+h workspace prev # Navigate workspaces previous
-
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% # Volume control
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% # Volume control
-
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # Volume control
-bindsym XF86AudioPlay exec --no-startup-id ~/.scripts/mpc_toggle # Volume control
-
-bindsym XF86AudioPrev exec --no-startup-id mpc prev # Volume control
-bindsym XF86AudioNext exec --no-startup-id mpc next # Volume control
-
-
-
-
-
-
-###---Applications Bindings---###
-
-bindsym $mod+Return exec $term # Start a terminal
-bindsym $mod+d exec --no-startup-id "rofi -modi \\"run,drun\\" -show run -lines 6" # start Rofi (a program launcher)
-
-bindsym XF86WakeUp exec --no-startup-id ~/.scripts/i3lock.sh # Lock the screen with i3lock and this script
-bindsym XF86Calculator exec gnome-calculator # Open calculator with his multimedia key
-
-bindsym $mod+m exec --no-startup-id ~/.scripts/xdo.sh # Hide and show polybar with xdo
-bindsym $mod+r mode "resize" #Resize windows
-
-
-
-floating_modifier $mod # Use Mouse+$mod to drag floating windows to their wanted position
-
+# kill focused window
+bindsym $mod+Shift+q kill
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
 
+# start rofi (a program launcher)
 
+bindsym $mod+d exec --no-startup-id "rofi -modi \\"run,drun\\" -show run -lines 6"
 
+# change focus
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+h focus left
 
+## alternatively, you can use the cursor keys:
+#bindsym $mod+Left focus left
+#bindsym $mod+Down focus down
+#bindsym $mod+Up focus up
+#bindsym $mod+Right focus right
+#
+# move focused window
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left
 
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
+# split in horizontal orientation
+bindsym $mod+Right split h
+bindsym $mod+Left split h
+
+# split in vertical orientation
+bindsym $mod+Up split v
+bindsym $mod+Down split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
 
 # Set default names to workspaces 
 
@@ -396,5 +333,77 @@ mode "resize" {
 		bindsym Escape mode "default"
 }
 
+#navigate workspaces next / previous
+bindsym $mod+Ctrl+l workspace next
+bindsym $mod+Ctrl+h workspace prev 
 
+# Volume control
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86AudioPlay exec --no-startup-id ~/.scripts/mpc_toggle
+bindsym XF86AudioPrev exec --no-startup-id mpc prev
+bindsym XF86AudioNext exec --no-startup-id mpc next
+
+# Lock the screen with i3lock and this script
+bindsym XF86WakeUp exec --no-startup-id ~/.scripts/i3lock.sh
+
+# Open calculator with his multimedia key
+bindsym XF86Calculator exec gnome-calculator
+
+# Hide and show polybar with xdo
+bindsym $mod+m exec --no-startup-id ~/.scripts/xdo.sh
+
+#Resize windows
+bindsym $mod+r mode "resize"
+
+# Autostart applications at startup
+
+exec_always --no-startup-id compton -f
+
+exec_always --no-startup-id feh --bg-fill /home/claudio/Imágenes/Wallpapers/green-plants.jpg
+
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+exec_always --no-startup-id parcellite
+
+exec_always --no-startup-id mpd
+
+exec_always --no-startup-id urxvtd --quiet --opendisplay --fork &
+
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+	bindsym o      mode "$mode_gaps_outer"
+		bindsym i      mode "$mode_gaps_inner"
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+	bindsym plus  gaps inner current plus 5
+		bindsym minus gaps inner current minus 5
+		bindsym 0     gaps inner current set 0
+
+		bindsym Shift+plus  gaps inner all plus 5
+		bindsym Shift+minus gaps inner all minus 5
+		bindsym Shift+0     gaps inner all set 0
+
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+	bindsym plus  gaps outer current plus 5
+		bindsym minus gaps outer current minus 5
+		bindsym 0     gaps outer current set 0
+
+		bindsym Shift+plus  gaps outer all plus 5
+		bindsym Shift+minus gaps outer all minus 5
+		bindsym Shift+0     gaps outer all set 0
+
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
 
