@@ -1,4 +1,6 @@
-# Example aliases
+alias audio="pulsemixer"
+# Quick command to open ranger
+alias r="ranger"
 # Quick command to modify .zshrc
 alias zshconfig="vim ~/.zshrc"
 # Quick command to know if the internet works properly
@@ -41,6 +43,8 @@ alias less="vimpager"
 alias zless="vimpager"
 # Find the 10 most heavy files in a folder
 alias hefi="du -hsx * | sort -rh | head -10"
+# When i forgot to use sudo vim:
+alias sv="sudo -e vim"
 # Edit i3 conf with vim and much faster
 alias vi3="vim ~/.config/i3/config"
 # Use vim as cat.
