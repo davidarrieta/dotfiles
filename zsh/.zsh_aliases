@@ -1,3 +1,4 @@
+# Quick command to open pulsemixer
 alias audio="pulsemixer"
 # Quick command to open ranger
 alias r="ranger"
@@ -13,6 +14,8 @@ alias ñs="ls --color=yes --group-directories-first"
 alias m="udisksctl mount -b"
 # Same, but unmount
 alias um="udisksctl unmount -b"
+# wget, but faster. 'dl' stands for download.
+alias dl="wget"
 # Common vi alias
 alias vi="vim"
 # How to use the "archlinux" plugin that comes with oh-my-zsh
