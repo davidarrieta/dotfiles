@@ -23,7 +23,7 @@ smart_gaps on
 gaps inner 15
 gaps outer -2
 
-#Mini borders
+# No borders nor title
 for_window [class="^.*"] border pixel 0
 
 
@@ -193,7 +193,7 @@ bindsym $mod+r mode "resize"
 # Blurme script!
 exec_always --no-startup-id /home/claudio/.scripts/blurme.sh &
 #Composite manager
-exec_always --no-startup-id compton -f
+#exec_always --no-startup-id compton -f
 
 # Set the wallpaper with feh
 exec_always --no-startup-id feh --bg-fill /home/claudio/Imágenes/Wallpapers/green-plants.jpg

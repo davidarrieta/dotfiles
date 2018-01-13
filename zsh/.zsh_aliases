@@ -1,3 +1,5 @@
+# Start vi-mode of zsh
+alias bv="bindkey -v"
 # Quick command to open pulsemixer
 alias audio="pulsemixer"
 # Quick command to open ranger
@@ -125,4 +127,5 @@ paclist() {
 alias trupg="trizen -Syu"
 alias trin="trizen -S"
 alias treps="trizen -Ss"
+alias trep="trizen -Si"
 

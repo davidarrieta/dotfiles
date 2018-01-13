@@ -37,6 +37,12 @@ set nocompatible
 " Sets how many lines of history VIM has to remember
 set history=500
 
+" Set the leader key to ,
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+let mapleader = ','
+let g:mapleader=','
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -50,6 +56,17 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
+" Git wrapper | Git in vim
+Plugin 'tpope/vim-fugitive'
+
+" fugitive git bindings
+nnoremap <Leader>ga :Git add %:p<CR><CR>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gr :Gread<CR>
+nnoremap <Leader>gw :Gwrite<CR>
+nnoremap <Leader>gp :Git push<CR>
 
 " Nerdtree plugin
 Plugin 'scrooloose/nerdtree'
@@ -111,12 +128,6 @@ set noexpandtab
 " => Keybinds
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Set the leader key to ,
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = ','
-let g:mapleader=','
-
 " Disabling arrow keys – because it’s not enough to use vim, you’ve got to live it. (https://tylercipriani.com/vim.html)
 noremap <up> <nop>
 inoremap <up> <nop>
@@ -128,6 +139,8 @@ noremap <left> <nop>
 noremap <right> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
+
+
 
 " to/from the clipboard
 map <Leader>y "*y
@@ -151,9 +164,6 @@ nmap <leader>l :set list!<CR>
 
 " Mapping <C-e> to execute Python code via Python 3 interpreter
 map <silent> <C-e> :call PYTHON()<CR>
-func PYTHON()
-	exec "!clear && python3 %"
-endfunc
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:$ 
@@ -185,6 +195,18 @@ set t_Co=256
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix |
+
+" Force markdown with .md files
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
 "Toggle line numbers both in normal and insert mode
 " (in this example, they're bound to the F3 key)
 noremap <F3> :set invnumber<CR> 
@@ -205,7 +227,10 @@ inoremap <F4> <ESC>:SyntasticCheck<CR>
 cnoremap w!! w !sudo tee % >/dev/null
 
 " Remap :W to :w
-command W w
+command! W w
+
+" Remap :Q to :q
+command! Q q
 
 set incsearch " Find as entering pattern
 

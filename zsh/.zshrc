@@ -49,7 +49,10 @@ ZSH_THEME="gallois"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(web-search alias-tips z git colorize copydir extract zsh-syntax-highlighting )
+plugins=(web-search alias-tips z git colorize copydir extract zsh-syntax-highlighting zsh-completions)
+
+# Required by zsh-completions
+autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 source /home/claudio/.zsh_aliases 
@@ -62,3 +65,5 @@ export PAGER=/usr/bin/vimpager
 #    emulate -L zsh
 #    ls -a
 # }
+#
+
