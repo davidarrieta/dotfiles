@@ -18,6 +18,12 @@ In the unix world programs are commonly configured in two different ways, via sh
 Programs with many options like window managers or text editors are configured on a per-user basis with files in your home directory `~`. 
 In unix-like operating systems any file or directory name that starts with a period or full stop character is considered hidden, and in a default view will not be displayed, thus the name dotfiles. 
 
+And in [ayekat's](https://github.com/ayekat/dotfiles) words:
+
+This is my collection of user/application settings ("dotfiles") and personal scripts. They are mostly adapted to my personal needs, and some scripts make a few assumptions about the environment that may not necessarily be considered "standard", so **it's not recommended** to just copy-paste them as-is.
+
+Nevertheless, I try to keep them as clean and non-WTF as possible, and people are invited to take a look at them, get ideas for their own dotfiles, and drop comments, suggestions, questions and bug reports if something seems odd.
+
 It's been said of every console user: 
 > _"you are your dotfiles."_
 
