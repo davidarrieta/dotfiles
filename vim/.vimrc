@@ -17,7 +17,7 @@
 " Sections:
 "
 "    -> General, starts at line 30
-"    -> Plugins and specific keybinds for that plugins, starts at line 42
+"    -> Plugins and specific keybinds for that plugins, starts at line 47
 "    -> Indentation, starts at line 103
 "    -> Keybinds, starts at line 120
 "    -> Colors and Fonts, starts at line 173
@@ -29,6 +29,12 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Don't show the mode at the bottom
+set noshowmode
+
+"Always show the statusline
+set laststatus=2
 
 "Use Vim settings, rather then Vi settings (much better!).
 "This must be first, because it changes other options as a side effect.
@@ -59,6 +65,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Git wrapper | Git in vim
 Plugin 'tpope/vim-fugitive'
+
+" The most lightweight statusline for Vim
+Plugin 'itchyny/lightline.vim'
 
 " fugitive git bindings
 nnoremap <Leader>ga :Git add %:p<CR><CR>
@@ -140,8 +149,6 @@ noremap <right> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-
-
 " to/from the clipboard
 map <Leader>y "*y
 
@@ -194,6 +201,17 @@ set t_Co=256
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
