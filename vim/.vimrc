@@ -256,7 +256,7 @@ set ignorecase " Case insensitive patterns,...
 
 set smartcase " When only lowercase is case doesnt matter
 
-set showcmd " Show (partial) command in the last line of the screen.
+"set showcmd " Show (partial) command in the last line of the screen.
 
 set wildmenu "When 'wildmenu' is on, command-line completion operates in an enhanced mode 
 
@@ -268,7 +268,7 @@ set undolevels=1000
 
 set hidden " Don't display any error when moving through unsaved buffers
 
-set ruler " status line there will be something like: 529, 35 68%, representing line 529, column 35, about 68% of the way to the end of the buffer.
+"set ruler " status line there will be something like: 529, 35 68%, representing line 529, column 35, about 68% of the way to the end of the buffer.
 
 
 """"""""""" Maybe they will be useful in the future  """""""""""""""""""

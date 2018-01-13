@@ -286,8 +286,6 @@ assign [instance="ncmpcpp"] $ws4
 assign [class="TelegramDesktop"] $ws5
 
 assign [class="mpv"] $ws6
-assign [class="(?i)libreoffice"] $ws7
-
 assign [class="(?i)zathura"] $ws7
 
 ##--Certain windows always in float(ing) mode--##
@@ -386,16 +384,15 @@ bindsym XF86AudioNext exec --no-startup-id mpc next
 
 
 # Press $mod+o followed by either f, t, m, n, v, etc. to launch firefox,  and the most used apps by me
-set $mode_launcher Launch: [f]irefox [m]usic(ncmpcpp [n]emo [t]elegram [l]ibreoffice writer [z]athura [r]anger
+set $mode_launcher Launch: [f]irefox [m]usic(ncmpcpp [n]emo [t]elegram  [z]athura [r]anger
 bindsym $mod+o mode "$mode_launcher"
 
 mode "$mode_launcher" {
     bindsym f exec firefox
-    bindsym t exec /home/claudio/Descargas/Telegram/Telegram
+    bindsym t exec telegram-desktop
     bindsym m exec --no-startup-id urxvt -name ncmpcpp -e ncmpcpp
 
     bindsym n exec nemo
-    bindsym l exec libreoffice --writer
     bindsym z exec zathura
 
 	bindsym r exec urxvt -name ranger -e ranger

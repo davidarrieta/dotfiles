@@ -1,0 +1,7 @@
+[core]
+	excludesfile = /home/claudio/.gitignore_global
+[user]
+	email = ArrietaDavid2001@gmail.com
+	name = Claudio D. Arrieta
+[diff]
+	tool = vimdiff
