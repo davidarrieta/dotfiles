@@ -1,0 +1,57 @@
+! do not scroll with output
+URxvt*scrollTtyOutput: false
+
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+
+! History
+URxvt.saveLines:        4095
+
+! Disable that ugly scrollbar
+Rxvt.scrollBar:false
+
+Rxvt.cursorBlink:true
+
+! Default urxvt extensions
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,matcher,selection-to-  clipboard
+
+! Highlight urls when urxvt finds one
+URxvt.url-select.underline: true
+
+! Press Alt-u to activate url finder. Press o when a url is finded to open it in firefox.
+URxvt.keysym.M-u:           perl:url-select:select_next
+
+! Alt-Escape to activate keyboard select mode, similar to the termite way. Press y to yank a selected text. |
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
+
+URxvt.url-select.launcher: /usr/bin/firefox
+
+! Enables copy/paste with Ctrl-Shift-C/V
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+
+!! Home and End keys to jump to the beginning and end of lines
+URxvt*keysym.Home:       \033[1~
+URxvt*keysym.End: \033[4~
+
+urxvt*depth: 32
+!URxvt.background:[97]#1d1f21 
+
+Rxvt*termName:rxvt-unicode
+
+!! |- Definimos el tipo de fuente a usar (para obtener una lista completa de fuentes       disponibles en su sistema use “fc-list” en su consola).
+URxvt.font: xft:Hack:pixelsize=12
+
+URxvt.internalBorder:    10
+URxvt.externalBorder:    0
+!URxvt.lineSpace:        0
+!urxvt*shading:          30
+
+URxvt*boldMode: true
+
