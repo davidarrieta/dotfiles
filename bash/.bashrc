@@ -1,7 +1,7 @@
 #
 # ~/.bashrc
 #
-# the basics (a según)
+# The basics
 
 : ${HOME=~}
 : ${LOGNAME=$(id -un)}
