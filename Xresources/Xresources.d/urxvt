@@ -45,7 +45,7 @@ urxvt*depth: 32
 
 Rxvt*termName:rxvt-unicode
 
-!! |- Definimos el tipo de fuente a usar (para obtener una lista completa de fuentes       disponibles en su sistema use “fc-list” en su consola).
+!! |- Define the font to use. If you want to obtain a complete list of fonts available use "fc-list".
 URxvt.font: xft:Hack:pixelsize=12
 
 URxvt.internalBorder:    10
