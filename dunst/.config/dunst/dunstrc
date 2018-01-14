@@ -112,7 +112,7 @@
     #
     # It's important to note that markup inside the format option will be parsed
     # regardless of what this is set to.
-     allow_markup = yes
+     markup = yes
 
     # The format of the message.  Possible variables are:
     #   %a  appname
@@ -162,7 +162,7 @@
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_folders = /usr/share/icons/Paper/16x16/status/:/usr/share/icons/Paper/16x16/devices/
+    icon_path = /usr/share/icons/Paper/16x16/status/:/usr/share/icons/Paper/16x16/devices/
 
 
     ### History ###
