@@ -37,7 +37,7 @@ alias purge="sudo pacman -Rnscu"
 # Clear the screen of the terminal, but faster.
 alias c="clear"
 # Remove old packages in pacman cache and optimize pacman with the script pacman-optimize 
-alias clean="sudo pacman -Sc && pacaur -Sc && sudo pacman-optimize"
+alias clean="sudo pacman -Sc && trizen -Sc && sudo pacman-optimize"
 # Just a more savage clean :)
 alias suclean="sudo pacman -Scc && trizen -Scc && sudo pacman-optimize"
 # Use Reflector to improve the speed of Arch mirrors. First do a backup of /etc/pacman.d/mirrorlist.
@@ -95,6 +95,9 @@ alias lsg="ls | grep -i"
 alias lsag="ls -a | grep -i"
 
 alias dots="cd ~/dotfiles"
+
+# sudo make me a sandwich.
+alias plz='sudo $(fc -ln -1)'
 
 # Pacman and trizen aliases:
 

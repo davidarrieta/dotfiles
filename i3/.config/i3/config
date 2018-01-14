@@ -191,12 +191,12 @@ bindsym $mod+r mode "resize"
 
 
 # Blurme script!
-exec_always --no-startup-id /home/claudio/.scripts/blurme.sh &
+exec_always --no-startup-id $HOME/.scripts/blurme.sh &
 #Composite manager
 #exec_always --no-startup-id compton -f
 
 # Set the wallpaper with feh
-exec_always --no-startup-id feh --bg-fill /home/claudio/Imágenes/Wallpapers/green-plants.jpg
+exec_always --no-startup-id feh --bg-fill $HOME/Imágenes/Wallpapers/green-plants.jpg
 # Launch polybar properly
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 

@@ -1,5 +1,7 @@
 [core]
 	excludesfile = /home/claudio/.gitignore_global
+[color]
+	ui = always
 [user]
 	email = ArrietaDavid2001@gmail.com
 	name = Claudio D. Arrieta

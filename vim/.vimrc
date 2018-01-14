@@ -16,12 +16,13 @@
 "                                                                                           "
 " Sections:
 "
-"    -> General, starts at line 30
-"    -> Plugins and specific keybinds for that plugins, starts at line 47
-"    -> Indentation, starts at line 103
-"    -> Keybinds, starts at line 120
-"    -> Colors and Fonts, starts at line 173
-"    -> Misc, starts at line 186
+"    -> General, search for pattern #G and you will find it
+"    -> Plugins and specific keybinds for that plugins, search for pattern #P
+"    and you will find it
+"    -> Indentation, search for pattern #I and you will find it
+"    -> Keybinds, search for pattern #K and you will find it
+"    -> Colors and Fonts, search for pattern #C and you will find it
+"    -> Misc, search for pattern #M and you will find it
 "
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -30,7 +31,10 @@
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Don't show the mode at the bottom
+" Enable UTF-8 by default
+set encoding=utf8
+
+" Don't display the mode in the ruler; we display it in the statusline:
 set noshowmode
 
 "Always show the statusline
@@ -49,8 +53,12 @@ set history=500
 let mapleader = ','
 let g:mapleader=','
 
+" Organizing .swp files
+set directory^=$HOME/.vim/tmp//
+set backupdir^=$HOME/.vim/tmp//
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugins
+" => Plugins #P
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Vundle says requires this option be enabled to work properly
@@ -76,6 +84,11 @@ nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gp :Git push<CR>
+
+" Syntastic bindings
+"nnoremap <F4> :SyntasticCheck<CR>
+"vnoremap <F4> <ESC>:SyntasticCheck<CR>
+"inoremap <F4> <ESC>:SyntasticCheck<CR>
 
 " Nerdtree plugin
 Plugin 'scrooloose/nerdtree'
@@ -116,8 +129,9 @@ Plugin 'tpope/vim-surround'
 call vundle#end()            "required
 filetype plugin indent on    "required. Filetype auto-detection.
 
-
-" ================ Indentation ======================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ================ Indentation ====================== #I
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set autoindent
 
@@ -133,8 +147,10 @@ set tabstop=4
 
 set noexpandtab
 
+au BufRead,BufNewFile PKGBUILD setl expandtab tabstop=2 shiftwidth=2
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Keybinds
+" => Keybinds #K
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Disabling arrow keys – because it’s not enough to use vim, you’ve got to live it. (https://tylercipriani.com/vim.html)
@@ -148,6 +164,10 @@ noremap <left> <nop>
 noremap <right> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
+
+" Uh, NOPE! I hate getting stuck in Ex mode...
+map Q <Nop>
+map gQ <Nop>
 
 " to/from the clipboard
 map <Leader>y "*y
@@ -185,8 +205,13 @@ nmap <silent> <Leader>q :quit<CR>
 " Move quickly through buffers
 nnoremap gb :ls<CR>:buffer<Space>
 
+"Toggle line numbers both in normal and insert mode
+" (in this example, they're bound to the F3 key)
+noremap <F3> :set invnumber<CR> 
+inoremap <F3> <C-O>:set invnumber<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors and Fonts
+" => Colors and Fonts #C
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Line numbers are good
@@ -199,11 +224,11 @@ syntax enable
 set t_Co=256
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Misc
+" => Misc #M
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
+      \ 'colorscheme': 'Tomorrow_Night',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -225,22 +250,13 @@ au BufNewFile,BufRead *.py
 " Force markdown with .md files
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
-"Toggle line numbers both in normal and insert mode
-" (in this example, they're bound to the F3 key)
-noremap <F3> :set invnumber<CR> 
-inoremap <F3> <C-O>:set invnumber<CR>
-
 set wrap " Wrap lines
 set linebreak " Wrap lines at convenient points
 
 " This makes sure that shell scripts are highlighted
 " as bash scripts and not sh scripts. From valloric
 let g:is_posix = 1
-
-nnoremap <F4> :SyntasticCheck<CR>
-vnoremap <F4> <ESC>:SyntasticCheck<CR>
-inoremap <F4> <ESC>:SyntasticCheck<CR>
-
+"
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cnoremap w!! w !sudo tee % >/dev/null
 
@@ -269,7 +285,6 @@ set undolevels=1000
 set hidden " Don't display any error when moving through unsaved buffers
 
 "set ruler " status line there will be something like: 529, 35 68%, representing line 529, column 35, about 68% of the way to the end of the buffer.
-
 
 """"""""""" Maybe they will be useful in the future  """""""""""""""""""
 

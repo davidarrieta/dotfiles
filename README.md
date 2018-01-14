@@ -27,6 +27,7 @@ Nevertheless, I try to keep them as clean and non-WTF as possible, and people ar
 It's been said of every console user: 
 > _"you are your dotfiles."_
 
+## Ok, your dotfiles are nice but i want to learn from other people; Where can i get other dotfiles?
 
 Here you will find A LOT of other people's dotfiles: 
 * [Dotfiles.github.io](http://dotfiles.github.io/) 
