@@ -17,7 +17,7 @@ urxvt*depth: 32
 !
 ! Define the font to use. If you want to obtain a complete list of fonts available use "fc-list".
 URxvt.font: xft:Hack:pixelsize=12
-URxvt.boldFont: xft:Hack:style=Bold:pixelsize=12
+URxvt.boldFont:xft:Hack:style=Bold:pixelsize=12
 !URxvt.font: xft:Hack:size=12
 !
 ! This option specifies the name of the terminal type to be set in the TERM environment variable.
@@ -98,6 +98,6 @@ URxvt.externalBorder: 0
 ! Darken (0 .. 99) or lighten (101 .. 200) the transparent background.  A value of 100 means no shading
 !URxvt*shading: 30
 !
-! I don't know
+! Idk
 URxvt*boldMode: true
 
