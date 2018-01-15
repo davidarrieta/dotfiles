@@ -55,7 +55,7 @@ plugins=(web-search alias-tips z git colorize copydir extract zsh-syntax-highlig
 autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
-source /home/claudio/.zsh_aliases 
+source /home/claudio/.aliases 
 
 export EDITOR="vim"
 export PAGER=/usr/bin/vimpager

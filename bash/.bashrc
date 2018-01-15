@@ -10,8 +10,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# append to the history file, don't overwrite it
-shopt -s histappend
+# Same aliases for bash and zsh
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
