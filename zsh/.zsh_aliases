@@ -41,7 +41,7 @@ alias clean="sudo pacman -Sc && trizen -Sc && sudo pacman-optimize"
 # Just a more savage clean :)
 alias suclean="sudo pacman -Scc && trizen -Scc && sudo pacman-optimize"
 # Use Reflector to improve the speed of Arch mirrors. First do a backup of /etc/pacman.d/mirrorlist.
-alias mirror="sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup && sudo reflector --verbose -l 10 --sort score -p http -p https -p ftp --sort rate --save /etc/pacman.d/mirrorlist"
+alias mirror="sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup && sudo reflector --verbose -l 10 --sort score -p https -p http -p ftp --sort rate --save /etc/pacman.d/mirrorlist"
 # Using vim as pager, like less
 #alias less="/usr/share/vim/vim80/macros/less.sh"
 alias less="vimpager"
