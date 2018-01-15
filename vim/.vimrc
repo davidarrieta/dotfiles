@@ -74,9 +74,6 @@ Plugin 'VundleVim/Vundle.vim'
 " Git wrapper | Git in vim
 Plugin 'tpope/vim-fugitive'
 
-" The most lightweight statusline for Vim
-Plugin 'itchyny/lightline.vim'
-
 " fugitive git bindings
 nnoremap <Leader>ga :Git add %:p<CR><CR>
 nnoremap <Leader>gs :Gstatus<CR>
@@ -85,10 +82,16 @@ nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gp :Git push<CR>
 
+" The most lightweight statusline for Vim
+Plugin 'itchyny/lightline.vim'
+
 " Syntastic bindings
 "nnoremap <F4> :SyntasticCheck<CR>
 "vnoremap <F4> <ESC>:SyntasticCheck<CR>
 "inoremap <F4> <ESC>:SyntasticCheck<CR>
+
+" Flake8 python checker for Vim
+Plugin 'nvie/vim-flake8'
 
 " Nerdtree plugin
 Plugin 'scrooloose/nerdtree'
@@ -191,7 +194,7 @@ nmap <leader>l :set list!<CR>
 
 " Mapping <C-e> to execute Python code via Python 3 interpreter
 map <silent> <C-e> :call PYTHON()<CR>
-func PYTHON()
+func! PYTHON()
 	exec "!clear && python3 %"
 endfunc
 
@@ -229,6 +232,9 @@ set t_Co=256
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc #M
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Run flake8 every time you open a .py file
+autocmd BufWritePost *.py call Flake8()
 
 let g:lightline = {
       \ 'colorscheme': 'Tomorrow_Night',
