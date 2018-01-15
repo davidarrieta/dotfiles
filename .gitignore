@@ -7,5 +7,4 @@ ncmpcpp/.ncmpcpp/error.log
 ncmpcpp/.ncmpcpp/lyrics/
 rofi/.config/rofi/example1-Xresources
 rofi/.config/rofi/example2
-
-
+*.swp
