@@ -1,1 +1,136 @@
-dotfiles/zsh/.zsh_aliases
+# See the documentation for fugitive.vim quickly
+alias dfu="less $HOME/.vim/bundle/vim-fugitive/doc/fugitive.txt"
+# Start vi-mode of zsh
+alias bv="bindkey -v"
+# Quick command to open pulsemixer
+alias audio="pulsemixer"
+# Quick command to open ranger
+alias r="ranger"
+# Quick command to modify .zshrc
+alias zshconfig="vim ~/.zshrc"
+# Quick command to know if the internet works properly
+alias p="ping -c 3 google.com"
+# Just an ls more colorful
+alias ls="ls --color=yes --group-directories-first"
+# To avoid typos
+alias ñs="ls --color=yes --group-directories-first"
+#Quick command to mount a USB, flash drive, hard drive etc. I like how udisksctl mounts.
+alias m="udisksctl mount -b"
+# Same, but unmount
+alias um="udisksctl unmount -b"
+# wget, but faster. 'dl' stands for download.
+alias dl="wget"
+# Common vi alias
+alias vi="vim"
+# How to use the "archlinux" plugin that comes with oh-my-zsh
+alias paclias="less /home/claudio/.oh-my-zsh/plugins/archlinux/README.md"
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+# Quick access to modify .vimrc 
+# "cv" stands for Customize Vim
+# In addition, the letters "c" and "v" are quite close to each other on the QWERTY keyboard.
+alias cv="vim ~/.vimrc"
+# Search for packages in Arch with pacman. "spp" stands for "Search pacman packages"
+alias spp="pacman -Q | grep "
+# Quick command to rm -r 
+alias rr="rm -r"
+# Purge a package with pacman
+alias purge="sudo pacman -Rnscu"
+# Clear the screen of the terminal, but faster.
+alias c="clear"
+# Remove old packages in pacman cache and optimize pacman with the script pacman-optimize 
+alias clean="sudo pacman -Sc && trizen -Sc && sudo pacman-optimize"
+# Just a more savage clean :)
+alias suclean="sudo pacman -Scc && trizen -Scc && sudo pacman-optimize"
+# Use Reflector to improve the speed of Arch mirrors. First do a backup of /etc/pacman.d/mirrorlist.
+alias mirror="sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup && sudo reflector --verbose -l 10 --sort score -p https -p http -p ftp --sort rate --save /etc/pacman.d/mirrorlist"
+# Using vim as pager, like less
+#alias less="/usr/share/vim/vim80/macros/less.sh"
+alias less="vimpager"
+alias zless="vimpager"
+# Find the 10 most heavy files in a folder
+alias hefi="du -hsx * | sort -rh | head -10"
+# When i forgot to use sudo vim:
+alias sv="sudo -e vim"
+# Edit i3 conf with vim and much faster
+alias vi3="vim ~/.config/i3/config"
+# Use vim as cat.
+alias cat="vimcat"
+# Quick command to modify .aliases. "csa" stands for "Configure shell aliases".
+alias csa="vim ~/.aliases"
+# To avoid typos pasting from webs
+alias nano="vim"
+# lulz
+alias emacs="vim"
+alias iv="vim"
+# Be more verbose and interactive with cp, mv and rm.
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias rm="rm -i"
+
+# Command to quickly download and convert to mp3 a song from youtube
+alias mp3-dl="youtube-dl --audio-quality 1 --extract-audio --audio-format mp3"
+
+# See the most heavy files in a folder 
+alias duf='du -sh *'
+
+# Find directories by their name
+alias fd='find . -type d -name'
+# Find files by their name
+alias ff='find . -type f -name'
+
+# Generate a playlist in .m3u for mpd
+alias genplaylist="cd ~/Música;find . -name '*.mp3' -o -name '*.flac' -o -name '*.m4a' -o -name '*.mp4'|sed -e 's%^./%%g' > ~/.mpd/playlists/all.m3u"
+
+#█▓▒░ update mpd database
+function genplaylist() {
+  cd ~/music
+  find . -name '*.mp3' -o -name '*.flac'|sed -e 's%^./%%g' > ~/.config/mpd/playlists/all.m3u
+  mpc clear
+  mpc load all.m3u
+  mpc update
+}
+
+alias todo="vim ~/.todo"
+
+alias lsg="ls | grep -i"
+alias lsag="ls -a | grep -i"
+
+alias dots="cd ~/dotfiles"
+
+# sudo make me a sandwich.
+alias plz='sudo $(fc -ln -1)'
+
+# Pacman and trizen aliases:
+
+alias pacupg='sudo pacman -Syu'
+alias pacin='sudo pacman -S'
+alias pacins='sudo pacman -U'
+alias pacre='sudo pacman -R'
+alias pacrem='sudo pacman -Rns'
+alias pacrep='pacman -Si'
+alias pacreps='pacman -Ss'
+alias pacloc='pacman -Qi'
+alias paclocs='pacman -Qs'
+alias pacinsd='sudo pacman -S --asdeps'
+alias pacmir='sudo pacman -Syy'
+alias paclsorphans='sudo pacman -Qdt'
+alias pacrmorphans='sudo pacman -Rs $(pacman -Qtdq)'
+alias pacfileupg='sudo pacman -Fy'
+alias pacfiles='pacman tFs'
+alias upgrade='sudo pacman -Syu'
+
+paclist() {
+  # Source: https://bbs.archlinux.org/viewtopic.php?id=93683
+  LC_ALL=C pacman -Qei $(pacman -Qu | cut -d " " -f 1) | \
+    awk 'BEGIN {FS=":"} /^Name/{printf("\033[1;36m%s\033[1;37m", $2)} /^Description/{print $2}'
+}
+
+
+# Trizen
+
+alias trupg="trizen -Syu"
+alias trin="trizen -S"
+alias treps="trizen -Ss"
+alias trep="trizen -Si"
+
