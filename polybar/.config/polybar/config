@@ -40,7 +40,9 @@ secondary = #e60053
 alert = ${xrdb:color9:}
 
 [bar/example]
-;monitor = ${env:MONITOR:HDMI-1}
+; Use xrandr -q | grep " connected" | cut -d ' ' -f1
+; for a list of connected monitors
+monitor = VGA-1
 
 ;Tamaño de la barra en general, en este caso ocupa toda la pantalla
 width = 100%
@@ -87,8 +89,7 @@ module-margin-right = 2
 ;y fc-match para ver el nombre exacto a poner aquí.
 ;Para colocar fuentes que tienen espacios de por medio como por ejemplo "SF Pro Text" se coloca una barra invertida.
 font-0 = SF\ Pro\ Text:style=Regular:size=9
-font-1 = DejaVuSans:style=Book:size:8
-font-2 = FontAwesome:style=regular:size=11
+font-1 = FontAwesome:style=regular:size=11
 
 ;Modulos en la barra, del lado izquierdo tenemos el modulo que me dice en cual workspace estoy
 modules-left = bspwm i3 
@@ -98,7 +99,7 @@ modules-center =   mpd
 
 ;Modulos del lado derecho. En esta parte tenemos el modulo filesystem que nos dice que tan lleno está la raíz en el disco duro, el
 ;modulo de volumen, el de memoria RAM, el de CPU, la fecha y un powermenu
-modules-right =   scriptdate pavolume  powermenu
+modules-right =   scriptdate pavolume powermenu 
 
 
 ;El lugar de la bandeja donde se colocan los iconos como audacious, telegram etc. En este caso está del lado derecho.
