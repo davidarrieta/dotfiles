@@ -270,7 +270,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 #navigate workspaces next / previous
 bindsym $mod+Ctrl+l workspace next
-bindsym $mod+Ctrl+h workspace prev 
+bindsym $mod+Ctrl+h workspace prev
 
 
 ###---Define actions for certain windows---###
@@ -290,11 +290,11 @@ assign [class="(?i)zathura"] $ws7
 
 ##--Certain windows always in float(ing) mode--##
 
-for_window [class="Pavucontrol"] floating enable
-for_window [class="Leafpad" title="Leafpad"] floating enable resize set 1024 640
+for_window [class="Nemo"] floating enable, move position center resize set 1024 640
+for_window [class="L3afpad"] floating enable, move position center resize set 1024 640
 
 for_window [class="Audacious"] floating enable resize set 1024 640
-for_window [class="Lxappearance"] floating enable
+for_window [class="Lxappearance"] floating enable, move position center
 
 for_window [class="Nautilus"] floating enable
 for_window [class="TelegramDesktop"] floating enable resize set 1024 640
@@ -303,9 +303,9 @@ for_window [class="Gnome-calculator"] floating enable
 for_window [class="GParted"] floating enable
 
 for_window [class="Nitrogen"] floating enable
-for_window [class="mpv"] floating enable
+for_window [class="mpv"] floating enable, move position center
 
-for_window [class="Viewnior"] floating enable
+for_window [class="Viewnior"] floating enable, move position center
 for_window [class="feh"] floating enable resize set 1024 640
 
 for_window [window_role="Preferences"] floating enable
@@ -326,6 +326,7 @@ for_window [title="Seleccionar un archivo"] floating enable, move position cente
 for_window [class="(?i)lightdm-gtk-greeter-settings"] floating enable, move position center resize set 1024 640
 for_window [class="^URxvt$" instance="pulsemixer"] floating enable, move position center resize set 800 600
 
+for_window [instance="file_properties"] move position center, resize set 800 600
 
 ###---Colors---###
 
