@@ -17,7 +17,7 @@
 " Sections:
 "
 "    -> General, search for pattern #G and you will find it
-"    -> Plugins and specific keybinds for that plugins, search for pattern #P
+"    -> Plugins and specific key binds for that plugins, search for pattern #P
 "    and you will find it
 "    -> Indentation, search for pattern #I and you will find it
 "    -> Keybinds, search for pattern #K and you will find it
@@ -93,11 +93,17 @@ Plugin 'itchyny/lightline.vim'
 " Flake8 python checker for Vim
 Plugin 'nvie/vim-flake8'
 
+" Comment stuff out.
+Plugin 'tpope/vim-commentary'
+
+" Repeat things but better
+Plugin 'tpope/vim-repeat'
+
 " Nerdtree plugin
 Plugin 'scrooloose/nerdtree'
 
 " Keybind to open NerdTree with Ctrl + n
-map <C-n> :NERDTreeToggle<CR>
+map <Leader>n :NERDTreeToggle<CR>
 
 " Vim Multiple Cursors plugin, Sublime Text's awesome multiple selection feature into Vim. 
 Plugin 'terryma/vim-multiple-cursors'
@@ -124,6 +130,7 @@ Plugin 'lilydjwg/colorizer'
 
 "CtrlP plugin
 Plugin 'ctrlpvim/ctrlp.vim'
+
 
 " Surround plugin. Quoting/parenthesizing made simple
 Plugin 'tpope/vim-surround'
@@ -155,6 +162,11 @@ au BufRead,BufNewFile PKGBUILD setl expandtab tabstop=2 shiftwidth=2
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Keybinds #K
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Keybinds for the built-in spell checker in Vim. 'sc' and 'ns' stands for
+" 'set spell' and 'no spell' respectively
+nmap <Leader>sc :set spell spelllang=es,en<CR>
+nmap <Leader>ns :set nospell<CR>
 
 " Disabling arrow keys – because it’s not enough to use vim, you’ve got to live it. (https://tylercipriani.com/vim.html)
 noremap <up> <nop>
@@ -198,8 +210,14 @@ func! PYTHON()
 	exec "!clear && python3 %"
 endfunc
 
-" Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:$ 
+" See more lines on scrolling
+if !&sidescrolloff
+  set sidescrolloff=5
+endif
+
+if &listchars ==# 'eol:$'
+  set listchars=tab:>\ ,trail:-,eol:$,extends:>,precedes:<,nbsp:+
+endif
 
 " toggle paste mode
 map <Leader>P :set invpaste<CR>
@@ -210,6 +228,13 @@ nmap <silent> <Leader>q :quit<CR>
 
 " Move quickly through buffers
 nnoremap gb :ls<CR>:buffer<Space>
+
+" Move between open buffers
+nnoremap <leader>bd :bdelete<CR>
+nnoremap <leader>bf :bfirst<CR>
+nnoremap <leader>bl :blast<CR>
+nnoremap <leader>bn :bnext<CR>
+nnoremap <leader>bp :bprevious<CR>
 
 "Toggle line numbers both in normal and insert mode
 " (in this example, they're bound to the F3 key)
@@ -232,6 +257,9 @@ set t_Co=256
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc #M
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" sh stuff
+autocmd FileType sh set expandtab shiftwidth=2 softtabstop=4
 
 " Run flake8 every time you open a .py file
 autocmd BufWritePost *.py call Flake8()
@@ -279,7 +307,7 @@ set incsearch " Find as entering pattern
 
 set ignorecase " Case insensitive patterns,...
 
-set smartcase " When only lowercase is case doesnt matter
+set smartcase " When only lowercase is case doesn't matter
 
 "set showcmd " Show (partial) command in the last line of the screen.
 
@@ -294,6 +322,7 @@ set undolevels=1000
 set hidden " Don't display any error when moving through unsaved buffers
 
 "set ruler " status line there will be something like: 529, 35 68%, representing line 529, column 35, about 68% of the way to the end of the buffer.
+"
 
 """"""""""" Maybe they will be useful in the future  """""""""""""""""""
 
