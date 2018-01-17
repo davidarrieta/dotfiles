@@ -1,3 +1,5 @@
+# Open my own vim documentation quickly
+alias tv="less $HOME/Documentos/tipsVim"
 # See the documentation for fugitive.vim quickly
 alias dfu="less $HOME/.vim/bundle/vim-fugitive/doc/fugitive.txt"
 # Start vi-mode of zsh
@@ -78,6 +80,10 @@ alias duf='du -sh *'
 alias fd='find . -type d -name'
 # Find files by their name
 alias ff='find . -type f -name'
+# History
+alias hig="history | grep"
+# Grep always searching in case insensitive mode
+alias grep="grep -i"
 
 # Generate a playlist in .m3u for mpd
 alias genplaylist="cd ~/Música;find . -name '*.mp3' -o -name '*.flac' -o -name '*.m4a' -o -name '*.mp4'|sed -e 's%^./%%g' > ~/.mpd/playlists/all.m3u"

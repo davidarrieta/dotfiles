@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /home/claudio/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [color]
 	ui = always
 [user]
