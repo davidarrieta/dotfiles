@@ -1,3 +1,5 @@
+# Quickly search for something with find. 'fihe' stands for 'find here'
+alias fihe="find . -iname"
 # Open my own vim documentation quickly
 alias tv="less $HOME/Documentos/tipsVim"
 # See the documentation for fugitive.vim quickly
