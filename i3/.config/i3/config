@@ -389,14 +389,14 @@ set $mode_launcher Launch: [f]irefox [m]usic(ncmpcpp [n]emo [t]elegram  [z]athur
 bindsym $mod+o mode "$mode_launcher"
 
 mode "$mode_launcher" {
-    bindsym f exec firefox
-    bindsym t exec telegram-desktop
-    bindsym m exec --no-startup-id urxvt -name ncmpcpp -e ncmpcpp
+    bindsym f mode "default", exec firefox
+    bindsym t mode "default", exec telegram-desktop
+    bindsym m mode "default", exec --no-startup-id urxvt -name ncmpcpp -e ncmpcpp
 
-    bindsym n exec nemo
-    bindsym z exec zathura
+    bindsym n mode "default", exec nemo
+    bindsym z mode "default", exec zathura
 
-	bindsym r exec urxvt -name ranger -e ranger
+	bindsym r mode "default", exec urxvt -name ranger -e ranger
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
