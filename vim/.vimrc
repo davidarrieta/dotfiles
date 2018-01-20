@@ -69,7 +69,7 @@ Plugin 'nvie/vim-flake8'				" Flake8 python checker for Vim
 Plugin 'tpope/vim-commentary'			" Comment stuff out.
 Plugin 'tpope/vim-repeat'				" Repeat things but better
 Plugin 'scrooloose/nerdtree'			" Nerdtree plugin
-Plugin 'terryma/vim-multiple-cursors'	" Vim Multiple Cursors plugin, Sublime Text's awesome multiple selection feature into Vim.
+Plugin 'terryma/vim-multiple-cursors'	" Sublime Text's awesome multiple selection feature
 Plugin 'ctrlpvim/ctrlp.vim'				" Fuzzy finding
 Plugin 'lilydjwg/colorizer'				" Colorizer plugin
 Plugin 'tpope/vim-surround'				" Surround plugin. Quoting/parenthesizing made simple
@@ -78,7 +78,7 @@ Plugin 'tpope/vim-surround'				" Surround plugin. Quoting/parenthesizing made si
 " => Plugins Settings - fugitive 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" fugitive git bindings
+" fugitive bindings
 nnoremap <Leader>ga :Git add %:p<CR><CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gb :Gblame<CR>
@@ -127,6 +127,9 @@ let g:multi_cursor_start_key='<F6>'
 "All of your Plugins must be added before the following line
 call vundle#end()            "required
 filetype plugin indent on    "required. Filetype auto-detection.
+"           │     │    └──── Enable file type detection.
+"           │     └───────── Enable loading of indent file.
+"           └─────────────── Enable loading of plugin files.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Indentation

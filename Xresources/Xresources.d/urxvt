@@ -14,6 +14,7 @@ urxvt*depth: 32
 !
 ! Background color
 !URxvt.background:[97]#1d1f21 
+!URxvt*background: rgba:0000/0000/0200/c800
 !
 ! Define the font to use. If you want to obtain a complete list of fonts available use "fc-list".
 !URxvt.font: xft:GohuFont:pixelsize=10
