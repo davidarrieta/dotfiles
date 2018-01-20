@@ -116,5 +116,24 @@ This repository is strongly inspired by the work of some people, and would not h
 
 * [Xero](https://github.com/xero) 
 * [Mohabaks](https://mohabaks.github.io/)
+* [Samuel Walladge](https://swalladge.id.au/)
 * All the *ricers* who inspired me from [unixporn](https://www.reddit.com/r/unixporn/).
 * And all the people i might have stolen scripts or configs :grin:
+
+## LICENSE
+
+```
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+```
+
+This repository contains both original and third party content. Content can be assumed to be original unless stated otherwise. Original content is copyright © 2018 Claudio D. Arrieta , and can be used and distributed under the terms of the GPLv3. All third party content is copyright their respective authors and bound by their original licenses.
+
+All attempts have been made to identify third party content within the repository, with sources and attribution given where necessary. Please contact me if any issues are discovered.
