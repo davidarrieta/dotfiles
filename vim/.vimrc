@@ -16,63 +16,58 @@
 "                                                                                           "
 " Sections:
 "
-"    -> General, search for pattern #G and you will find it
-"    -> Plugins and specific key binds for that plugins, search for pattern #P
-"    and you will find it
-"    -> Indentation, search for pattern #I and you will find it
-"    -> Keybinds, search for pattern #K and you will find it
-"    -> Colors and Fonts, search for pattern #C and you will find it
-"    -> Misc, search for pattern #M and you will find it
+"    -> General
+"    -> Plugins
+"		-> Plugins Settings 
+"    -> Indentation
+"    -> Keybinds
+"    -> Colors and Fonts
+"    -> Misc
 "
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General
+" => General 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Enable UTF-8 by default
-set encoding=utf8
+set encoding=utf8						" Enable UTF-8 by default
+set noshowmode							" Don't display the mode in the ruler; we display it in the statusline:
+set laststatus=2						" Always show the statusline
+set nocompatible						" Use Vim settings, rather then Vi settings (much better!).
+										" This must be first, because it changes other options as a side effect.
 
-" Don't display the mode in the ruler; we display it in the statusline:
-set noshowmode
+set history=500							" Sets how many lines of history VIM has to remember
+let mapleader = ','						" Set the leader key to ,
+let g:mapleader=','						" With a map leader it's possible to do extra key combinations
+										" like <leader>w saves the current file
 
-"Always show the statusline
-set laststatus=2
-
-"Use Vim settings, rather then Vi settings (much better!).
-"This must be first, because it changes other options as a side effect.
-set nocompatible
-
-" Sets how many lines of history VIM has to remember
-set history=500
-
-" Set the leader key to ,
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = ','
-let g:mapleader=','
-
-" Organizing .swp files
-set directory^=$HOME/.vim/tmp//
-set backupdir^=$HOME/.vim/tmp//
+set directory^=$HOME/.vim/tmp//			" Organizing .swp files
+set backupdir^=$HOME/.vim/tmp//			" Now the .swp files will stay in your .vim folder
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugins #P
+" => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"Vundle says requires this option be enabled to work properly
-filetype off
-
-"set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+filetype off							" Vundle says requires this option be enabled to work properly
+set rtp+=~/.vim/bundle/Vundle.vim		" Set the runtime path to include Vundle and initialize
 call vundle#begin()
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'			" Let Vundle manage Vundle, required
+Plugin 'tpope/vim-fugitive'				" Git wrapper | Git in vim
+Plugin 'itchyny/lightline.vim'			" The most lightweight statusline for Vim
+Plugin 'nvie/vim-flake8'				" Flake8 python checker for Vim
+Plugin 'tpope/vim-commentary'			" Comment stuff out.
+Plugin 'tpope/vim-repeat'				" Repeat things but better
+Plugin 'scrooloose/nerdtree'			" Nerdtree plugin
+Plugin 'terryma/vim-multiple-cursors'	" Vim Multiple Cursors plugin, Sublime Text's awesome multiple selection feature into Vim.
+Plugin 'ctrlpvim/ctrlp.vim'				" Fuzzy finding
+Plugin 'lilydjwg/colorizer'				" Colorizer plugin
+Plugin 'tpope/vim-surround'				" Surround plugin. Quoting/parenthesizing made simple
 
-" Git wrapper | Git in vim
-Plugin 'tpope/vim-fugitive'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugins Settings - fugitive 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " fugitive git bindings
 nnoremap <Leader>ga :Git add %:p<CR><CR>
@@ -82,66 +77,51 @@ nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gp :Git push<CR>
 
-" The most lightweight statusline for Vim
-Plugin 'itchyny/lightline.vim'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugins Settings - syntastic
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Syntastic bindings
 "nnoremap <F4> :SyntasticCheck<CR>
 "vnoremap <F4> <ESC>:SyntasticCheck<CR>
 "inoremap <F4> <ESC>:SyntasticCheck<CR>
 
-" Flake8 python checker for Vim
-Plugin 'nvie/vim-flake8'
-
-" Comment stuff out.
-Plugin 'tpope/vim-commentary'
-
-" Repeat things but better
-Plugin 'tpope/vim-repeat'
-
-" Nerdtree plugin
-Plugin 'scrooloose/nerdtree'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugins Settings - NerdTree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Keybind to open NerdTree with Ctrl + n
 map <Leader>n :NERDTreeToggle<CR>
 
-" Vim Multiple Cursors plugin, Sublime Text's awesome multiple selection feature into Vim. 
-Plugin 'terryma/vim-multiple-cursors'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugins Settings - multiple cursors
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Ctrl-n, Ctrl-p, Ctrl-x, and <Esc> are mapped in the special multicursor mode once you've added at least one virtual cursor to 
 "the buffer. If you don't like the plugin taking over your favorite key bindings, you can turn off the default with:
-
 let g:multi_cursor_use_default_mapping=0
 
 "You can then map the 'next'(Siguiente), 'previous'(Anterior), 'skip'(<E>scapar), and 'exit(' keys like the following:
-
 let g:multi_cursor_next_key='<A-n>'
 let g:multi_cursor_prev_key='<A-p>'
 let g:multi_cursor_skip_key='<A-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 "By default, the 'next' key is also used to enter multicursor mode. If you want to use a different key to start multicursor mode than for selecting the next location, do like the following:
-
 " Map start key separately from next key
 let g:multi_cursor_start_key='<F6>'
 
-" Colorizer plugin
-Plugin 'lilydjwg/colorizer'
-
-"CtrlP plugin
-Plugin 'ctrlpvim/ctrlp.vim'
-
-
-" Surround plugin. Quoting/parenthesizing made simple
-Plugin 'tpope/vim-surround'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugins Settings - Vundle
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "All of your Plugins must be added before the following line
 call vundle#end()            "required
 filetype plugin indent on    "required. Filetype auto-detection.
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ================ Indentation ====================== #I
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Indentation
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set autoindent
 
@@ -160,12 +140,12 @@ set noexpandtab
 au BufRead,BufNewFile PKGBUILD setl expandtab tabstop=2 shiftwidth=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Keybinds #K
+" => Keybinds
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Keybinds for the built-in spell checker in Vim. 'sc' and 'ns' stands for
+" Keybinds for the built-in spell checker in Vim. 'ss' and 'ns' stands for
 " 'set spell' and 'no spell' respectively
-nmap <Leader>sc :set spell spelllang=es,en<CR>
+nmap <Leader>ss :set spell spelllang=es,en<CR>
 nmap <Leader>ns :set nospell<CR>
 
 " Disabling arrow keys – because it’s not enough to use vim, you’ve got to live it. (https://tylercipriani.com/vim.html)
@@ -241,8 +221,17 @@ nnoremap <leader>bp :bprevious<CR>
 noremap <F3> :set invnumber<CR> 
 inoremap <F3> <C-O>:set invnumber<CR>
 
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cnoremap w!! w !sudo tee % >/dev/null
+
+" Remap :W to :w to avoid typos
+command! W w
+
+" Remap :Q to :q to avoid typos 
+command! Q q
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors and Fonts #C
+" => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Line numbers are good
@@ -255,7 +244,7 @@ syntax enable
 set t_Co=256
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Misc #M
+" => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " sh stuff
@@ -294,15 +283,6 @@ set linebreak " Wrap lines at convenient points
 " as bash scripts and not sh scripts. From valloric
 let g:is_posix = 1
 "
-" Allow saving of files as sudo when I forgot to start vim using sudo.
-cnoremap w!! w !sudo tee % >/dev/null
-
-" Remap :W to :w
-command! W w
-
-" Remap :Q to :q
-command! Q q
-
 set incsearch " Find as entering pattern
 
 set ignorecase " Case insensitive patterns,...
