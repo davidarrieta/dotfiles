@@ -1,0 +1,4 @@
+#!/bin/bash
+while :; do
+  printf "\x1b[48;5;$((RANDOM % 255))m \x1b[48;5;$((RANDOM % 255))m \x1b[48;5;$((RANDOM % 255))m \x1b[48;5;$((RANDOM % 255))m \x1b[48;5;$((RANDOM % 255))m \x1b[48;5;$((RANDOM % 255))m \x1b[48;5;$((RANDOM % 255))m \x1b[48;5;$((RANDOM % 255))m "
+done
