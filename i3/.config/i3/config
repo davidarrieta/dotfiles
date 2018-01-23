@@ -286,7 +286,9 @@ assign [class="Pcmanfm"] $ws3
 assign [class="^URxvt$" instance="ranger"] $ws3
 
 assign [instance="ncmpcpp"] $ws4
+
 assign [class="TelegramDesktop"] $ws5
+assign [class="^URxvt$" instance="weechat"] $ws5
 
 assign [class="mpv"] $ws6
 assign [class="(?i)zathura"] $ws7
@@ -388,7 +390,7 @@ bindsym XF86AudioNext exec --no-startup-id mpc next
 
 
 # Press $mod+o followed by either f, t, m, n, v, etc. to launch firefox,  and the most used apps by me
-set $mode_launcher Launch: [f]irefox [m]usic(ncmpcpp PCMa[n]FM [t]elegram  [z]athura [r]anger
+set $mode_launcher Launch: [f]irefox [m]usic(ncmpcpp) [P]CManFM [t]elegram [z]athura [r]anger [w]eechat
 bindsym $mod+o mode "$mode_launcher"
 
 mode "$mode_launcher" {
@@ -396,10 +398,11 @@ mode "$mode_launcher" {
     bindsym t mode "default", exec telegram-desktop
     bindsym m mode "default", exec --no-startup-id urxvt -name ncmpcpp -e ncmpcpp
 
-    bindsym n mode "default", exec pcmanfm
+    bindsym p mode "default", exec pcmanfm
     bindsym z mode "default", exec zathura
 
 	bindsym r mode "default", exec urxvt -name ranger -e ranger
+	bindsym w mode "default", exec urxvt -name weechat -e weechat
 
     bindsym Escape mode "default"
     bindsym Return mode "default"

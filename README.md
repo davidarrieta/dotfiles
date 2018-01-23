@@ -12,14 +12,14 @@
 
 ## Dotfiles? How do you eat that?
 
-It's been said of every console user: 
-> _"you are your dotfiles."_
-
 In [xero's](https://github.com/xero/dotfiles) words:
 
 In the unix world programs are commonly configured in two different ways, via shell arguments or text based configuration files. 
 Programs with many options like window managers or text editors are configured on a per-user basis with files in your home directory `~`. 
 In unix-like operating systems any file or directory name that starts with a period or full stop character is considered hidden, and in a default view will not be displayed, thus the name dotfiles. 
+
+It's been said of every console user: 
+> _"you are your dotfiles."_
 
 And in [ayekat's](https://github.com/ayekat/dotfiles) words:
 

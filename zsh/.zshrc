@@ -58,6 +58,7 @@ source /home/claudio/.aliases
 
 export EDITOR="vim"
 export PAGER=/usr/bin/vimpager
+export SYSTEMD_PAGER=/usr/bin/less
 
 # To ls automatically after cd
 #function chpwd() {
