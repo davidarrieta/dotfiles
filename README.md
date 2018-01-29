@@ -9,6 +9,7 @@
         ▀██▄▄███  ▀██▄▄██▀    ██▄▄▄     ██      ▄▄▄██▄▄▄    ██▄▄▄   ▀██▄▄▄▄█  █▄▄▄▄▄██ 
           ▀▀▀ ▀▀    ▀▀▀▀       ▀▀▀▀     ▀▀      ▀▀▀▀▀▀▀▀     ▀▀▀▀     ▀▀▀▀▀    ▀▀▀▀▀▀  
 ```
+<br>
 
 ## Dotfiles? How do you eat that?
 
@@ -32,6 +33,8 @@ Nevertheless, I try to keep them as clean and non-WTF as possible, and people ar
 Here you will find A LOT of other people's dotfiles: 
 * [Dotfiles.github.io](http://dotfiles.github.io/) 
 * [Arch Linux wiki page for dotfiles](https://wiki.archlinux.org/index.php/Dotfiles)
+
+<br>
 
 ## What's included?
 
@@ -58,7 +61,6 @@ Here you will find A LOT of other people's dotfiles:
 |Video Player   |`mpv`   |[Mpv](https://github.com/mpv-player/mpv)   |   |   |   |   |
 |Image Viewer | `feh` - `viewnior` | [Feh](https://github.com/derf/feh) - [Viewnior](https://github.com/hellosiyan/Viewnior) |
 
-
 ### Other things i use and recommend
 
 * For desktop blurrying: Ganifladi's excellent `blurme` → [Blurme](https://github.com/ganifladi/blurme)
@@ -67,6 +69,8 @@ Here you will find A LOT of other people's dotfiles:
 * To vote for all your packages downloaded from the AUR: `aurvote` → [AURvote](https://github.com/archlinuxfr/aurvote) 
 Use it this way: ```$ aurvote -v $(pacman -Qqm) ``` - **Only for Arch Linux users.**
 * To retrieve and filter the latest Pacman mirror list and the best servers available: `reflector` → [Reflector](https://xyne.archlinux.ca/projects/reflector/) - **Only for Arch Linux users.**
+
+<br>
 
 ## Installation
 
@@ -98,6 +102,7 @@ $ stow whatever-dotfile-you-want
 ```
 This will symlink files to `~/.config/i3/` `~/.zshrc` and various other places.
 
+<br>
 
 ## Current workflow since January 6, 2018.
 
@@ -113,6 +118,7 @@ This will symlink files to `~/.config/i3/` `~/.zshrc` and various other places.
 #### [DuckDuckGo](www.duckduckgo.com) and [cava](https://github.com/karlstav/cava)
 ![DDG and cava](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/2018-01-05-1515171832_screenshot_1360x768.png)
 
+<br>
 
 ## Thanks to:
 
@@ -123,6 +129,8 @@ This repository is strongly inspired by the work of some people, and would not h
 * [Samuel Walladge](https://swalladge.id.au/)
 * All the *ricers* who inspired me from [unixporn](https://www.reddit.com/r/unixporn/).
 * And all the people i might have stolen scripts or configs :grin:
+
+<br>
 
 ## LICENSE
 
