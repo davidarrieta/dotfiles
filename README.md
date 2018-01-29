@@ -37,11 +37,13 @@ Here you will find A LOT of other people's dotfiles:
 
 |Software   |What i use   |Link to the project   |Link to my own configuration files (dotfiles) of that software   |
 |---|---|---|---|
-|Shell prompt  |`zsh` with `oh-my-zsh` |[zsh](http://www.zsh.org/) - [Oh my zsh](https://github.com/robbyrussell/oh-my-zsh)   | [zsh](https://github.com/davidarrieta/dotfiles/blob/master/zsh/.zshrc) |
+|Shell prompt  |`bash` and `zsh` with `oh-my-zsh` |[bash](https://www.gnu.org/software/bash/) [zsh](http://www.zsh.org/) - [Oh my zsh](https://github.com/robbyrussell/oh-my-zsh) | [zsh](https://github.com/davidarrieta/dotfiles/blob/master/zsh/.zshrc) [bash](https://github.com/davidarrieta/dotfiles/tree/master/bash) |
 |Bar   |`polybar`   |[Polybar](https://github.com/jaagr/polybar/)   |[Polybar](https://github.com/davidarrieta/dotfiles/blob/master/polybar/.config/polybar/config)   |
 |Window Compositor   |`compton`   | [Compton](https://github.com/chjj/compton)  |[Compton](https://github.com/davidarrieta/dotfiles/blob/master/compton/.config/.compton.conf)   |   |   |   |
+|VCS | `git` | [git](https://git-scm.com/) | [git](https://github.com/davidarrieta/dotfiles/tree/master/git) |
 |Launcher   |`rofi`   |[Rofi](https://github.com/DaveDavenport/rofi)   | [Rofi](https://github.com/davidarrieta/dotfiles/blob/master/rofi/.config/rofi/config)  |   |   |   |
-|Music Player   |`ncmpcpp` with `mpc` and `mpd`   |[ncmpcpp](https://github.com/arybczak/ncmpcpp) - [mpd](https://github.com/MusicPlayerDaemon/MPD) - [mpc](https://www.musicpd.org/clients/mpc/)  | [ncmpcpp](https://github.com/davidarrieta/dotfiles/blob/master/ncmpcpp/.ncmpcpp/config) - [mpd](https://github.com/davidarrieta/dotfiles/blob/master/mpd/.mpd/mpd.conf)   |   |   |   |
+|Music Player   |`ncmpcpp` with `mpc` and `mpd`   |[ncmpcpp](https://github.com/arybczak/ncmpcpp) - [mpd](https://github.com/MusicPlayerDaemon/MPD) - [mpc](https://www.musicpd.org/clients/mpc/)  | [ncmpcpp](https://github.com/davidarrieta/dotfiles/blob/master/ncmpcpp/.ncmpcpp/config) - [mpd](https://github.com/davidarrieta/dotfiles/blob/master/mpd/.mpd/mpd.conf)   | 
+|Notification Daemon | `dunst` | [dunst](https://dunst-project.org/) | [dunst](https://github.com/davidarrieta/dotfiles/blob/master/dunst/.config/dunst/dunstrc) | 
 |PDF Viewer   |`zathura`   |[Zathura](https://github.com/pwmt/zathura)   |[Zathura](https://github.com/davidarrieta/dotfiles/blob/master/zathura/.config/zathura/zathurarc)   |   |   |   |
 |Text Editor   |`vim` - `leafpad`   |[Vim](https://github.com/vim/vim) - [Leafpad](http://tarot.freeshell.org/leafpad/)  |[Vim](https://github.com/davidarrieta/dotfiles/blob/master/vim/.vimrc)   |   |   |   
 |Terminal Emulator   | `urxvt`   |[urxvt](http://software.schmorp.de/pkg/rxvt-unicode.html)   | [urxvt](https://github.com/davidarrieta/dotfiles/blob/master/Xresources/Xresources.d/urxvt) |
@@ -55,6 +57,7 @@ Here you will find A LOT of other people's dotfiles:
 |Terminal Font   |`hack`   |[Hack](https://github.com/source-foundry/Hack)   |   |   |   |   |
 |Video Player   |`mpv`   |[Mpv](https://github.com/mpv-player/mpv)   |   |   |   |   |
 |Image Viewer | `feh` - `viewnior` | [Feh](https://github.com/derf/feh) - [Viewnior](https://github.com/hellosiyan/Viewnior) |
+
 
 ### Other things i use and recommend
 
