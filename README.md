@@ -33,33 +33,34 @@ Here you will find A LOT of other people's dotfiles:
 * [Dotfiles.github.io](http://dotfiles.github.io/) 
 * [Arch Linux wiki page for dotfiles](https://wiki.archlinux.org/index.php/Dotfiles)
 
-
 ## What's included?
 
-* Shell prompt: `zsh` with `oh-my-zsh` → [Zsh](http://www.zsh.org/) - [Oh my zsh](https://github.com/robbyrussell/oh-my-zsh)
-* Bar: `polybar` → [Polybar](https://github.com/jaagr/polybar/)
-* Browser: `firefox` → [Firefox](https://www.mozilla.org/en-US/firefox/new/)
-* Compositor: `compton` → [Compton](https://github.com/chjj/compton)
-* File Manager: `ranger` `nemo` → [Ranger](https://github.com/ranger/ranger) - [Nemo](https://github.com/linuxmint/nemo)
-* Font: `hack` → [Hack](https://github.com/source-foundry/Hack)
-* Media player: `mpv` → [Mpv](https://github.com/mpv-player/mpv)
-* Music player: `ncmpcpp` → [Ncmpcpp](https://github.com/arybczak/ncmpcpp)
-* Program launcher: `rofi` → [Rofi](https://github.com/DaveDavenport/rofi)
-* PDF viewer: `zathura` → [Zathura](https://github.com/pwmt/zathura)
-* Text editor: `vim` and `leafpad` → [Vim](https://github.com/vim/vim) - [Leafpad](http://tarot.freeshell.org/leafpad/)
-* Terminal emulator: `rxvt-unicode-256xresources` → [Urxvt-256xresources](https://aur.archlinux.org/packages/rxvt-unicode-256xresources/)
-* Window manager: `i3-gaps` → [i3 Gaps](https://github.com/Airblader/i3)
-* Image viewer: `feh` and `viewnior` → [Feh](https://github.com/derf/feh) - [Viewnior](https://github.com/hellosiyan/Viewnior)
+|Software   |What i use   |Link to the project   |Link to my own configuration files (dotfiles) of that software   |
+|---|---|---|---|
+|Shell prompt  |`zsh` with `oh-my-zsh` |[zsh](http://www.zsh.org/) - [Oh my zsh](https://github.com/robbyrussell/oh-my-zsh)   | [zsh](https://github.com/davidarrieta/dotfiles/blob/master/zsh/.zshrc) |
+|Bar   |`polybar`   |[Polybar](https://github.com/jaagr/polybar/)   |[Polybar](https://github.com/davidarrieta/dotfiles/blob/master/polybar/.config/polybar/config)   |
+|Window Compositor   |`compton`   | [Compton](https://github.com/chjj/compton)  |[Compton](https://github.com/davidarrieta/dotfiles/blob/master/compton/.config/.compton.conf)   |   |   |   |
+|Launcher   |`rofi`   |[Rofi](https://github.com/DaveDavenport/rofi)   | [Rofi](https://github.com/davidarrieta/dotfiles/blob/master/rofi/.config/rofi/config)  |   |   |   |
+|Music Player   |`ncmpcpp` with `mpc` and `mpd`   |[ncmpcpp](https://github.com/arybczak/ncmpcpp) - [mpd](https://github.com/MusicPlayerDaemon/MPD) - [mpc](https://www.musicpd.org/clients/mpc/)  | [ncmpcpp](https://github.com/davidarrieta/dotfiles/blob/master/ncmpcpp/.ncmpcpp/config) - [mpd](https://github.com/davidarrieta/dotfiles/blob/master/mpd/.mpd/mpd.conf)   |   |   |   |
+|PDF Viewer   |`zathura`   |[Zathura](https://github.com/pwmt/zathura)   |[Zathura](https://github.com/davidarrieta/dotfiles/blob/master/zathura/.config/zathura/zathurarc)   |   |   |   |
+|Text Editor   |`vim` - `leafpad`   |[Vim](https://github.com/vim/vim) - [Leafpad](http://tarot.freeshell.org/leafpad/)  |[Vim](https://github.com/davidarrieta/dotfiles/blob/master/vim/.vimrc)   |   |   |   
+|Terminal Emulator   | `urxvt`   |[urxvt](http://software.schmorp.de/pkg/rxvt-unicode.html)   | [urxvt](https://github.com/davidarrieta/dotfiles/blob/master/Xresources/Xresources.d/urxvt) |
+|Window Manager | `i3-gaps` | [i3 Gaps](https://github.com/Airblader/i3) | [i3-gaps](https://github.com/davidarrieta/dotfiles/blob/master/i3/.config/i3/config)
+|Terminal Pager| `vimpager` - `vimcat` | [vimpager and vimcat](https://github.com/rkitover/vimpager) | [vimcat](https://github.com/davidarrieta/dotfiles/blob/master/vim/.vimcatrc)
+|AUR Helper| `trizen` | [trizen](https://github.com/trizen/trizen) | [trizen](https://github.com/davidarrieta/dotfiles/blob/master/trizen/.config/trizen/trizen.conf) | 
+|Screenshooter| `scrot` | [Scrot](https://github.com/dreamer/scrot) |
+|Display Manager| `lightdm` | [LightDM](https://freedesktop.org/wiki/Software/LightDM) | 
+|Browser    |`firefox`   |[Firefox](https://www.mozilla.org/en-US/firefox/new/)   | 
+|File Manager   |`ranger` and `pcmanfm`   |[Ranger](https://github.com/ranger/ranger) - [PCManFM](https://wiki.lxde.org/en/PCManFM)  |   |   |   |   |
+|Terminal Font   |`hack`   |[Hack](https://github.com/source-foundry/Hack)   |   |   |   |   |
+|Video Player   |`mpv`   |[Mpv](https://github.com/mpv-player/mpv)   |   |   |   |   |
+|Image Viewer | `feh` - `viewnior` | [Feh](https://github.com/derf/feh) - [Viewnior](https://github.com/hellosiyan/Viewnior) |
 
 ### Other things i use and recommend
 
 * For desktop blurrying: Ganifladi's excellent `blurme` → [Blurme](https://github.com/ganifladi/blurme)
-* To replace `less` and `cat` with `vim` and prove to the world that you're a fanboy of Vim: `vimpager` and `vimcat` → [Vimpager & vimcat](https://github.com/rkitover/vimpager)
-* Display Manager: `lightdm` with the theme `litarvan` → [Lightdm](https://freedesktop.org/wiki/Software/LightDM/) - [Litarvan](https://github.com/Litarvan/lightdm-webkit-theme-litarvan)
-* These two packages are necessary for `ncmpcpp` to work: `mpd` with `mpc` → [MPD](https://github.com/MusicPlayerDaemon/MPD) - [Mpc](https://www.musicpd.org/clients/mpc/)
-* Commandline screen capture utility: `scrot` → [Scrot](https://github.com/dreamer/scrot)
-* To have icons in `polybar`: `ttf-font-awesome-4` → [Font Awesome 4](https://aur.archlinux.org/packages/ttf-font-awesome-4/) **Font Awesome 5 does not work properly with Polybar. Or at least it doesn't work like Font Awesome 4.**
-* The best `pacaur` replacement: `trizen` → [Trizen](https://github.com/trizen/trizen) - **Only for Arch Linux users.**
+* Display Manager Theme: `litarvan` → [Litarvan](https://github.com/Litarvan/lightdm-webkit-theme-litarvan)
+* To have icons in `polybar`: `ttf-font-awesome-4` → [Font Awesome 4](https://aur.archlinux.org/packages/ttf-font-awesome-4/) **Font Awesome 5 does not work properly with Polybar. Or at least it doesn't work like Font Awesome 4.** 
 * To vote for all your packages downloaded from the AUR: `aurvote` → [AURvote](https://github.com/archlinuxfr/aurvote) 
 Use it this way: ```$ aurvote -v $(pacman -Qqm) ``` - **Only for Arch Linux users.**
 * To retrieve and filter the latest Pacman mirror list and the best servers available: `reflector` → [Reflector](https://xyne.archlinux.ca/projects/reflector/) - **Only for Arch Linux users.**
