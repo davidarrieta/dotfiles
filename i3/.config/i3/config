@@ -180,6 +180,9 @@ bindsym $mod+d exec --no-startup-id "rofi -modi \\"run,drun\\" -show run -lines 
 # Lock the screen with i3lock and this script
 bindsym XF86WakeUp exec --no-startup-id ~/.scripts/i3lock.sh
 
+# Toggle screen
+bindsym XF86Display exec --no-startup-id ~/.scripts/toggle-screen.sh
+
 # Open calculator with his multimedia key
 bindsym XF86Calculator exec gnome-calculator
 
@@ -189,17 +192,21 @@ bindsym $mod+m exec --no-startup-id ~/.scripts/xdo.sh
 #Resize windows
 bindsym $mod+r mode "resize"
 
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
 
 ###---Starting external applications---###
 
 
 # Blurme script!
-exec_always --no-startup-id $HOME/.scripts/blurme.sh &
+#exec_always --no-startup-id $HOME/.scripts/blurme.sh &
 #Composite manager
-#exec_always --no-startup-id compton -f
+exec_always --no-startup-id compton -f
 
 # Set the wallpaper with feh
-exec_always --no-startup-id feh --bg-fill $HOME/Imágenes/Wallpapers/green-plants.jpg
+exec_always --no-startup-id feh --bg-fill $HOME/Imágenes/Wallpapers/possible_rice4.jpeg
 # Launch polybar properly
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
@@ -213,6 +220,10 @@ exec_always --no-startup-id urxvtd --quiet --opendisplay --fork &
 # Start the polkit helper
 exec_always --no-startup-id lxsession
 
+# Laptop touchpad
+exec_always --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Scroll Method Enabled" 0 1 0
+
+exec_always --no-startup-id $HOME/dotfiles/scripts/.scripts/xinput-scroll.sh
 
 ###---Workspaces related---###
 
@@ -332,6 +343,10 @@ for_window [class="(?i)lightdm-gtk-greeter-settings"] floating enable, move posi
 for_window [class="^URxvt$" instance="pulsemixer"] floating enable, move position center resize set 800 600
 
 for_window [instance="file_properties"] move position center, resize set 800 600
+for_window [title="Confirmar"] move position center, resize set 300 100
+
+for_window [title="Confirm"] move position center, resize set 300 100
+
 
 ###---Colors---###
 
