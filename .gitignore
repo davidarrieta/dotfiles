@@ -4,7 +4,7 @@ mpd/.mpd/mpd.pid
 mpd/.mpd/mpdstate
 mpd/.mpd/playlists
 ncmpcpp/.ncmpcpp/error.log
-ncmpcpp/.ncmpcpp/lyrics/
+ncmpcpp/.ncmpcpp/lyrics/*
 rofi/.config/rofi/example1-Xresources
 rofi/.config/rofi/example2
 *.swp
