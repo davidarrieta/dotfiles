@@ -28,19 +28,11 @@ This is my collection of user/application settings ("dotfiles") and personal scr
 
 Nevertheless, I try to keep them as clean and non-WTF as possible, and people are invited to take a look at them, get ideas for their own dotfiles, and drop comments, suggestions, questions and bug reports if something seems odd.
 
-## Ok, your dotfiles are nice but i want to learn from other people; Where can i get other dotfiles?
-
-Here you will find A LOT of other people's dotfiles: 
-* [Dotfiles.github.io](http://dotfiles.github.io/) 
-* [Arch Linux wiki page for dotfiles](https://wiki.archlinux.org/index.php/Dotfiles)
-
-<br>
-
 ## What's included?
 
 |Software   |What i use   |Link to the project   |Link to my own configuration files (dotfiles) of that software   |
 |---|---|---|---|
-|Shell prompt  |`bash` and `zsh` with `oh-my-zsh` |[bash](https://www.gnu.org/software/bash/) [zsh](http://www.zsh.org/) - [Oh my zsh](https://github.com/robbyrussell/oh-my-zsh) | [zsh](https://github.com/davidarrieta/dotfiles/blob/master/zsh/.zshrc) [bash](https://github.com/davidarrieta/dotfiles/tree/master/bash) |
+|Shell prompt  |`bash` and `zsh` with `oh-my-zsh` |[bash](https://www.gnu.org/software/bash/) - [zsh](http://www.zsh.org/) - [Oh my zsh](https://github.com/robbyrussell/oh-my-zsh) | [zsh](https://github.com/davidarrieta/dotfiles/blob/master/zsh/.zshrc) - [bash](https://github.com/davidarrieta/dotfiles/tree/master/bash) |
 |Bar   |`polybar`   |[Polybar](https://github.com/jaagr/polybar/)   |[Polybar](https://github.com/davidarrieta/dotfiles/blob/master/polybar/.config/polybar/config)   |
 |Window Compositor   |`compton`   | [Compton](https://github.com/chjj/compton)  |[Compton](https://github.com/davidarrieta/dotfiles/blob/master/compton/.config/.compton.conf)   |   |   |   |
 |VCS | `git` | [git](https://git-scm.com/) | [git](https://github.com/davidarrieta/dotfiles/tree/master/git) |
@@ -50,7 +42,7 @@ Here you will find A LOT of other people's dotfiles:
 |PDF Viewer   |`zathura`   |[Zathura](https://github.com/pwmt/zathura)   |[Zathura](https://github.com/davidarrieta/dotfiles/blob/master/zathura/.config/zathura/zathurarc)   |   |   |   |
 |Text Editor   |`vim` - `leafpad`   |[Vim](https://github.com/vim/vim) - [Leafpad](http://tarot.freeshell.org/leafpad/)  |[Vim](https://github.com/davidarrieta/dotfiles/blob/master/vim/.vimrc)   |   |   |   
 |Terminal Emulator   | `urxvt`   |[urxvt](http://software.schmorp.de/pkg/rxvt-unicode.html)   | [urxvt](https://github.com/davidarrieta/dotfiles/blob/master/Xresources/Xresources.d/urxvt) |
-|Window Manager | `i3-gaps` | [i3 Gaps](https://github.com/Airblader/i3) | [i3-gaps](https://github.com/davidarrieta/dotfiles/blob/master/i3/.config/i3/config)
+|Window Manager | `i3-gaps` | [i3-gaps](https://github.com/Airblader/i3) | [i3-gaps](https://github.com/davidarrieta/dotfiles/blob/master/i3/.config/i3/config)
 |Terminal Pager| `vimpager` - `vimcat` | [vimpager and vimcat](https://github.com/rkitover/vimpager) | [vimcat](https://github.com/davidarrieta/dotfiles/blob/master/vim/.vimcatrc)
 |AUR Helper| `trizen` | [trizen](https://github.com/trizen/trizen) | [trizen](https://github.com/davidarrieta/dotfiles/blob/master/trizen/.config/trizen/trizen.conf) | 
 |Screenshooter| `scrot` | [Scrot](https://github.com/dreamer/scrot) |
@@ -64,7 +56,6 @@ Here you will find A LOT of other people's dotfiles:
 ### Other things i use and recommend
 
 * For desktop blurrying: Ganifladi's excellent `blurme` → [Blurme](https://github.com/ganifladi/blurme)
-* Display Manager Theme: `litarvan` → [Litarvan](https://github.com/Litarvan/lightdm-webkit-theme-litarvan)
 * To have icons in `polybar`: `ttf-font-awesome-4` → [Font Awesome 4](https://aur.archlinux.org/packages/ttf-font-awesome-4/) **Font Awesome 5 does not work properly with Polybar. Or at least it doesn't work like Font Awesome 4.** 
 * To vote for all your packages downloaded from the AUR: `aurvote` → [AURvote](https://github.com/archlinuxfr/aurvote) 
 Use it this way: ```$ aurvote -v $(pacman -Qqm) ``` - **Only for Arch Linux users.**
@@ -74,9 +65,9 @@ Use it this way: ```$ aurvote -v $(pacman -Qqm) ``` - **Only for Arch Linux user
 
 ## Installation
 
-### Before installing, be sure to read useful cowboy [gently-worded note](https://github.com/cowboy/dotfiles#heed-this-critically-important-warning-before-you-install) and this excellent article by [Anish Athalye](https://github.com/anishathalye): [Dotfiles are NOT meant to be forked](http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/). That said, let's go with the installation:
+### Before installing, be sure to read useful cowboy [gently-worded note](https://github.com/cowboy/dotfiles#heed-this-critically-important-warning-before-you-install) and this excellent article by Anish Athalye: [Dotfiles are NOT meant to be forked](http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/). That said, let's go with the installation:
 
-0. **Learn how to organize your files well:** You must learn how to arrange your files right so that `stow` can link them correctly, here are some helpful links:
+0. **If you want to make your own dotfiles stow-compatible:** You must learn how to arrange your files right so that `stow` can link them correctly, here are some helpful links:
 [Using GNU Stow to manage your dotfiles](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html) - [Managing dotfiles with GNU stow](https://alexpearce.me/2016/02/managing-dotfiles-with-stow/)
 
 1. **Install GNU Stow:** GNU Stow is available for all GNU+Linux distros and most other unix-like distributions via your package manager.
@@ -117,6 +108,14 @@ This will symlink files to `~/.config/i3/` `~/.zshrc` and various other places.
 
 #### [DuckDuckGo](www.duckduckgo.com) and [cava](https://github.com/karlstav/cava)
 ![DDG and cava](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/2018-01-05-1515171832_screenshot_1360x768.png)
+
+<br>
+
+## Ok, your dotfiles are nice but i want to learn from other people; Where can i get other dotfiles?
+
+Here you will find A LOT of other people's dotfiles: 
+* [Dotfiles.github.io](http://dotfiles.github.io/) 
+* [Arch Linux wiki page for dotfiles](https://wiki.archlinux.org/index.php/Dotfiles)
 
 <br>
 
