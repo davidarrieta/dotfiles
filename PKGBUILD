@@ -1,4 +1,16 @@
 # Maintainer: Claudio D. Arrieta <ArrietaDavid2001@protonmail.com>
+#
+# BEFORE RUNNING, READ THIS!
+# 
+# This is not a PKGBUILD that you should run as it is without any precaution, 
+# you're encouraged to edit it, modify it, and delete it as desired. 
+# If you don't know how to properly modify this PKGBUILD, you should
+# take a quick look at these wiki pages:
+# 
+# https://wiki.archlinux.org/index.php/PKGBUILD
+# https://wiki.archlinux.org/index.php/Creating_packages
+#
+# Have a lot of fun!
 
 pkgbase=arrietadavid-dotfiles-deps
 pkgname=(arrietadavid-dotfiles-deps arrietadavid-dotfiles-deps-desktop)
@@ -50,12 +62,6 @@ package_arrietadavid-dotfiles-deps-desktop() {
     arrietadavid-dotfiles-deps
   )
   optdepends=(  
-    'mesa: Open-source OpenGL specification. Needed because of my graphic card.'
-    'mesa-libg: Needed because of my graphic card.'
-    'lib32-mesa-libgl: Needed because of my graphic card.'
-    'xf86-video-nouveau: Open Source driver for nVidia cards.'
-    'mesa-vdpau: Needed because of my graphic card.'
-    'libva-mesa-driver: Needed because of my graphic card.'
     'ttf-dejavu: I like to use this font with Firefox'
     'ttf-droid: I like to use this font with Firefox'
     'ttf-hack: My favorite font for the terminal'
@@ -81,7 +87,6 @@ package_arrietadavid-dotfiles-deps-desktop() {
     'calcurse: A text-based personal organizer'
     'gnome-calculator: Calculator'
     'htop: Interactive process viewer'
-    'nemo: File manager (Nautilus fork)'
     'transmission-gtk: Fast, easy, and free BitTorrent client (GTK+ GUI)'
     'w3m: Needed for ranger to display images'
     'youtube-dl: Download videos from YouTube.com and a few more sites'
