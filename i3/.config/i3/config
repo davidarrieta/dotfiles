@@ -349,6 +349,7 @@ for_window [title="Confirm"] move position center, resize set 300 100
 for_window [title="Acerca de Mozilla Firefox"] floating enable, move position center
 
 for_window [title="About Mozilla Firefox"] floating enable, move position center
+for_window [class="Pavucontrol"] floating enable, move position center, resize set 800 600
 
 
 ###---Colors---###
