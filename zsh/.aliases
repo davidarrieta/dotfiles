@@ -86,6 +86,8 @@ alias ff='find . -type f -name'
 alias hig="history | grep"
 # Grep always searching in case insensitive mode
 alias grep="grep -i"
+# Get current weather. Replace "Coro" with your current city.
+alias weather="curl http://wttr.in/Coro"
 
 # Generate a playlist in .m3u for mpd
 alias genplaylist="cd ~/Música;find . -name '*.mp3' -o -name '*.flac' -o -name '*.m4a' -o -name '*.mp4'|sed -e 's%^./%%g' > ~/.mpd/playlists/all.m3u"
