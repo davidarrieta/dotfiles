@@ -346,6 +346,9 @@ for_window [instance="file_properties"] move position center, resize set 800 600
 for_window [title="Confirmar"] move position center, resize set 300 100
 
 for_window [title="Confirm"] move position center, resize set 300 100
+for_window [title="Acerca de Mozilla Firefox"] floating enable, move position center
+
+for_window [title="About Mozilla Firefox"] floating enable, move position center
 
 
 ###---Colors---###
@@ -402,6 +405,18 @@ bindsym XF86AudioNext exec --no-startup-id mpc next
 
 
 ###---Misc---###
+
+# Press $mod+shift+s by either [l] or [v] to quickly switch between VGA or laptop screen
+set $mode_screen What screen do you want to use? [V]GA [L]aptop screen
+bindsym $mod+shift+s mode "$mode_screen"
+
+mode "$mode_screen" {
+	bindsym v mode "default", exec sh $HOME/.screenlayout/vga.sh
+	bindsym l mode "default", exec sh $HOME/.screenlayout/laptop-screen.sh
+
+	bindsym Escape mode "default"
+	bindsym Return mode "default"
+}
 
 
 # Press $mod+o followed by either f, t, m, n, v, etc. to launch firefox,  and the most used apps by me
