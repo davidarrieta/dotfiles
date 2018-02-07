@@ -63,16 +63,16 @@ set rtp+=~/.vim/bundle/Vundle.vim		" Set the runtime path to include Vundle and 
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'			" Let Vundle manage Vundle, required
-Plugin 'tpope/vim-fugitive'				" Git wrapper | Git in vim
 Plugin 'itchyny/lightline.vim'			" The most lightweight statusline for Vim
 Plugin 'nvie/vim-flake8'				" Flake8 python checker for Vim
 Plugin 'tpope/vim-commentary'			" Comment stuff out.
+Plugin 'tpope/vim-fugitive'				" Git wrapper | Git in vim
 Plugin 'tpope/vim-repeat'				" Repeat things but better
+Plugin 'tpope/vim-surround'				" Surround plugin. Quoting/parenthesizing made simple
 Plugin 'scrooloose/nerdtree'			" Nerdtree plugin
 Plugin 'terryma/vim-multiple-cursors'	" Sublime Text's awesome multiple selection feature
 Plugin 'ctrlpvim/ctrlp.vim'				" Fuzzy finding
 Plugin 'lilydjwg/colorizer'				" Colorizer plugin
-Plugin 'tpope/vim-surround'				" Surround plugin. Quoting/parenthesizing made simple
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins Settings - fugitive 
@@ -258,6 +258,9 @@ set t_Co=256
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Scripts header
+au bufnewfile *.sh 0r $HOME/.vim/sh_header.temp
 
 " sh stuff
 autocmd FileType sh set expandtab shiftwidth=2 softtabstop=4
