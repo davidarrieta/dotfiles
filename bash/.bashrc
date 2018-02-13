@@ -15,12 +15,15 @@ if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
 
+# Load .profile 
+if [ -f ~/.profile ]; then
+    . ~/.profile
+fi
+
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-alias ls='ls --color=yes'
-PS1='[\u@\h \W]\$ '
-
-export EDITOR=vim
-export PAGER=vimpager
+# Prompt
+# PS1='[\u@\h \W]\$ '
+PS1="[\w]\\$ \[$(tput sgr0)\]"
