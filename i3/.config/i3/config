@@ -206,7 +206,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 exec_always --no-startup-id compton -f
 
 # Set the wallpaper with feh
-exec_always --no-startup-id feh --bg-fill $HOME/Imágenes/Wallpapers/possible_rice4.jpeg
+exec_always --no-startup-id feh --bg-fill $HOME/Imágenes/Wallpapers/green_plants2.jpg
 # Launch polybar properly
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
@@ -406,6 +406,19 @@ bindsym XF86AudioNext exec --no-startup-id mpc next
 
 
 ###---Misc---###
+
+# Press $mod+shift+p by either [s] or [r] to quickly shutdown or reboot the computer
+set $mode_poweroff What do you want to do? [S]hutdown [R]eboot
+bindsym $mod+shift+p mode "$mode_poweroff"
+
+mode "$mode_poweroff" {
+	bindsym s mode "default", exec shutdown -h now
+	bindsym r mode "default", exec reboot
+
+	bindsym Escape mode "default"
+	bindsym Return mode "default"
+
+}
 
 # Press $mod+shift+s by either [l] or [v] to quickly switch between VGA or laptop screen
 set $mode_screen What screen do you want to use? [V]GA [L]aptop screen
