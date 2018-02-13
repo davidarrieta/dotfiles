@@ -13,14 +13,8 @@ ZSH_THEME="gallois"
 # sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -36,14 +30,6 @@ ZSH_THEME="gallois"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -55,15 +41,20 @@ autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases 
+source $HOME/.profile
 
-export EDITOR="vim"
-export PAGER=/usr/bin/vimpager
-export SYSTEMD_PAGER=/usr/bin/less
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=1000000
+export SAVEHIST=1000000
+
+# To prevent history from recording duplicated entries (such as ls -l entered 
+# many times during single shell session), you can set the 
+# hist_ignore_all_dups option:
+#setopt hist_ignore_all_dups
 
 # To ls automatically after cd
-#function chpwd() {
-#    emulate -L zsh
-#    ls -a
-# }
-#
+function chpwd() {
+    emulate -L zsh
+    ls -a
+ }
 
