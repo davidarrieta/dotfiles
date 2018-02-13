@@ -95,7 +95,7 @@ font-0 = SF\ Pro\ Text:style=Regular:size=9
 font-1 = FontAwesome:style=regular:size=10
 
 ;Modulos en la barra, del lado izquierdo tenemos el modulo que me dice en cual workspace estoy
-modules-left = bspwm i3 
+modules-left = i3 
 
 ;Modulos del centro
 modules-center = mpd
@@ -310,7 +310,7 @@ label-discharging = Discharging %percentage%%
 
 ; Available tokens:
 ;   %percentage% (default)
-label-full = Fully charged
+label-full =  %percentage%% 
 
 ; Only applies if <ramp-capacity> is used
 ramp-capacity-0 = 
@@ -346,7 +346,7 @@ format = <label>
 
 ; Available tokens:
 ;   %percentage% (default)
-label = %percentage%%
+label =  %percentage%%
 
 ; Only applies if <ramp> is used
 ramp-0 = 🌕
@@ -504,10 +504,10 @@ menu-2-1-exec = menu-open-0
 [module/scriptdate]
 type = custom/script
 
-exec = date +'%I:%M%p'
+exec = date +' %I:%M%p'
 ;exec = date +'%d %b %Y %I:%M%p'
 
-format-prefix =
+format-prefix = 
 format-prefix-foreground = #9A9B9A
 ;format-prefix-foreground = ${colors.background}
 ;format-underline = #B6C0D2
