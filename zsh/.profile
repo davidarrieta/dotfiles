@@ -1,6 +1,7 @@
 export EDITOR=vim
 export PAGER=less
 export LESS=' -RSJMNsi'
+export PATH=$PATH:~/.scripts
 
 # less Colors for man Pages
 export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking
