@@ -197,7 +197,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 
-###---Starting external applications---###
+###---Execute external applications---###
 
 
 # Blurme script!
@@ -304,7 +304,7 @@ assign [class="^URxvt$" instance="weechat"] $ws5
 assign [class="mpv"] $ws6
 assign [class="(?i)zathura"] $ws7
 
-##--Certain windows always in float(ing) mode--##
+##--Certain windows always in floating mode--##
 
 for_window [class="Pcmanfm"] floating enable, move position center resize set 1024 640
 for_window [class="L3afpad"] floating enable, move position center resize set 1024 640
@@ -351,6 +351,8 @@ for_window [title="Acerca de Mozilla Firefox"] floating enable, move position ce
 for_window [title="About Mozilla Firefox"] floating enable, move position center
 for_window [class="Pavucontrol"] floating enable, move position center, resize set 800 600
 
+for_window [title="Moviendo archivos"] floating enable, move position center, resize set 400 200
+for_window [title="Copiando archivos"] floating enable, move position center, resize set 400 200
 
 ###---Colors---###
 
@@ -407,17 +409,19 @@ bindsym XF86AudioNext exec --no-startup-id mpc next
 
 ###---Misc---###
 
-# Press $mod+shift+p by either [s] or [r] to quickly shutdown or reboot the computer
-set $mode_poweroff What do you want to do? [S]hutdown [R]eboot
-bindsym $mod+shift+p mode "$mode_poweroff"
 
-mode "$mode_poweroff" {
-	bindsym s mode "default", exec shutdown -h now
-	bindsym r mode "default", exec reboot
+set $mode_power [l]ock [e]logout [s]uspend [h]ibernate [r]eboot [p]oweroff (shutdown)
+bindsym $mod+shift+p mode "$mode_power"
+mode "$mode_power" {
+    bindsym l mode "default", exec --no-startup-id $HOME/.scripts/i3exit lock
+    bindsym e mode "default", exec --no-startup-id $HOME/.scripts/i3exit logout
+    bindsym s mode "default", exec --no-startup-id $HOME/.scripts/i3exit suspend
+    bindsym h mode "default", exec --no-startup-id $HOME/.scripts/i3exit hibernate
+    bindsym r mode "default", exec --no-startup-id $HOME/.scripts/i3exit reboot
+    bindsym p mode "default", exec --no-startup-id $HOME/.scripts/i3exit shutdown
 
-	bindsym Escape mode "default"
-	bindsym Return mode "default"
-
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 # Press $mod+shift+s by either [l] or [v] to quickly switch between VGA or laptop screen
