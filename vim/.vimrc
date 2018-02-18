@@ -41,14 +41,18 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set encoding=utf8						" Enable UTF-8 by default
-set noshowmode							" Don't display the mode in the ruler; we display it in the statusline:
+set noshowmode							" Don't display the mode in the ruler; 
+										" we display it in the statusline:
 set laststatus=2						" Always show the statusline
-set nocompatible						" Use Vim settings, rather then Vi settings (much better!).
-										" This must be first, because it changes other options as a side effect.
-
-set history=500							" Sets how many lines of history VIM has to remember
+set nocompatible						" Use Vim settings, 
+										" rather than Vi settings (much better!).
+										" This must be first, because it 
+										" changes other options as a side effect.
+set history=500							" Sets how many lines of 
+										" history VIM has to remember
 let mapleader = ','						" Set the leader key to ,
-let g:mapleader=','						" With a map leader it's possible to do extra key combinations
+let g:mapleader=','						" With a map leader it's possible 
+										" to do extra key combinations
 										" like <leader>w saves the current file
 
 set directory^=$HOME/.vim/tmp//			" Organizing .swp files
