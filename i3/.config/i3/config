@@ -290,7 +290,7 @@ bindsym $mod+Ctrl+h workspace prev
 ###---Define actions for certain windows---###
 
 
-assign [class="Firefox"] $ws1
+assign [class="Firefox|Chromium"] $ws1
 assign [class="^URxvt$" instance="urxvt"] $ws2
 
 assign [class="Pcmanfm"] $ws3
