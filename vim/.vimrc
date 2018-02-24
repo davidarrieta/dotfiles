@@ -263,7 +263,7 @@ set t_Co=256
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Scripts header
+" Scripts header (Thanks to: Tecmint. Link: http://bit.ly/2FiMD8A)
 au bufnewfile *.sh 0r $HOME/.vim/sh_header.temp
 
 " sh stuff
