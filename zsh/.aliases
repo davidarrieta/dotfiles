@@ -46,18 +46,16 @@ alias c="clear"
 alias clean="sudo pacman -Sc && trizen -Sc && sudo pacman-optimize"
 # Just a more savage clean :)
 alias suclean="sudo pacman -Scc && trizen -Scc && sudo pacman-optimize"
-# Use Reflector to improve the speed of Arch mirrors. First do a backup of /etc/pacman.d/mirrorlist.
-# alias mirror="sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup && sudo reflector --verbose -l 10 --sort score -p https -p http -p ftp --sort rate --save /etc/pacman.d/mirrorlist"
-#
-# This function currently only works on Bash. I'll fix that later. #TODO
+# Improve package download speed using reflector to search
+# for the best mirror available. First, backup existing mirrorlist 
+# and then execute reflector. 
 mirror () {
   sudo cp -vf /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak && \
   sudo reflector --verbose -l 10 --sort score -p https -p http -p ftp \
   --sort rate --save /etc/pacman.d/mirrorlist
 }
-alias mirror="mirror"
 
-# Create a directory and inmediately "cd" to that directory. Currently only works on Bash #TODO
+# Create a directory and inmediately "cd" to that directory
 mcd () {
   mkdir -p $1
   cd $1
@@ -152,6 +150,3 @@ alias trupg="trizen -Syu"
 alias trin="trizen -S"
 alias treps="trizen -Ss"
 alias trep="trizen -Si"
-
-transfer() { if [ $# -eq 0 ]; then echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi
-tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; }
