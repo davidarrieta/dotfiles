@@ -77,6 +77,7 @@ Plugin 'scrooloose/nerdtree'			" Nerdtree plugin
 Plugin 'terryma/vim-multiple-cursors'	" Sublime Text's awesome multiple selection feature
 Plugin 'ctrlpvim/ctrlp.vim'				" Fuzzy finding
 Plugin 'lilydjwg/colorizer'				" Colorizer plugin
+Plugin 'vim-syntastic/syntastic'		" Syntax checking plugin for Vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins Settings - fugitive 
