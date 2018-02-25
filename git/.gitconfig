@@ -11,5 +11,6 @@
 [user]
 	email = ArrietaDavid2001@protonmail.com
 	name = Claudio D. Arrieta
+	signingkey = 43860D391C0B6F2A
 [diff]
 	tool = vimdiff
