@@ -1,7 +1,16 @@
+# Make vim the default editor for the whole system
 export EDITOR=vim
+
+# Make less the default pager
 export PAGER=less
+
+# Use the less pager with these options, including line numbers
 export LESS=' -RSJMNsi'
+
+# Allow my scripts to be executed anywhere 
 export PATH=$PATH:~/.scripts
+
+# Needed by npm to properly work
 export PATH=~/.npm-global/bin:$PATH
 
 # less Colors for man Pages
