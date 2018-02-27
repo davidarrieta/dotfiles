@@ -55,8 +55,9 @@ let g:mapleader=','						" With a map leader it's possible
 										" to do extra key combinations
 										" like <leader>w saves the current file
 
-set directory^=$HOME/.vim/tmp//			" Organizing .swp files
-set backupdir^=$HOME/.vim/tmp//			" Now the .swp files will stay in your .vim folder
+set directory^=$HOME/.vim/tmp//			" Organize.swp files
+set backupdir^=$HOME/.vim/tmp//			" Now the .swp files will stay in your ~/.vim folder
+set number								" Line numbers are good
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
@@ -251,9 +252,6 @@ command! Q q
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"Line numbers are good
-set number
-
 "Turn on syntax highlighting
 syntax enable
 
@@ -302,12 +300,13 @@ set linebreak " Wrap lines at convenient points
 " This makes sure that shell scripts are highlighted
 " as bash scripts and not sh scripts. From valloric
 let g:is_posix = 1
-"
-set incsearch " Find as entering pattern
 
-set ignorecase " Case insensitive patterns,...
-
-set smartcase " When only lowercase is case doesn't matter
+set incsearch	" Find as entering pattern
+set ignorecase	" Case insensitive patterns,...
+set smartcase	" When only lowercase is case doesn't matter
+set infercase	" Case aware smarter completions
+				" see http://bit.ly/2oxIx5l
+				" for more info
 
 "set showcmd " Show (partial) command in the last line of the screen.
 
@@ -322,7 +321,17 @@ set undolevels=1000
 set hidden " Don't display any error when moving through unsaved buffers
 
 "set ruler " status line there will be something like: 529, 35 68%, representing line 529, column 35, about 68% of the way to the end of the buffer.
-"
+
+
+let s:undoDir = "/tmp/.undodir_" . $USER	" Use persistent undo
+if !isdirectory(s:undoDir)					" See 
+    call mkdir(s:undoDir, "", 0700)			" http://bit.ly/2FwrGa5
+endif										" for more info
+let &undodir=s:undoDir						"
+set undofile								"
+
+nnoremap <silent> <leader>sh :syntax sync fromstart<CR>	" Recompute syntax
+autocmd FileType markdown syntax sync fromstart			" highlighting
 
 """"""""""" Maybe they will be useful in the future  """""""""""""""""""
 
