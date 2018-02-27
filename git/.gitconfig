@@ -14,3 +14,5 @@
 	signingkey = 43860D391C0B6F2A
 [diff]
 	tool = vimdiff
+[commit]
+	gpgsign = true
