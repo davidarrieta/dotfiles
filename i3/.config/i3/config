@@ -370,6 +370,9 @@ for_window [class="Pavucontrol"] floating enable, move position center, resize s
 for_window [title="Moviendo archivos"] floating enable, move position center, resize set 400 200
 for_window [title="Copiando archivos"] floating enable, move position center, resize set 400 200
 
+for_window [class="Leafpad"] floating enable resize set 1024 640
+
+
 ###---Colors---###
 
 
