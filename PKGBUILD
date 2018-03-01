@@ -14,9 +14,9 @@
 
 pkgbase=arrietadavid-dotfiles-deps
 pkgname=(arrietadavid-dotfiles-deps arrietadavid-dotfiles-deps-desktop)
-pkgver=2018.01.14
+pkgver=2018.03.01
 pkgrel=1
-pkgdesc="My dotfiles. See my Github for more information"
+pkgdesc="Claudio D. Arrieta's dotfiles. See my Github for more info" 
 
 arch=(any)
 url='https://github.com/DavidArrieta/dotfiles'
@@ -25,7 +25,7 @@ license=('GPL3')
 package_arrietadavid-dotfiles-deps() {
   pkgname=arrietadavid-dotfiles-deps
   pkgdesc="The most basic dependencies for my dotfiles"
-  depends=(coreutils grep vim zsh bash bc gksu grub lxsession networkmanager
+  depends=(coreutils grep vim zsh bash bash-completion bc gksu grub lxsession networkmanager
            pulseaudio systemd udisks2 git)
   optdepends=(
     'ntfs-3g: NTFS compatibility'
@@ -47,6 +47,7 @@ package_arrietadavid-dotfiles-deps-desktop() {
   pkgdesc="Desktop dependencies for my dotfiles"
   depends=(
     xorg-server-common
+    xorg-apps
     xorg-server
     xorg-xinit
     xdg-user-dirs
@@ -60,6 +61,7 @@ package_arrietadavid-dotfiles-deps-desktop() {
     scrot
     rofi
     arrietadavid-dotfiles-deps
+    compton
   )
   optdepends=(  
     'ttf-dejavu: I like to use this font with Firefox'
@@ -89,6 +91,8 @@ package_arrietadavid-dotfiles-deps-desktop() {
     'htop: Interactive process viewer'
     'transmission-gtk: Fast, easy, and free BitTorrent client (GTK+ GUI)'
     'w3m: Needed for ranger to display images'
+    'dropbox: Cloud storage service'
+    'dropbox-cli: Command line interface for Dropbox'
     'youtube-dl: Download videos from YouTube.com and a few more sites'
   )
 }
