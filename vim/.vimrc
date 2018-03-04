@@ -163,6 +163,8 @@ au BufRead,BufNewFile PKGBUILD setl expandtab tabstop=2 shiftwidth=2
 
 " Keybinds for the built-in spell checker in Vim. 'ss' and 'ns' stands for
 " 'set spell' and 'no spell' respectively
+" Use 'z=' and Vim will suggest a list of 
+" alternatives that it thinks may be correct.
 nmap <Leader>ss :set spell spelllang=es,en<CR>
 nmap <Leader>ns :set nospell<CR>
 
