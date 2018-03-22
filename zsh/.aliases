@@ -183,10 +183,10 @@ alias plz='sudo $(fc -ln -1)'
 alias purge="sudo pacman -Rnscu"
 #
 # Remove old packages in pacman cache and optimize pacman with the script pacman-optimize 
-alias clean="sudo pacman -Sc && trizen -Sc && sudo pacman-optimize"
+alias clean="sudo pacman -Sc && sudo pacman-optimize"
 #
 # Just a more savage clean :)
-alias suclean="sudo pacman -Scc && trizen -Scc && sudo pacman-optimize"
+alias suclean="sudo pacman -Scc && sudo pacman-optimize"
 #
 # Improve package download speed using reflector to search
 # for the best mirror available. First, backup existing mirrorlist 
@@ -197,7 +197,7 @@ mirror () {
   --sort rate --save /etc/pacman.d/mirrorlist
 }
 #
-# Pacman and trizen aliases:
+# Pacman and aliases:
 #
 alias pacupg='sudo pacman -Syu'
 alias pacin='sudo pacman -S'
@@ -222,12 +222,6 @@ paclist() {
     awk 'BEGIN {FS=":"} /^Name/{printf("\033[1;36m%s\033[1;37m", $2)} /^Description/{print $2}'
 }
 #
-# Trizen
-#
-alias trupg="trizen -Syu"
-alias trin="trizen -S"
-alias treps="trizen -Ss"
-alias trep="trizen -Si"
 #
 
 
