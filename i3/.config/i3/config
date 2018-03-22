@@ -191,7 +191,7 @@ floating_modifier $mod
 bindsym $mod+Return exec urxvt
 
 # Start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id "rofi -modi \\"run,drun\\" -show run -lines 6"
+bindsym $mod+d exec --no-startup-id "rofi -modi \\"run,drun\\" -show drun -lines 6"
 
 # Lock the screen with i3lock and this script
 bindsym XF86WakeUp exec --no-startup-id ~/.scripts/i3lock.sh
