@@ -43,7 +43,7 @@ Nevertheless, I try to keep them as clean and non-WTF as possible, and people ar
 |Text Editor   |`vim` - `leafpad`   |[Vim](https://github.com/vim/vim) - [Leafpad](http://tarot.freeshell.org/leafpad/)  |[Vim](https://github.com/davidarrieta/dotfiles/blob/master/vim/.vimrc)   |   |   |   
 |Terminal Emulator   | `urxvt`   |[urxvt](http://software.schmorp.de/pkg/rxvt-unicode.html)   | [urxvt](https://github.com/davidarrieta/dotfiles/blob/master/Xresources/Xresources.d/urxvt) |
 |Window Manager | `i3-gaps` | [i3-gaps](https://github.com/Airblader/i3) | [i3-gaps](https://github.com/davidarrieta/dotfiles/blob/master/i3/.config/i3/config)
-|AUR Helper| `trizen` | [trizen](https://github.com/trizen/trizen) | [trizen](https://github.com/davidarrieta/dotfiles/blob/master/trizen/.config/trizen/trizen.conf) | 
+|AUR Helper| `aurutils` | [aurutils](https://github.com/AladW/aurutils) |
 |Screenshooter| `scrot` | [Scrot](https://github.com/dreamer/scrot) |
 |Display Manager| `lightdm` | [LightDM](https://freedesktop.org/wiki/Software/LightDM) | 
 |Browser    |`firefox`   |[Firefox](https://www.mozilla.org/en-US/firefox/new/)   | 
