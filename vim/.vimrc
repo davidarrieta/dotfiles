@@ -69,12 +69,12 @@ set number								" Line numbers are good
 call plug#begin('~/.vim/plugged')
 
 Plug 'itchyny/lightline.vim'			" The most lightweight statusline for Vim
-Plug 'nvie/vim-flake8'				" Flake8 python checker for Vim
-Plug 'tpope/vim-commentary'			" Comment stuff out.
+Plug 'nvie/vim-flake8'					" Flake8 python checker for Vim
+Plug 'tpope/vim-commentary'				" Comment stuff out.
 Plug 'tpope/vim-fugitive'				" Git wrapper | Git in vim
-Plug 'tpope/vim-repeat'				" Repeat things but better
+Plug 'tpope/vim-repeat'					" Repeat things but better
 Plug 'tpope/vim-surround'				" Surround plugin. Quoting/parenthesizing made simple
-Plug 'terryma/vim-multiple-cursors'	" Sublime Text's awesome multiple selection feature
+Plug 'terryma/vim-multiple-cursors'		" Sublime Text's awesome multiple selection feature
 Plug 'lilydjwg/colorizer'				" Colorizer plugin
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -88,22 +88,6 @@ nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gp :Git push<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugins Settings - syntastic
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Syntastic bindings
-"nnoremap <F4> :SyntasticCheck<CR>
-"vnoremap <F4> <ESC>:SyntasticCheck<CR>
-"inoremap <F4> <ESC>:SyntasticCheck<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugins Settings - NerdTree
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Keybind to open NerdTree with Ctrl + n
-map <Leader>n :NERDTreeToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins Settings - multiple cursors
@@ -124,9 +108,10 @@ let g:multi_cursor_quit_key='<Esc>'
 let g:multi_cursor_start_key='<F6>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugins Settings - Vundle
+" => Plugins Settings - VimPlug
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" All your plugins must be added BEFORE this line
 " Initialize plugin system
 call plug#end()
 
