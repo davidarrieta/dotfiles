@@ -63,22 +63,19 @@ set number								" Line numbers are good
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-filetype off							" Vundle says requires this option be enabled to work properly
-set rtp+=~/.vim/bundle/Vundle.vim		" Set the runtime path to include Vundle and initialize
-call vundle#begin()
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'			" Let Vundle manage Vundle, required
-Plugin 'itchyny/lightline.vim'			" The most lightweight statusline for Vim
-Plugin 'nvie/vim-flake8'				" Flake8 python checker for Vim
-Plugin 'tpope/vim-commentary'			" Comment stuff out.
-Plugin 'tpope/vim-fugitive'				" Git wrapper | Git in vim
-Plugin 'tpope/vim-repeat'				" Repeat things but better
-Plugin 'tpope/vim-surround'				" Surround plugin. Quoting/parenthesizing made simple
-Plugin 'scrooloose/nerdtree'			" Nerdtree plugin
-Plugin 'terryma/vim-multiple-cursors'	" Sublime Text's awesome multiple selection feature
-Plugin 'ctrlpvim/ctrlp.vim'				" Fuzzy finding
-Plugin 'lilydjwg/colorizer'				" Colorizer plugin
-Plugin 'vim-syntastic/syntastic'		" Syntax checking plugin for Vim
+Plug 'itchyny/lightline.vim'			" The most lightweight statusline for Vim
+Plug 'nvie/vim-flake8'				" Flake8 python checker for Vim
+Plug 'tpope/vim-commentary'			" Comment stuff out.
+Plug 'tpope/vim-fugitive'				" Git wrapper | Git in vim
+Plug 'tpope/vim-repeat'				" Repeat things but better
+Plug 'tpope/vim-surround'				" Surround plugin. Quoting/parenthesizing made simple
+Plug 'terryma/vim-multiple-cursors'	" Sublime Text's awesome multiple selection feature
+Plug 'lilydjwg/colorizer'				" Colorizer plugin
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins Settings - fugitive 
@@ -130,12 +127,8 @@ let g:multi_cursor_start_key='<F6>'
 " => Plugins Settings - Vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"All of your Plugins must be added before the following line
-call vundle#end()            "required
-filetype plugin indent on    "required. Filetype auto-detection.
-"           │     │    └──── Enable file type detection.
-"           │     └───────── Enable loading of indent file.
-"           └─────────────── Enable loading of plugin files.
+" Initialize plugin system
+call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Indentation
