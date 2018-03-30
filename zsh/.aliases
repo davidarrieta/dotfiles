@@ -30,6 +30,7 @@
 #	-> Disk management
 #	-> Shortcuts and Quick commands
 #	-> Arch Linux, pacman and AUR related
+#	-> Pass alias
 #	-> Misc
 # 
 ############################################################
@@ -223,6 +224,17 @@ paclist() {
 }
 #
 #
+
+
+##-- Pass alias --## 
+#
+# "gghp" stands for Get GitHub Password
+alias gghp='pass -c Programming/Github/github.com'
+#
+# "gglp" stands for Get GitLab Password
+alias gglp='pass -c Programming/Gitlab/gitlab.com'
+#
+
 
 
 ###-- Misc --###
