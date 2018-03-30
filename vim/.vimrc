@@ -74,6 +74,7 @@ Plug 'tpope/vim-commentary'				" Comment stuff out.
 Plug 'tpope/vim-fugitive'				" Git wrapper | Git in vim
 Plug 'tpope/vim-repeat'					" Repeat things but better
 Plug 'tpope/vim-surround'				" Surround plugin. Quoting/parenthesizing made simple
+Plug 'tpope/vim-vinegar'				" vinegar.vim enhances netrw (The built in directory browser)
 Plug 'terryma/vim-multiple-cursors'		" Sublime Text's awesome multiple selection feature
 Plug 'lilydjwg/colorizer'				" Colorizer plugin
 
