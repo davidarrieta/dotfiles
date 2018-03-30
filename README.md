@@ -55,6 +55,7 @@ You must already have a basic idea of what dotfiles are, so I won't focus on exp
 |Terminal Font   |`hack`   |[Hack](https://github.com/source-foundry/Hack)   |   |   |   |   |
 |Video Player   |`mpv`   |[Mpv](https://github.com/mpv-player/mpv)   |   |   |   |   |
 |Image Viewer | `feh` - `viewnior` | [Feh](https://github.com/derf/feh) - [Viewnior](https://github.com/hellosiyan/Viewnior) |
+|Password manager | `pass` | [pass: The Standard Unix Password Manager](https://www.passwordstore.org/) |
 
 ### Other things i use and recommend
 
