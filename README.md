@@ -13,20 +13,24 @@
 
 ## Dotfiles? How do you eat that?
 
-In [xero's](https://github.com/xero/dotfiles) words:
+### In my odyssey to have the perfect dotfiles I have come across the profiles of many other people with the same objective and these two summaries of "what are dotfiles" are the ones I liked the most
 
-In the unix world programs are commonly configured in two different ways, via shell arguments or text based configuration files. 
-Programs with many options like window managers or text editors are configured on a per-user basis with files in your home directory `~`. 
-In unix-like operating systems any file or directory name that starts with a period or full stop character is considered hidden, and in a default view will not be displayed, thus the name dotfiles. 
+#### In [Xero's](https://github.com/xero/dotfiles) words:
+
+- In the \*nix world programs are commonly configured in two different ways, via shell arguments or text-based configuration files. Programs with many options like window managers or text editors are configured on a per-user basis with files in your home directory `~`. In unix-like operating systems any file or directory name that starts with a period or full stop character is considered hidden, and in a default view will not be displayed, thus the name dotfiles. 
 
 It's been said of every console user: 
-> _"you are your dotfiles."_
+> _"You are your dotfiles."_
 
-And in [ayekat's](https://github.com/ayekat/dotfiles) words:
+#### In [Ayekat's](https://github.com/ayekat/dotfiles) words:
 
-This is my collection of user/application settings ("dotfiles") and personal scripts. They are mostly adapted to my personal needs, and some scripts make a few assumptions about the environment that may not necessarily be considered "standard", so **it's not recommended** to just copy-paste them as-is.
+- This is my collection of user/application settings ("dotfiles") and personal scripts. They are mostly adapted to my personal needs, and some scripts make a few assumptions about the environment that may not necessarily be considered "standard", so **it's not recommended** to just copy-paste them as-is.
 
-Nevertheless, I try to keep them as clean and non-WTF as possible, and people are invited to take a look at them, get ideas for their own dotfiles, and drop comments, suggestions, questions and bug reports if something seems odd.
+- Nevertheless, I try to keep them as clean and non-WTF as possible, and people are invited to take a look at them, get ideas for their own dotfiles, and drop comments, suggestions, questions and bug reports if something seems odd.
+
+#### And in my own words: 
+
+You must already have a basic idea of what dotfiles are, so I won't focus on explaining what they are but how they differ from other dotfiles. My dotfiles are characterized by the fact that I try to be as minimalist and _non-bloated_ as possible, this can be confirmed by seeing with which tools I work on a daily basis (Vim, i3, Arch Linux, ncmpcpp, aurutils, rofi, zathura, etc.) and the fact of how I use them and how I configure them to my liking. Clearly, there are going to be some exceptions to this rule (Oh my zsh, Firefox, LightDM, etc.) but I do what I can to also be as comfortable as possible. So you can think of this repository as a little guide to build your own minimalist workflow (if you're one of those people who likes this), and if you're one of those people who hates minimalism, you might find something really useful if you know how to look.
 
 ## What's included?
 
