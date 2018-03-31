@@ -20,30 +20,33 @@ rofi.sidebar-mode:       true
 !rofi.fullscreen:         true
 rofi.transparency   real
 
-! base00: #1d1f21
-! base01: #282a2e
-! base02: #373b41
-! base03: #969896
-! base04: #b4b7b4
-! base05: #c5c8c6
-! base06: #e0e0e0
-! base07: #ffffff
-! base08: #cc6666
-! base09: #de935f
-! base0A: #f0c674
-! base0B: #b5bd68
-! base0C: #8abeb7
-! base0D: #81a2be
-! base0E: #b294bb
-! base0F: #a3685a
+! Base16 Gruvbox dark, medium
+! Author: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+
+! base00: #282828
+! base01: #3c3836
+! base02: #504945
+! base03: #665c54
+! base04: #bdae93
+! base05: #d5c4a1
+! base06: #ebdbb2
+! base07: #fbf1c7
+! base08: #fb4934
+! base09: #fe8019
+! base0A: #fabd2f
+! base0B: #b8bb26
+! base0C: #8ec07c
+! base0D: #83a598
+! base0E: #d3869b
+! base0F: #d65d0e
 
 ! Enable the extended coloring options
 rofi.color-enabled: true
 
 ! Property Name     BG       Border   Separator
-rofi.color-window:  argb:F2282a2e, #282a2e, #c5c8c6
+rofi.color-window:  argb:F23c3836, #3c3836, #282828
 
 ! Property Name     BG       FG       BG-alt   Head-BG  Head-FG
-rofi.color-normal:  argb:D9282a2e, #c5c8c6, #282a2e, #282a2e, #ffffff
-rofi.color-active:  argb:D9282a2e, #81a2be, #282a2e, #282a2e, #81a2be
-rofi.color-urgent:  #282a2e, #cc6666, #282a2e, #282a2e, #cc6666
+rofi.color-normal:  argb:D93c3836, #d5c4a1, #3c3836, #3c3836, #fbf1c7
+rofi.color-active:  argb:D93c3836, #83a598, #3c3836, #3c3836, #83a598
+rofi.color-urgent:  #3c3836, #fb4934, #3c3836, #3c3836, #fb4934

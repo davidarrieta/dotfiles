@@ -31,7 +31,7 @@ foreground = ${xrdb:color20:#B4B7B4}
 foreground-alt = ${xrdb:color8:}
 
 ;Color de la línea de abajo que aparece para indicar que (en este caso) estas en determinado workspace
-primary = ${xrdb:color8:}
+primary = ${xrdb:color20:}
 
 ;Aún no sé que es pero debe ser casi lo mismo
 secondary = #e60053

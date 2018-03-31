@@ -222,7 +222,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 exec_always --no-startup-id compton -f
 
 # Set the wallpaper with feh
-exec_always --no-startup-id feh --bg-fill $HOME/Imágenes/Wallpapers/green_plants2.jpg
+exec_always --no-startup-id feh --bg-fill $HOME/Imágenes/default.jpg
 # Launch polybar properly
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
@@ -375,34 +375,27 @@ for_window [class="Leafpad"] floating enable resize set 1024 640
 
 ###---Colors---###
 
-
-# Base16 Tomorrow Night
-# Author: Chris Kempson (http://chriskempson.com)
+## Base16 Gruvbox dark, medium
+# Author: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+#
 # You can use these variables anywhere in the i3 configuration file.
 
-set $base00 #1d1f21
-set $base01 #282a2e
-
-set $base02 #373b41
-set $base03 #969896
-
-set $base04 #b4b7b4
-set $base05 #c5c8c6
-
-set $base06 #e0e0e0
-set $base07 #ffffff
-
-set $base08 #cc6666
-set $base09 #de935f
-
-set $base0A #f0c674
-set $base0B #b5bd68
-
-set $base0C #8abeb7
-set $base0D #81a2be
-
-set $base0E #b294bb
-set $base0F #a3685a
+set $base00 #282828
+set $base01 #3c3836
+set $base02 #504945
+set $base03 #665c54
+set $base04 #bdae93
+set $base05 #d5c4a1
+set $base06 #ebdbb2
+set $base07 #fbf1c7
+set $base08 #fb4934
+set $base09 #fe8019
+set $base0A #fabd2f
+set $base0B #b8bb26
+set $base0C #8ec07c
+set $base0D #83a598
+set $base0E #d3869b
+set $base0F #d65d0e
 
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border

@@ -241,19 +241,22 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#282a2e"
-    foreground = "#969896"
+    msg_urgency = low
+    background = "#3C3836"
+	foreground = "#665C54"
 	timeout= 4 
 
 [urgency_normal]
-    background = "#373b41"
-    foreground = "#c5c8c6"
-    timeout = 4 
+	msg_urgency = normal
+	background = "#504945"
+	foreground = "#D5C4A1"
+	timeout = 4 
 
 [urgency_critical]
-    background = "#cc6666"
-	foreground = "#e0e0e0"
-    timeout = 0 
+	msg_urgency = critical
+	background = "#D65D0E"
+	foreground = "#EBDBB2"
+	timeout = 0 
 
 
 # Every section that isn't one of the above is interpreted as a rules to
