@@ -43,6 +43,9 @@ alias sudo='sudo '
 # Common vi alias
 alias vi="vim"
 #
+# Neovim
+alias vim="nvim"
+#
 # Clear the screen of the terminal, but faster.
 alias c="clear"
 #
