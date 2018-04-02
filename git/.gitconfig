@@ -5,7 +5,10 @@
 	ci = commit
 	st = status
 	br = branch
-	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	plog1 = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	plog2 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	plog3 = log --color --pretty=format:'%C(yellow)%h%C(reset) %s%C(bold red)%d%C(reset) %C(green)%ad%C(reset) %C(blue)[%an]%C(reset)' --relative-date --decorate
+
 [color]
 	ui = always
 [user]
