@@ -34,7 +34,7 @@ ZSH_THEME="gallois"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions web-search alias-tips z git colorize copydir extract zsh-syntax-highlighting zsh-completions)
+plugins=(zsh-autosuggestions git-open web-search alias-tips z git colorize copydir extract zsh-syntax-highlighting zsh-completions)
 
 # Required by zsh-completions
 autoload -U compinit && compinit
@@ -58,3 +58,5 @@ function chpwd() {
     ls -a
  }
 
+#BASE16_SHELL=$HOME/.config/base16-shell/
+#[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
