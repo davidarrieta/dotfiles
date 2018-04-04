@@ -6,8 +6,7 @@
          ▄███▄██   ▄████▄   ███████   ███████    ████       ██       ▄████▄   ▄▄█████▄ 
         ██▀  ▀██  ██▀  ▀██    ██        ██         ██       ██      ██▄▄▄▄██  ██▄▄▄▄ ▀ 
         ██    ██  ██    ██    ██        ██         ██       ██      ██▀▀▀▀▀▀   ▀▀▀▀██▄ 
-        ▀██▄▄███  ▀██▄▄██▀    ██▄▄▄     ██      ▄▄▄██▄▄▄    ██▄▄▄   ▀██▄▄▄▄█  █▄▄▄▄▄██ 
-          ▀▀▀ ▀▀    ▀▀▀▀       ▀▀▀▀     ▀▀      ▀▀▀▀▀▀▀▀     ▀▀▀▀     ▀▀▀▀▀    ▀▀▀▀▀▀  
+        ▀██▄▄███  ▀██▄▄██▀    ██▄▄▄     ██      ▄▄▄██▄▄▄    ██▄▄▄   ▀██▄▄▄▄█  █▄▄▄▄▄██ ▀▀▀ ▀▀    ▀▀▀▀       ▀▀▀▀     ▀▀      ▀▀▀▀▀▀▀▀     ▀▀▀▀     ▀▀▀▀▀    ▀▀▀▀▀▀  
 ```
 <br>
 
@@ -135,6 +134,8 @@ This will symlink files to `~/.config/i3/` `~/.zshrc` and various other places.
 ![i3 config, neofetch and mpv](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/img_10.png)
 
 <br>
+
+## [Click here and go down to see my old rice](https://github.com/davidarrieta/dotfiles/tree/4cbeb3ab980fda4d4716f9b741a82defb4c67b9e)
 
 ## Ok, your dotfiles are nice but i want to learn from other people; Where can i get other dotfiles?
 
