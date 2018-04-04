@@ -139,7 +139,7 @@ This will symlink files to `~/.config/i3/` `~/.zshrc` and various other places.
 
 <br>
 
-## Ok, your dotfiles are nice but i want to learn from other people; Where can i get other dotfiles?
+## "Hey dude your dotfiles are great but I want to learn from other people too"
 
 Here you will find A LOT of other people's dotfiles: 
 * [Dotfiles.github.io](http://dotfiles.github.io/) 
