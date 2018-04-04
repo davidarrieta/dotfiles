@@ -135,7 +135,7 @@ This will symlink files to `~/.config/i3/` `~/.zshrc` and various other places.
 
 <br>
 
-## [Click here and go down to see my old rice](https://github.com/davidarrieta/dotfiles/tree/4cbeb3ab980fda4d4716f9b741a82defb4c67b9e)
+## [Click here and go down if you want to see my old rice](https://github.com/davidarrieta/dotfiles/tree/4cbeb3ab980fda4d4716f9b741a82defb4c67b9e)
 
 <br>
 
