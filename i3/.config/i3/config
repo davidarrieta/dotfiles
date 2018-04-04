@@ -217,7 +217,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 
 
 # Blurme script!
-#exec_always --no-startup-id $HOME/.scripts/blurme.sh &
+exec_always --no-startup-id $HOME/.scripts/blurme.sh &
 #Composite manager
 exec_always --no-startup-id compton -f
 
@@ -437,7 +437,7 @@ mode "$mode_power" {
 }
 
 # Press $mod+shift+s by either [l] or [v] to quickly switch between VGA or laptop screen
-set $mode_screen What screen do you want to use? [V]GA [L]aptop screen
+set $mode_screen Which screen do you want to use? [V]GA [L]aptop screen
 bindsym $mod+shift+s mode "$mode_screen"
 
 mode "$mode_screen" {
@@ -473,7 +473,7 @@ mode "$mode_launcher" {
 # with the maximum quality available and with a name like "2001-6-28_screenshot_1024x600.jpg and move it
 # to ~/Imágenes/screenshots. "Imágenes" is the word for pictures in spanish
 
-set $mode_launcher_screenshot What quality do you want? [h]ighQuality(.png) [l]owQuality(.jpg) [s]elect Area 
+set $mode_launcher_screenshot Which quality do you want? [h]ighQuality(.png) [l]owQuality(.jpg) [s]elect Area 
 bindsym Print mode "$mode_launcher_screenshot"
 
 mode "$mode_launcher_screenshot" {
