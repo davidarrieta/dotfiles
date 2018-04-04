@@ -129,10 +129,10 @@ This will symlink files to `~/.config/i3/` `~/.zshrc` and various other places.
 ![PCManFM and cava](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/img_6.png)
 
 #### [cava](https://github.com/karlstav/cava), [neofetch](https://github.com/dylanaraps/neofetch) and [ranger](https://ranger.github.io/)
-![cava, neofetch and ranger](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/img_7)
+![cava, neofetch and ranger](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/img_7.png)
 
 #### [A bit of my i3 configuration](https://github.com/davidarrieta/dotfiles/blob/master/i3/.config/i3/config), [neofetch](https://github.com/dylanaraps/neofetch) and [mpv](https://mpv.io/) playing [this song](https://www.youtube.com/watch?v=R1v8wpScKNI) 
-![i3 config, neofetch and mpv](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/img_10)
+![i3 config, neofetch and mpv](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/img_10.png)
 
 <br>
 
