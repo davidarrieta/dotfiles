@@ -105,16 +105,34 @@ This will symlink files to `~/.config/i3/` `~/.zshrc` and various other places.
 ## Current workflow since January 6, 2018.
 
 #### Clean
-![Clean](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/2018-01-05-1515172280_screenshot_1360x768.png)
+![Clean](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/img_8.png)
 
-#### [TTY-Clock](https://github.com/xorg62/tty-clock), [Cava](https://github.com/karlstav/cava) and [neofetch](https://github.com/dylanaraps/neofetch)
-![TTY-Clock, Cava and neofetch](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/2018-01-05-1515171432_screenshot_1360x768.png)
+#### [TTY-Clock](https://github.com/xorg62/tty-clock)
+![TTY-Clock](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/img_9.png)
 
-#### [Pipes.sh](https://github.com/pipeseroni/pipes.sh), [Ncmpcpp](https://github.com/arybczak/ncmpcpp), [TTY-Clock](https://github.com/xorg62/tty-clock) and a bit of my [.vimrc](https://github.com/davidarrieta/dotfiles/blob/master/vim/.vimrc)
-![Pipes.sh, Ncmpcpp, TTY-Clock and a bit of my .vimrc](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/2018-01-05-1515171601_screenshot_1360x768.png)
+#### [r/unixporn](https://reddit.com/r/unixporn)
+![r/unixporn](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/img_1.png)
 
-#### [DuckDuckGo](www.duckduckgo.com) and [cava](https://github.com/karlstav/cava)
-![DDG and cava](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/2018-01-05-1515171832_screenshot_1360x768.png)
+#### [Color scripts](https://github.com/stark/Color-Scripts)
+![Color scripts](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/img_2.png)
+
+#### [cava](https://github.com/karlstav/cava) and [colorblocks](https://github.com/davidarrieta/dotfiles/blob/master/scripts/.scripts/colorblocks)
+![Cava and colorblocks](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/img_3.png)
+
+#### [neofetch](https://github.com/dylanaraps/neofetch), [ranger](https://ranger.github.io/) and [ncmpcpp](https://github.com/arybczak/ncmpcpp)
+![neofetch, ranger and ncmpcpp](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/img_4.png)
+
+#### [PCManFM](https://wiki.archlinux.org/index.php/PCManFM) and [cava](https://github.com/karlstav/cava)
+![PCManFM and cava](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/img_5.png)
+
+#### [PCManFM](https://wiki.archlinux.org/index.php/PCManFM) and [cava](https://github.com/karlstav/cava)
+![PCManFM and cava](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/img_6.png)
+
+#### [cava](https://github.com/karlstav/cava), [neofetch](https://github.com/dylanaraps/neofetch) and [ranger](https://ranger.github.io/)
+![cava, neofetch and ranger](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/img_7)
+
+#### [A bit of my i3 configuration](https://github.com/davidarrieta/dotfiles/blob/master/i3/.config/i3/config), [neofetch](https://github.com/dylanaraps/neofetch) and [mpv](https://mpv.io/) playing [this song](https://www.youtube.com/watch?v=R1v8wpScKNI) 
+![i3 config, neofetch and mpv](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/img_10)
 
 <br>
 
