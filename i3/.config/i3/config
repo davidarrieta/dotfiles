@@ -217,7 +217,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 
 
 # Blurme script!
-exec_always --no-startup-id $HOME/.scripts/blurme.sh &
+#exec_always --no-startup-id $HOME/.scripts/blurme.sh &
 #Composite manager
 exec_always --no-startup-id compton -f
 
