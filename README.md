@@ -32,7 +32,7 @@ It's been said of every console user:
 
 You must already have a basic idea of what dotfiles are, so I won't focus on explaining what they are but how they differ from other dotfiles:
 
-- My dotfiles are characterized by the fact that I try to be as minimalist and _non-bloated_ as possible, this can be confirmed by seeing with which tools I work on a daily basis (Vim, i3, Arch Linux, ncmpcpp, aurutils, rofi, zathura, pass, etc.) and the fact of how I use them and how I configure them to my liking. Clearly, there are going to be some exceptions to this rule (Oh my zsh, Firefox, LightDM, etc.) but I do what I can to also be as comfortable as possible. 
+- My dotfiles are characterized by the fact that I try to be as minimalist and _non-bloated_ as possible, this can be confirmed by seeing with which tools I work on a daily basis (Neovim, i3, Arch Linux, ncmpcpp, aurutils, rofi, zathura, pass, etc.) and the fact of how I use them and how I configure them to my liking. Clearly, there are going to be some exceptions to this rule (Firefox, SystemD, PulseAudio etc.) but I do what I can to also be as comfortable as possible. 
 So, you can think of this repository as a little guide to build your own minimalist workflow (if you're one of those people who likes this), and if you're one of those people who hates minimalism, you might find something really useful if you know how to look.
 
 ## What's included?
@@ -47,7 +47,7 @@ So, you can think of this repository as a little guide to build your own minimal
 |Music Player   |`ncmpcpp` with `mpc` and `mpd`   |[ncmpcpp](https://github.com/arybczak/ncmpcpp) - [mpd](https://github.com/MusicPlayerDaemon/MPD) - [mpc](https://www.musicpd.org/clients/mpc/)  | [ncmpcpp](https://github.com/davidarrieta/dotfiles/blob/master/ncmpcpp/.ncmpcpp/config) - [mpd](https://github.com/davidarrieta/dotfiles/blob/master/mpd/.mpd/mpd.conf)   | 
 |Notification Daemon | `dunst` | [dunst](https://dunst-project.org/) | [dunst](https://github.com/davidarrieta/dotfiles/blob/master/dunst/.config/dunst/dunstrc) | 
 |PDF Viewer   |`zathura`   |[Zathura](https://github.com/pwmt/zathura)   |[Zathura](https://github.com/davidarrieta/dotfiles/blob/master/zathura/.config/zathura/zathurarc)   |   |   |   |
-|Text Editor   |`vim` - `leafpad`   |[Vim](https://github.com/vim/vim) - [Leafpad](http://tarot.freeshell.org/leafpad/)  |[Vim](https://github.com/davidarrieta/dotfiles/blob/master/vim/.vimrc)   |   |   |   
+|Text Editor   |`neovim` - `leafpad`   | [Neovim](https://neovim.io/) - [Leafpad](http://tarot.freeshell.org/leafpad/)  |[Vim](https://github.com/davidarrieta/dotfiles/blob/master/vim/.vimrc)   |   |   |   
 |Terminal Emulator   | `urxvt`   |[urxvt](http://software.schmorp.de/pkg/rxvt-unicode.html)   | [urxvt](https://github.com/davidarrieta/dotfiles/blob/master/Xresources/Xresources.d/urxvt) |
 |Window Manager | `i3-gaps` | [i3-gaps](https://github.com/Airblader/i3) | [i3-gaps](https://github.com/davidarrieta/dotfiles/blob/master/i3/.config/i3/config)
 |AUR Helper| `aurutils` | [aurutils](https://github.com/AladW/aurutils) |
