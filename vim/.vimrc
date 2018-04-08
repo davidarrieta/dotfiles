@@ -54,8 +54,8 @@ set history=500
 " Set the leader key to ,
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = ','						
-let g:mapleader=','			
+let mapleader = ','
+let g:mapleader=','
 "
 " Organize.swp files, Now the .swp files will stay in your ~/.vim folder
 set directory^=$HOME/.vim/tmp//			
