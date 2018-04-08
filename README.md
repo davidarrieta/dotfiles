@@ -47,7 +47,7 @@ So, you can think of this repository as a little guide to build your own minimal
 |Music Player   |`ncmpcpp` with `mpc` and `mpd`   |[ncmpcpp](https://github.com/arybczak/ncmpcpp) - [mpd](https://github.com/MusicPlayerDaemon/MPD) - [mpc](https://www.musicpd.org/clients/mpc/)  | [ncmpcpp](https://github.com/davidarrieta/dotfiles/blob/master/ncmpcpp/.ncmpcpp/config) - [mpd](https://github.com/davidarrieta/dotfiles/blob/master/mpd/.mpd/mpd.conf)   | 
 |Notification Daemon | `dunst` | [dunst](https://dunst-project.org/) | [dunst](https://github.com/davidarrieta/dotfiles/blob/master/dunst/.config/dunst/dunstrc) | 
 |PDF Viewer   |`zathura`   |[Zathura](https://github.com/pwmt/zathura)   |[Zathura](https://github.com/davidarrieta/dotfiles/blob/master/zathura/.config/zathura/zathurarc)   |   |   |   |
-|Text Editor   |`neovim` - `leafpad`   | [Neovim](https://neovim.io/) - [Leafpad](http://tarot.freeshell.org/leafpad/)  |[Vim](https://github.com/davidarrieta/dotfiles/blob/master/vim/.vimrc)   |   |   |   
+|Text Editor   |`neovim` - `leafpad`   | [Neovim](https://neovim.io/) - [Leafpad](http://tarot.freeshell.org/leafpad/)  |[Neovim](https://github.com/davidarrieta/dotfiles/blob/master/vim/.vimrc)   |   |   |   
 |Terminal Emulator   | `urxvt`   |[urxvt](http://software.schmorp.de/pkg/rxvt-unicode.html)   | [urxvt](https://github.com/davidarrieta/dotfiles/blob/master/Xresources/Xresources.d/urxvt) |
 |Window Manager | `i3-gaps` | [i3-gaps](https://github.com/Airblader/i3) | [i3-gaps](https://github.com/davidarrieta/dotfiles/blob/master/i3/.config/i3/config)
 |AUR Helper| `aurutils` | [aurutils](https://github.com/AladW/aurutils) |
