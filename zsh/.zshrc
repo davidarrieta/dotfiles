@@ -1,62 +1,141 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+######################################################################
+#
+#  ___           _    _ _      _______ _  _ 
+# |   \ __ ___ _(_)__| ( )___ |_  / __| || |
+# | |) / _` \ V / / _` |/(_-<  / /\__ \ __ |
+# |___/\__,_|\_/|_\__,_| /__/ /___|___/_||_|
+#
+#
+######################################################################
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="gallois"
+#######################################################
+#
+# Claudio D. Arrieta's custom zsh
+# License: GPLv3
+# See: https://github.com/DavidArrieta/dotfiles
+# for more information
+#
+#######################################################
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+#######################################################
+# Sections:
+#
+#	-> General
+#	-> Plugins and themes
+#		-> Zplug-specific
+#	-> Shell utils
+#
+#######################################################
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+###-- General --###
+#
+# Needed by zplug
+source ~/.zplug/init.zsh
 
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+###-- Plugins and themes --###
 
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+# Let zplug manage itself
+zplug 'zplug/zplug', \
+	hook-build:'zplug --self-manage'
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+# Install a bunch of useful OMZ plugins
+#
+#
+zplug "plugins/git", \
+	from:oh-my-zsh
+#
+#
+zplug "plugins/z",	 \
+	from:oh-my-zsh
+#
+#
+zplug "plugins/colorize", \
+	from:oh-my-zsh
+#
+#
+zplug "plugins/copydir", \
+	from:oh-my-zsh
+#
+#
+zplug "plugins/extract", \
+	from:oh-my-zsh
+#
+#
+zplug "plugins/web-search", \
+	from:oh-my-zsh
+#
+#
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions git-open web-search alias-tips z git colorize copydir extract zsh-syntax-highlighting zsh-completions)
+# Load a pretty minimalist theme from OMZ
+zplug "themes/gallois",	\
+	from:oh-my-zsh, as:theme
+
+# Install a bunch of useful plugins from the web
+
+#
+#
+zplug "zsh-users/zsh-syntax-highlighting", \
+	defer:2
+#
+#
+zplug "zsh-users/zsh-autosuggestions",	\
+	as:plugin
+#
+#
+zplug "zsh-users/zsh-completions"
+#
+#
+zplug "paulirish/git-open",				\
+	as:plugin
+#
+#
+zplug "djui/alias-tips"
+#
+#
 
 # Required by zsh-completions
 autoload -U compinit && compinit
 
-source $ZSH/oh-my-zsh.sh
-source $HOME/.aliases 
+###-- Zplug-specific --###
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load --verbose
+
+###-- Shell utils --### 
+
+#
+# Source my own aliases (Available in my dotfiles repo)
+source $HOME/.aliases
+#
+#
+# Source my .profile (Available in my dotfiles repo)
 source $HOME/.profile
-
+#
+#
+# Specify which file use to store the history
 export HISTFILE="$HOME/.zsh_history"
+#
+#
+# Set the maximum size of .zsh_history. In my case, I want a big history file
 export HISTSIZE=1000000
+#
+#
+# Same as above. 
 export SAVEHIST=1000000
-
-# To prevent history from recording duplicated entries (such as ls -l entered 
-# many times during single shell session), you can set the 
-# hist_ignore_all_dups option:
-#setopt hist_ignore_all_dups
-
-# To ls automatically after cd
+#
+#
+# ls automatically after cd
 function chpwd() {
     emulate -L zsh
     ls -a
  }
-
-#BASE16_SHELL=$HOME/.config/base16-shell/
-#[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"

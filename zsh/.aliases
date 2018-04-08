@@ -160,7 +160,7 @@ alias r="ranger"
 alias zshconfig="vim ~/.zshrc"
 #
 # How to use the "archlinux" plugin that comes with oh-my-zsh
-alias paclias="less /home/claudio/.oh-my-zsh/plugins/archlinux/README.md"
+alias paclias="less $HOME/.zplug/repos/robbyrussell/oh-my-zsh/plugins/archlinux/README.md"
 #
 # Quick command to modify .vimrc 
 # "cv" stands for Customize Vim
