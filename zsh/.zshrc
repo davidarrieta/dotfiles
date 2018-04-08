@@ -46,7 +46,7 @@ zplug "plugins/git", \
 	from:oh-my-zsh
 #
 #
-zplug "plugins/z",	 \
+zplug "plugins/z", \
 	from:oh-my-zsh
 #
 #
@@ -69,7 +69,7 @@ zplug "plugins/web-search", \
 
 
 # Load a pretty minimalist theme from OMZ
-zplug "themes/gallois",	\
+zplug "themes/gallois", \
 	from:oh-my-zsh, as:theme
 
 # Install a bunch of useful plugins from the web
@@ -80,14 +80,14 @@ zplug "zsh-users/zsh-syntax-highlighting", \
 	defer:2
 #
 #
-zplug "zsh-users/zsh-autosuggestions",	\
+zplug "zsh-users/zsh-autosuggestions", \
 	as:plugin
 #
 #
 zplug "zsh-users/zsh-completions"
 #
 #
-zplug "paulirish/git-open",				\
+zplug "paulirish/git-open", \
 	as:plugin
 #
 #
