@@ -39,7 +39,7 @@ So, you can think of this repository as a little guide to build your own minimal
 
 |Software   |What i use   |Link to the project   |Link to my own configuration files (dotfiles) of that software   |
 |---|---|---|---|
-|Shell prompt  |`bash` and `zsh` with `oh-my-zsh` |[bash](https://www.gnu.org/software/bash/) - [zsh](http://www.zsh.org/) - [Oh my zsh](https://github.com/robbyrussell/oh-my-zsh) | [zsh](https://github.com/davidarrieta/dotfiles/blob/master/zsh/.zshrc) - [bash](https://github.com/davidarrieta/dotfiles/tree/master/bash) |
+|Shell prompt  |`bash` and `zsh` with `zplug` |[bash](https://www.gnu.org/software/bash/) - [zsh](http://www.zsh.org/) - [Zplug](https://github.com/zplug/zplug) | [zsh](https://github.com/davidarrieta/dotfiles/blob/master/zsh/.zshrc) - [bash](https://github.com/davidarrieta/dotfiles/tree/master/bash) |
 |Bar   |`polybar`   |[Polybar](https://github.com/jaagr/polybar/)   |[Polybar](https://github.com/davidarrieta/dotfiles/blob/master/polybar/.config/polybar/config)   |
 |Window Compositor   |`compton`   | [Compton](https://github.com/chjj/compton)  |[Compton](https://github.com/davidarrieta/dotfiles/blob/master/compton/.config/.compton.conf)   |   |   |   |
 |VCS | `git` | [git](https://git-scm.com/) | [git](https://github.com/davidarrieta/dotfiles/tree/master/git) |
