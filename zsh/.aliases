@@ -165,7 +165,7 @@ alias paclias="less $HOME/.zplug/repos/robbyrussell/oh-my-zsh/plugins/archlinux/
 # Quick command to modify .vimrc 
 # "cv" stands for Customize Vim
 # In addition, the letters "c" and "v" are quite close to each other on the QWERTY keyboard.
-alias cv="vim ~/.vimrc"
+alias cv="vim ~/.config/nvim/init.vim"
 #
 # Edit i3 conf with vim and much faster
 alias vi3="vim ~/.config/i3/config"
