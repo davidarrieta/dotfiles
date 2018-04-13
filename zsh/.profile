@@ -1,5 +1,5 @@
-# Make vim the default editor for the whole system
-export EDITOR=vim
+# Make neovim the default editor for the whole system
+export EDITOR=nvim
 
 # Make less the default pager
 export PAGER=less
