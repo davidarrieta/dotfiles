@@ -74,9 +74,6 @@ Use it this way: ```$ aurvote -v $(pacman -Qqm) ``` - **Only for Arch Linux user
 
 ### Before installing, be sure to read useful cowboy [gently-worded note](https://github.com/cowboy/dotfiles#heed-this-critically-important-warning-before-you-install) and this excellent article by Anish Athalye: [Dotfiles are NOT meant to be forked](http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/). That said, let's go with the installation:
 
-0. **If you want to make your own dotfiles stow-compatible:** You must learn how to arrange your files right so that `stow` can link them correctly, here are some helpful links:
-[Using GNU Stow to manage your dotfiles](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html) - [Managing dotfiles with GNU stow](https://alexpearce.me/2016/02/managing-dotfiles-with-stow/)
-
 1. **Install GNU Stow:** GNU Stow is available for all GNU+Linux distros and most other unix-like distributions via your package manager.
 
 - `sudo pacman -S stow`
@@ -99,6 +96,9 @@ $ stow zsh
 $ stow whatever-dotfile-you-want
 ```
 This will symlink files to `~/.config/i3/` `~/.zshrc` and various other places.
+
+**If you have your own dotfiles repo and you want to make your own dotfiles stow-compatible you must learn how to arrange your files right so that `stow` can link them correctly, here are some helpful links:**
+[Using GNU Stow to manage your dotfiles](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html) - [Managing dotfiles with GNU stow](https://alexpearce.me/2016/02/managing-dotfiles-with-stow/)
 
 <br>
 
