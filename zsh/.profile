@@ -21,3 +21,11 @@ export LESS_TERMCAP_se=$'\e[0m'           # end standout-mode
 export LESS_TERMCAP_so=$'\e[38;5;246m'    # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\e[0m'           # end underline
 export LESS_TERMCAP_us=$'\e[04;38;5;146m' # begin underline
+
+# From "man 1 gpg-agent":
+
+# You should always add the following lines to your .bashrc or whatever
+# initialization file is used for all shell invocations:
+
+GPG_TTY=`tty`
+export GPG_TTY
