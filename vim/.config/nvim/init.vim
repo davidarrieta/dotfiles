@@ -227,13 +227,16 @@ command! Q q
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'itchyny/lightline.vim'			" The most lightweight statusline for Vim
-Plug 'tpope/vim-commentary'			" Comment stuff out.
+Plug 'tpope/vim-commentary'				" Comment stuff out.
+Plug 'tpope/vim-characterize'			" Unicode character metadata
 Plug 'tpope/vim-fugitive'				" Git integration
-Plug 'tpope/vim-repeat'				" Repeat things but better
-Plug 'tpope/vim-surround'			" Surround plugin. Quoting/parenthesizing made simple
+Plug 'tpope/vim-repeat'					" Repeat things but better
+Plug 'tpope/vim-surround'				" Surround plugin. Quoting/parenthesizing made simple
 Plug 'tpope/vim-vinegar'				" vinegar.vim enhances netrw (The built in directory browser)
 Plug 'terryma/vim-multiple-cursors'		" Sublime Text's awesome multiple selection feature
 Plug 'lilydjwg/colorizer'				" Colorizer plugin
+Plug 'tommcdo/vim-lion'					" A simple alignment operator
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
