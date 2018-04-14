@@ -97,7 +97,7 @@ $ stow whatever-dotfile-you-want
 ```
 This will symlink files to `~/.config/i3/` `~/.zshrc` and various other places.
 
-**If you have your own dotfiles repo and you want to make your own dotfiles stow-compatible you must learn how to arrange your files right so that `stow` can link them correctly, here are some helpful links:**
+- **If you have an existing dotfiles repo and you want to make your own dotfiles stow-compatible you must learn how to arrange your files right so that `stow` can link them correctly, here are some helpful links:**
 [Using GNU Stow to manage your dotfiles](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html) - [Managing dotfiles with GNU stow](https://alexpearce.me/2016/02/managing-dotfiles-with-stow/)
 
 <br>
