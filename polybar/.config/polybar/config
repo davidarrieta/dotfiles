@@ -8,35 +8,26 @@
 ;=====================================================
 
 [colors]
-;Color de la barra en general
-;background = ${xrdb:color0:#222}
-;background = ${xrdb:color18:}
+;General bar color
 background = #F21D1F21
-;background = #D0DECF
 
-;Color cuando por ejemplo estás en un cierto workspace y aparece con una iluminación para indicar que estas alli
-;background-alt = #444 
-;background-alt = #75BEC3
-;background-alt = #D0DECF
+;Color when you are in a certain workspace and in the i3 module appears with an illumination to indicate that you are there.
 background-alt = ${xrdb:color19:}
 
-;foreground = ${xrdb:color7:#222}
-;Color de la letra en general
-;foreground = #dfdfdf
+;General font color
 foreground = ${xrdb:color20:#B4B7B4}
 
-;Color de la letra cuando se hace click en un modulo, por ejemplo en el modulo de sonido actual al hacer click se cambia a "sound ;muted"
-;con un color más oscuro para indicar que no hay sonido
-;foreground-alt = #555
+;Color of the font when clicking on a module, for example in the current sound module, clicking changes it to "sound muted" 
+;with a darker color to indicate that there is no sound.
 foreground-alt = ${xrdb:color8:}
 
-;Color de la línea de abajo que aparece para indicar que (en este caso) estas en determinado workspace
+;Color of the line below that appears to indicate that (in this case) you are in a particular workspace
 primary = ${xrdb:color20:}
 
-;Aún no sé que es pero debe ser casi lo mismo
+;Idk what it does
 secondary = #e60053
 
-;Color que cambia a rojo cuando en la pestaña esa de cuando estas en un workspace aparece una ventana urgente
+;Color that changes to red when an urgent window appears in any workspace
 alert = ${xrdb:color9:}
 
 [bar/example]
@@ -47,67 +38,64 @@ monitor = VGA-1
 ; Use the specified monitor as a fallback if the main one is not found.
 monitor-fallback = LVDS1
 
-;Tamaño de la barra en general, en este caso ocupa toda la pantalla
+;Size of the bar in general, in this case it occupies the whole screen
 width = 100%
 
-;Anchura de la barra en general, me gusta ese tamaño.
+;General bar width
 height = 27
 ;offset-x = 1%
 ;offset-y = 1%
 
-;Redondez de las esquinas de la barra en general, a mayor valor, mayor será el grado de redondez de las esquinas de la barra, a
-;menor valor, serán más cuadradas las esquinas. Me gusta este tamaño, parece un rectangulo.
+; Value used for drawing rounded corners
+; Individual top/bottom values can be defined using:
+;   radius-{top,bottom}
 ;radius = 12.0
 
 ; Prefer fixed center position for the `modules-center` block
 ; When false, the center position will be based on the size of the other blocks.;
 fixed-center = true
 
-;Son los mismos valores background y foreground de arriba.
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-;Anchura de las líneas que aparecen debajo de las palabras. A mayor valor, mayor anchura.
+; Under-/overline pixel size and argb color
+; Individual values can be defined using:
+;   {overline,underline}-size
+;   {overline,underline}-color
 line-size = 3
-;Aún no sé que hace, pero tiene que ver con la misma vaina de las lineas.
 line-color = #f00
 
-;El espacio que deja la línea arriba y abajo; El espacio que deja para no tocar toda la parte de arriba de la pantalla
-;y las ventanas de abajo
+; Values applied to all borders
+; Individual side values can be defined using:
+;   border-{left,top,right,bottom}-size
+;   border-{left,top,right,bottom}-color
+;   
 border-size = 0
-;El color del borde de la barra en general, creo que prefiero dejarlo así.
 border-color = #00000000
 
-;El espacio que deja el primer modulo de la izquierda para no tocar la barra o mejor dicho
 ;Number of spaces to add at the beginning/end of the bar
-;A mayor valor, mayor espacio.
 padding-left = 2
 padding-right = 2
 
-;El espacio que deja cada modulo para separarse entre si, de izquierda a derecha.
+;The space left by each module to separate from each other, from left to right.
 module-margin-left = 1
 module-margin-right = 2
 
-;¿Cómo saber la fuente a colocar? Con los comandos fc-list y fc-match. fc-list -a para ver la lista de fuentes disponibles
-;y fc-match para ver el nombre exacto a poner aquí.
-;Para colocar fuentes que tienen espacios de por medio como por ejemplo "SF Pro Text" se coloca una barra invertida.
+;How to place the font correctly? With the fc-list and fc-match commands. 
+;fc-list -a to view the list of available sources
+;and fc-match to see the exact name to put here.
+;To place fonts that have spaces in between, such as "SF Pro Text", a backslash is used.
 font-0 = SF\ Pro\ Text:style=Regular:size=9
 font-1 = FontAwesome:style=regular:size=10
 
-;Modulos en la barra, del lado izquierdo tenemos el modulo que me dice en cual workspace estoy
 modules-left = i3 
 
-;Modulos del centro
 modules-center = mpd
 
-;Modulos del lado derecho. En esta parte tenemos el modulo filesystem que nos dice que tan lleno está la raíz en el disco duro, el
-;modulo de volumen, el de memoria RAM, el de CPU, la fecha y un powermenu
 modules-right = battery backlight scriptdate pavolume powermenu 
 
-;El lugar de la bandeja donde se colocan los iconos como audacious, telegram etc. En este caso está del lado derecho.
 tray-position = right
 
-;Lo mismo que el padding de arriba solo que con la bandeja del sistema.
 tray-padding = 2
 
 ; Tray icon max size
