@@ -102,7 +102,7 @@ This will symlink files to `~/.config/i3/` `~/.zshrc` and various other places.
 
 <br>
 
-## Current workflow since January 6, 2018.
+## Current workflow - [Click here to see my post in /r/unixporn, Almost 450 upvotes!](https://redd.it/8c6rpd)
 
 #### Clean
 ![Clean](https://github.com/davidarrieta/dotfiles/blob/master/screenshots/img_8.png)
