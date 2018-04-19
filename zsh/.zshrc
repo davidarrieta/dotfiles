@@ -14,8 +14,7 @@
 # License: GPLv3
 # See: https://github.com/DavidArrieta/dotfiles
 # for more information
-#
-#######################################################
+# ######################################################
 
 #######################################################
 # Sections:
@@ -27,7 +26,6 @@
 #
 #######################################################
 
-
 ###-- General --###
 #
 # Needed by zplug
@@ -35,56 +33,37 @@ source ~/.zplug/init.zsh
 
 ###-- Plugins and themes --###
 
-# Let zplug manage itself
-zplug 'zplug/zplug', \
-	hook-build:'zplug --self-manage'
+#Let zplug manage itself
+#zplug 'zplug/zplug', \
+	#hook-build:'zplug --self-manage'
 
-# Install a bunch of useful OMZ plugins
-#
-#
-zplug "plugins/git", \
-	from:oh-my-zsh
-#
-#
-zplug "plugins/z", \
-	from:oh-my-zsh
-#
-#
-zplug "plugins/colorize", \
-	from:oh-my-zsh
-#
-#
-zplug "plugins/copydir", \
-	from:oh-my-zsh
-#
-#
-zplug "plugins/extract", \
-	from:oh-my-zsh
-#
-#
-zplug "plugins/web-search", \
-	from:oh-my-zsh
-#
-#
+# Install a bunch of useful plugins
 
-
-# Load a pretty minimalist theme from OMZ
-zplug "themes/gallois", \
-	from:oh-my-zsh, as:theme
-
-# Install a bunch of useful plugins from the web
-
+#
+#
+zplug "modules/git", \
+	defer:1, \
+	from:prezto
+#
+#
+zplug "plugins/git", from:oh-my-zsh ## The gallois theme from OMZ needs this
+#
+#
+zplug "modules/archive", \
+	from:prezto
 #
 #
 zplug "zsh-users/zsh-syntax-highlighting", \
 	defer:2
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 #
 #
-zplug "zsh-users/zsh-autosuggestions", \
-	as:plugin
+zplug "zsh-users/zsh-autosuggestions"
 #
 #
-zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-history-substring-search"
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 #
 #
 zplug "paulirish/git-open", \
@@ -94,21 +73,18 @@ zplug "paulirish/git-open", \
 zplug "djui/alias-tips"
 #
 #
-
-# Required by zsh-completions
-autoload -U compinit && compinit
+zplug "rupa/z", \
+	use:z.sh		# Source a file that isn't a .zsh file
+#
+#
+# Load a pretty minimalist theme from OMZ
+zplug "themes/gallois", \
+	from:oh-my-zsh, \
+	as:theme
 
 ###-- Zplug-specific --###
 
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-# Then, source plugins and add commands to $PATH
+# Source plugins and add commands to $PATH
 zplug load
 
 ###-- Shell utils --### 
@@ -122,21 +98,11 @@ source $HOME/.aliases
 source $HOME/.profile
 #
 #
-# Specify which file use to store the history
-export HISTFILE="$HOME/.zsh_history"
-#
-#
-# Set the maximum size of .zsh_history. In my case, I want a big history file
-export HISTSIZE=1000000
-#
-#
-# Same as above. 
-export SAVEHIST=1000000
-#
-#
 # ls automatically after cd
 function chpwd() {
     emulate -L zsh
     ls -a
  }
 
+# Source my own history configuration file (Heavily inspired by Prezto history module)
+. $HOME/dotfiles/zsh/history.zsh
