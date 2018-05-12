@@ -26,7 +26,8 @@ HISTFILESIZE=2000
 
 # Prompt
 # PS1='[\u@\h \W]\$ '
-PS1="[\w]\\$ \[$(tput sgr0)\]"
+#PS1="[\w]\\$ \[$(tput sgr0)\]"
+source ~/.bash_prompt
 
 # Enable Bash-completion
 
