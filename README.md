@@ -155,6 +155,7 @@ This repository is strongly inspired by the work of some people, and would not h
 * [Xero](https://github.com/xero) 
 * [Mohabaks](https://mohabaks.github.io/)
 * [Samuel Walladge](https://swalladge.id.au/)
+* [Addy aka The King of Ricing](https://github.com/addy-dclxvi)
 * All the *ricers* who inspired me from [unixporn](https://www.reddit.com/r/unixporn/).
 * And all the people i might have stolen scripts or configs :grin:
 
