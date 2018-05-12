@@ -88,7 +88,7 @@ module-margin-right = 2
 font-0 = SF\ Pro\ Text:style=Regular:size=9
 font-1 = FontAwesome:style=regular:size=10
 
-modules-left = i3 
+modules-left = bspwm i3 
 
 modules-center = mpd
 
@@ -165,21 +165,33 @@ fixed-values = true
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = %index%
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+
+label-focused = %index% %icon%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
+label-focused-foreground= #FBFDFD
 label-focused-padding = 2
 
-label-occupied = %index%
+label-occupied = %icon%
 label-occupied-padding = 2
 
-label-urgent = %index%!
+label-urgent = %index% %icon%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
-label-empty = %index%
+label-empty = 
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
+
+ws-icon-0 = 1; 
+ws-icon-1 = 2; 
+ws-icon-2 = 3; 
+ws-icon-3 = 4; 
+ws-icon-4 = 5; 
+ws-icon-5 = 6; 
+ws-icon-6 = 7;
 
 [module/i3]
 type = internal/i3
