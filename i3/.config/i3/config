@@ -203,7 +203,7 @@ bindsym XF86Display exec --no-startup-id ~/.scripts/toggle-screen.sh
 bindsym XF86Calculator exec gnome-calculator
 
 # Hide and show polybar with xdo
-bindsym $mod+m exec --no-startup-id ~/.scripts/xdo.sh
+bindsym $mod+m exec --no-startup-id ~/.scripts/hide_polybar.sh
 
 #Resize windows
 bindsym $mod+r mode "resize"
@@ -219,12 +219,12 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 # Blurme script!
 #exec_always --no-startup-id $HOME/.scripts/blurme.sh &
 #Composite manager
-exec_always --no-startup-id compton -f
+exec_always --no-startup-id compton -f --inactive-dim 0,5
 
 # Set the wallpaper with feh
 exec_always --no-startup-id feh --bg-fill $HOME/Imágenes/default.jpg
 # Launch polybar properly
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.scripts/polybar_launch 
 
 # Clipboard manager
 exec_always --no-startup-id parcellite
@@ -310,7 +310,7 @@ assign [class="Firefox|Chromium"] $ws1
 assign [class="^URxvt$" instance="urxvt"] $ws2
 
 assign [class="Pcmanfm"] $ws3
-assign [class="^URxvt$" instance="ranger"] $ws3
+assign [instance="ranger"] $ws3
 
 assign [instance="ncmpcpp"] $ws4
 
@@ -450,19 +450,21 @@ mode "$mode_screen" {
 
 
 # Press $mod+o followed by either f, t, m, n, v, etc. to launch firefox,  and the most used apps by me
-set $mode_launcher Launch: [f]irefox [m]usic(ncmpcpp) [P]CManFM [t]elegram [z]athura [r]anger [w]eechat
+set $mode_launcher Launch: [C]hromium[f]irefox [m]usic(ncmpcpp) [P]CManFM [t]elegram [z]athura [r]anger [w]eechat
 bindsym $mod+o mode "$mode_launcher"
 
 mode "$mode_launcher" {
     bindsym f mode "default", exec firefox
     bindsym t mode "default", exec telegram-desktop
-    bindsym m mode "default", exec --no-startup-id urxvt -name ncmpcpp -e ncmpcpp
+    bindsym m mode "default", exec --no-startup-id st -n ncmpcpp -e ncmpcpp
 
     bindsym p mode "default", exec pcmanfm
     bindsym z mode "default", exec zathura
 
-	bindsym r mode "default", exec urxvt -name ranger -e ranger
+	bindsym r mode "default", exec st -n ranger -e ranger
 	bindsym w mode "default", exec urxvt -name weechat -e weechat
+
+	bindsym c mode "default", exec chromium
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
