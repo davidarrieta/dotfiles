@@ -277,7 +277,7 @@ browser_sort_format = {%a - }{%t}|{%f} {(%l)}
 
 #song_columns_list_format = "(3)[]{}(85)[white]{t} (1)[blue]{a}"
 
-song_columns_list_format = "(10)[white]{l} (35)[cyan]{a} (10)[magenta]{t}"  
+song_columns_list_format = "(10)[white]{l} (30)[white]{b} (25)[cyan]{a} (10)[magenta]{t}"
 
 #song_columns_list_format = "(10)[blue]{l} (30)[green]{a} (30)[magenta]{b} (50)[yellow]{t}"  
 
@@ -387,7 +387,7 @@ header_text_scrolling = yes
 #
 #follow_now_playing_lyrics = no
 #
-fetch_lyrics_for_current_song_in_background = no
+fetch_lyrics_for_current_song_in_background = yes
 #
 #store_lyrics_in_song_dir = no
 #

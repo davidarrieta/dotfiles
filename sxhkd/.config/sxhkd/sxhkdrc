@@ -20,6 +20,10 @@
 #
 ######################################################################
 
+# program launcher
+super + o
+	sh $HOME/.scripts/launcher.sh
+
 # Launch terminal 
 super + Return
 	st 
@@ -28,14 +32,10 @@ super + Return
 super + shift + Return
 	urxvt
 
-# program launcher
-super + o 
-	launcher.sh
-	
-
 # Launch rofi
 super + d
-	rofi -modi "run,drun" -show drun -lines 6
+	dmenu_run
+	#rofi -modi "run,drun" -show drun -lines 6
 
 ## music control
 XF86Audio{Next,Prev,Play,Stop}
@@ -65,10 +65,6 @@ super + shift + q
 super + m
 	bspc desktop -l next
 
-## spit horizontal & split vertical, like in i3-gaps :D
-super + {h,v}
-	bspc node -p {east,south}
-
 ## preselect the ratio
 super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
@@ -89,38 +85,37 @@ alt + shift + Tab
 super + {Tab,grave}
 	bspc {node,desktop} -f last
 
-## focus or send to the given desktop
-super + {_,shift + }{1-8}
-	bspc {desktop -f,node -d} '^{1-8}'
-
 # send the newest marked node to the newest preselected node
-super + y
-	bspc node newest.marked.local -n newest.!automatic.local
+#super + y
+#	bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest node
-super + g
-	bspc node -s biggest
+#super + g
+	#bspc node -s biggest
 
 # set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+super + {t,y,f}
+	bspc node -t {tiled,floating,fullscreen}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
-
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
-# focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+# split windows like in i3-gaps
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
 
-# focus the next/previous node in the current desktop
-super + {_,shift + }c
-	bspc node -f {next,prev}.local
+# focus or send to the given desktop
+super + {_,shift + }{1-9}
+	bspc {desktop -f,node -d} '^{1-9}'
+
+# focus the node for the given path jump
+#super + {p,b,comma,period}
+	#bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
@@ -131,14 +126,6 @@ super + {u,i}
 	bspc wm -h off; \
 	bspc node {older,newer} -f; \
 	bspc wm -h on
-
-# focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
-
-# preselect the direction
-super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
 
 # cancel the preselection for the focused desktop
 super + ctrl + shift + space
@@ -156,3 +143,5 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+

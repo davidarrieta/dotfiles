@@ -308,6 +308,18 @@ endif
 let &undodir=s:undoDir
 set undofile
 
+" Replaces the word under cursor for whatever you want after that, you can
+" keep pressing . and it will keep substituting all the instances of the
+" original word (ala multiple cursors). You can skip them with n
+" (as you would in a normal search).
+" The second mapping goes the other way around: substitutes upwards
+nnoremap <Leader>x *``cgn
+nnoremap <Leader>X #``cgN
+
+" cd vim into the directory of the current buffer.
+nnoremap <leader>cd :cd %:p:h<CR>
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Bash stuff

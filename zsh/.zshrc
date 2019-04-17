@@ -26,6 +26,7 @@
 #
 #######################################################
 
+
 ###-- General --###
 #
 # Needed by zplug
@@ -53,21 +54,14 @@ zplug "modules/archive", \
 	from:prezto
 #
 #
-zplug "zsh-users/zsh-syntax-highlighting", \
-	defer:2
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
-#
-#
-zplug "zsh-users/zsh-autosuggestions"
-#
-#
-zplug "zsh-users/zsh-history-substring-search"
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-#
-#
 zplug "paulirish/git-open", \
 	as:plugin
+#
+#
+# Load a pretty minimalist theme from OMZ
+zplug "themes/gallois", \
+	from:oh-my-zsh, \
+	as:theme
 #
 #
 zplug "djui/alias-tips"
@@ -77,11 +71,19 @@ zplug "rupa/z", \
 	use:z.sh		# Source a file that isn't a .zsh file
 #
 #
-# Load a pretty minimalist theme from OMZ
-zplug "themes/gallois", \
-	from:oh-my-zsh, \
-	as:theme
-
+zplug "zsh-users/zsh-syntax-highlighting", \
+	defer:2
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
+#
+#
+zplug "zsh-users/zsh-autosuggestions"
+#
+#
+#zplug "zsh-users/zsh-history-substring-search", \
+	#defer:3
+#bindkey '^[[A' history-substring-search-up
+#bindkey '^[[B' history-substring-search-down
+#
 ###-- Zplug-specific --###
 
 # Source plugins and add commands to $PATH

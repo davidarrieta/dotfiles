@@ -50,23 +50,26 @@ bspc config presel_feedback_color "#$color1"
 
 
 ## Workspace names
-bspc monitor VGA1 -d 1 2 3 4 5 6 7 8 #9 10 
+bspc monitor VGA-1 -d 1 2 3 4 5 6 7 8 9 #10 
 
 ## Common bspwm configuration
 bspc config border_width         0
-bspc config window_gap          16
+bspc config window_gap          8
 bspc config split_ratio          0.5
 bspc config borderless_monocle   true
 bspc config gapless_monocle      false
 bspc config focus_follows_pointer true
 bspc config top_padding 10
+bspc config bottom_padding 0
+bspc config left_padding  0
+bspc config right_padding 0
+
 
 ##################
 ## Window rules ##
 ##################
 
 ## Workspace 1 (Web browsers)
-
 bspc rule -a Firefox desktop='^1' follow=on focus=on
 bspc rule -a Vivaldi desktop='^1' follow=on focus=on
 
@@ -74,7 +77,6 @@ bspc rule -a Chromium desktop='^1' follow=on focus=on
 bspc rule -a Opera desktop='^1' follow=on focus=on
 
 ## Workspace 2 (Terminals)
-
 bspc rule -a URxvt desktop='^2' follow=on focus=on
 bspc rule -a Termite desktop='^2' follow=on focus=on
 
@@ -82,10 +84,12 @@ bspc rule -a Xfce4-terminal desktop='^2' follow=on focus=on
 bspc rule -a Gnome-terminal desktop='^2' follow=on focus=on 
 
 bspc rule -a st-256color desktop='^2' follow=on focus=on 
+bspc rule -a LXTerminal desktop='^2' follow=on focus=on 
 
 ## Workspace 3 (File management) 
-
 bspc rule -a Pcmanfm desktop='^3' follow=on focus=on
+bspc rule -a Spacefm desktop='^3' follow=on focus=on
+
 bspc rule -a st-256color:ranger desktop='^3' follow=on focus=on
 #bspc rule -a URxvt:ranger desktop='^3' follow=on focus=on
 
@@ -94,7 +98,12 @@ bspc rule -a Nautilus desktop='^3' follow=on focus=on
 ## Workspace 4 (Music) 
 #bspc rule -a URxvt:ncmpcpp desktop=^4
 bspc rule -a st-256color:ncmpcpp desktop=^4
-bspc rule -a Audacious desktop=^4
+
+bspc rule -a Audacious desktop=^4 follow=off focus=off
+bspc rule -a Clementine desktop=^4
+
+bspc rule -a xmms desktop=^4
+bspc rule -a XMMS_Player desktop=^4
 
 ## Workspace 5 (Social)
 bspc rule -a TelegramDesktop desktop=^5
@@ -109,9 +118,13 @@ bspc rule -a mpv desktop='^6' follow=on focus=on
 bspc rule -a Ghb desktop='^6' follow=on focus=on
 
 bspc rule -a Xfburn desktop='^6' follow=on focus=on
+bspc rule -a Gnome-mpv desktop='^6' follow=on focus=on
 
 ## Workspace 7 (Documents and office)
 bspc rule -a Zathura desktop='^7' follow=on focus=on
+bspc rule -a Evince desktop='^7' follow=on focus=on
+
+bspc rule -a MuPDF desktop='^7' follow=on focus=on
 
 ## workspace 8 (system-settings)
 bspc rule -a Lxappearance desktop='^8' state=floating follow=on
@@ -129,12 +142,20 @@ bspc rule -a Exo-helper-1 desktop='^8' state=floating follow=on
 bspc rule -a Lxrandr desktop='^8' state=floating follow=on
 bspc rule -a Arandr desktop='^8' state=floating follow=on
 
+bspc rule -a Conky desktop='^8' state=floating follow=on
+
+## workspace 9 (sysinfo)
+bspc rule -a st-256color:tty-clock desktop='9' flag=sticky flag=locked
+bspc rule -a st-256color:htop desktop='9' flag=sticky flag=locked
+
 ## need to be floating
 bspc rule -a Audacious state=floating follow=on
+bspc rule -a Conky state=floating follow=on
 bspc rule -a Viewnior state=floating follow=on
 bspc rule -a feh state=floating follow=on
 bspc rule -a Gpicview state=floating follow=on
 bspc rule -a L3afpad state=floating follow=on
+bspc rule -a Leafpad state=floating follow=on
 bspc rule -a Gnome-calculator state=floating follow=on
 bspc rule -a Gparted state=floating follow=on
 bspc rule -a Nitrogen state=floating follow=on
@@ -147,26 +168,32 @@ bspc rule -a task_dialog state=floating follow=on
 bspc rule -a bubble state=floating follow=on
 bspc rule -a Places state=floating follow=on
 bspc rule -a Biblioteca state=floating follow=on
-bspc rule -a Seleccionar un archivo state=floating follow=on
+bspc rule -a 'Seleccionar un archivo' state=floating follow=on
 bspc rule -a Confirm state=floating follow=on
 bspc rule -a Confirmar state=floating follow=on
 bspc rule -a 'Acerca de Mozilla Firefox' state=floating follow=on
 bspc rule -a 'About Mozilla Firefox' state=floating follow=on
+bspc rule -a 'Buscar archivos' state=floating follow=on
+
 
 ###############
 ## autostart ##
 ###############
 
+## some sysinfo 
+st -n tty-clock -e tty-clock -c &
+st -n htop -e htop &
+
 ## reload compton
-pkill compton
-compton -b &
+#pkill compton
+#compton -b &
 
 # network applet
-nm-applet &
+#nm-applet &
 
 # clipboard manager
-pkill parcellite
-parcellite & 
+#pkill parcellite
+#parcellite & 
 
 # keybind daemon
 pkill sxhkd
@@ -176,15 +203,21 @@ sxhkd &
 mpd &
 
 ## set the wallpaper
-feh --bg-fill $HOME/Imágenes/default.jpg
+feh --bg-fill ~/Imágenes/Wallpapers/wallhaven-295990.png &
+
+# set the correct resolution
+#sh ~/.screenlayout/correctresolution.sh
+
+# file manager daemon
+spacefm -d &
 
 ## load dunst
-pkill dunst
-dunst &
+#pkill dunst
+#dunst &
 
 ## Launch my favorite bar which is polybar
-polybar_launch
+#polybar_launch
 
 ## Enable laptop touchpad scroll
-xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Scroll Method Enabled" 0 1 0
+#xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Scroll Method Enabled" 0 1 0
 
