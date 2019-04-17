@@ -8,17 +8,25 @@
 ###################################################################
 
 term=st 
-apps="Firefox\nTelegram\nncmpcpp\nPCManFM\nZathura\nranger\nWeechat\nChromium"
+apps="Palemoon\nncmpcpp\nChromium\nTelegram\nSpaceFM\nEvince\nSonata\nGNOME-mpv"
+#apps="Xmms\nChromium\nTelegram\nSpaceFM\nEvince\nClementine\nGNOME-mpv"
+#apps="Xmms\nFirefox\nTelegram\nncmpcpp\nPCManFM\nZathura\nranger\nWeechat\nChromium"
 
-chosen_app=$(echo -e "$apps" | dmenu -i)
+chosen_app=$(echo -e $apps | dmenu -i)
 
 case "$chosen_app" in 
-  Firefox) firefox & ;;
   Telegram) telegram-desktop & ;;
-  ncmpcpp) $term -n ncmpcpp -e ncmpcpp & ;;
-  PCManFM) pcmanfm & ;;
-  Zathura) zathura & ;; 
-  ranger) $term -n ranger -e ranger & ;;
-  Weechat) $term -n weechat -e weechat & ;;
   Chromium) chromium & ;; 
+  Palemoon) palemoon & ;;
+  SpaceFM) spacefm & ;;
+  Evince) evince & ;;
+  Clementine) clementine & ;;
+  GNOME-mpv) gnome-mpv & ;;
+  Xmms) xmms & ;;
+  ncmpcpp) $term -n ncmpcpp -e ncmpcpp & ;;
+  #Firefox) firefox & ;;
+  #PCManFM) pcmanfm & ;;
+  #Zathura) zathura & ;; 
+  #ranger) $term -n ranger -e ranger & ;;
+  #Weechat) $term -n weechat -e weechat & ;;
 esac 

@@ -13,6 +13,11 @@ export PATH=$PATH:~/.scripts
 # Needed by npm to properly work
 export PATH=~/.npm-global/bin:$PATH
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
 # less Colors for man Pages
 export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking
 export LESS_TERMCAP_md=$'\e[01;38;5;74m'  # begin bold

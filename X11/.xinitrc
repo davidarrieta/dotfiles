@@ -12,6 +12,9 @@ fi
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
 # urxvt daemon
-urxvtd -q -o -f
+#urxvtd -q -o -f
 
+#bspwm &
 
+# Polkit authentication agent
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
