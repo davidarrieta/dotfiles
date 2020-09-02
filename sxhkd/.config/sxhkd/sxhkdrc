@@ -20,9 +20,44 @@
 #
 ######################################################################
 
+
+
+# focus the next/previous window in the current desktop
+super + shift + b
+	bspc node -f {next,prev}.local.!hidden.window
+
+# Pause audio
+super + p
+	mpc toggle
+
+# Changes to next/previous tracks
+super + {comma,period}
+	mpc {prev,next}
+
+# hide window
+super + v
+  bspc node -g hidden
+
+# unhide window
+super + shift + v
+  bspc node {,$(bspc query -N -n .hidden | tail -n1)} -g hidden=off
+
+# clipboard manager using dmenu
+super + c
+	clipmenu
+
+# Quickly take a screenshot
+Print
+	maim $XDG_PICTURES_DIR/scr_$(date '+%Y-%m-%d_%H-%M-%S').png \
+	&& notify-send "📸 Screenshot taken"
+
+# Take a screenshot of a specific area
+super + Print
+	maimpick && notify-send "📸 Screenshot taken"
+
 # program launcher
 super + o
-	sh $HOME/.scripts/launcher.sh
+	sh $HOME/.scripts/sal
 
 # Launch terminal 
 super + Return
@@ -32,10 +67,18 @@ super + Return
 super + shift + Return
 	urxvt
 
-# Launch rofi
+# Launch dmenu
 super + d
 	dmenu_run
+
+# Launch rofi 
+super + shift + d
+	sh ~/.config/rofi/launchers/launcher.sh
 	#rofi -modi "run,drun" -show drun -lines 6
+
+# Launch passmenu
+super + ctrl + d 
+	passmenu
 
 ## music control
 XF86Audio{Next,Prev,Play,Stop}
@@ -43,23 +86,15 @@ XF86Audio{Next,Prev,Play,Stop}
 
 ## make sxhkd reload its configuration files
 super + s
-	pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
 
-# quit bspwm normally
-super + control + Escape
-	bspc quit
+# quit/restart bspwm
+super + ctrl + {q,r}
+	bspc {quit,wm -r}
 
-## close app
-super + q 
-	bspc node -c
-
-## close app (common way)
-alt + F4
-	bspc node -c
-
-## he disobey you? kill!
-super + shift + q
-	bspc node -k
+# close and kill
+super + {_,shift + }q
+    bspc node -{c,k}
 
 # alternate between the tiled and monocle layout
 super + m
@@ -81,9 +116,9 @@ alt + Tab
 alt + shift + Tab
 	bspc node -f prev.local
 
-## focus the last node/desktop
-super + {Tab,grave}
-	bspc {node,desktop} -f last
+## focus the last desktop
+super + Tab
+	bspc desktop -f last.local
 
 # send the newest marked node to the newest preselected node
 #super + y
@@ -113,13 +148,13 @@ super + ctrl + {h,j,k,l}
 super + {_,shift + }{1-9}
 	bspc {desktop -f,node -d} '^{1-9}'
 
+# rotate current node 90 degrees
+super + g
+	bspc node @focused:/ -R 90
+
 # focus the node for the given path jump
 #super + {p,b,comma,period}
 	#bspc node -f @{parent,brother,first,second}
-
-# focus the next/previous desktop in the current monitor
-super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
 
 # focus the older or newer node in the focus history
 super + {u,i}
@@ -137,11 +172,16 @@ super + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
-super + alt + shift + {h,j,k,l}
+super + alt + ctrl + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# Put the floating window into another layer (Below, normal or above)
+super + shift +  {b,n,a}
+	bspc node -l {below,normal,above}
 
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-
+#super + ctrl + o ; {e,w,m}
+#{nemo,sxiv,st -n nvim}
